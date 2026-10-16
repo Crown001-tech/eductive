@@ -1,8 +1,10 @@
 packages:
-  - "apps/*"
+  - "frontend"
+  - "backend"
   - "packages/*"
 
 allowBuilds:
+  esbuild: true
   sharp: false
   unrs-resolver: false
 
