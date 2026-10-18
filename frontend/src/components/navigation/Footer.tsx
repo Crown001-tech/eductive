@@ -22,10 +22,9 @@ export function Footer() {
               Synchronizing school leadership, attendance registers, continuous assessment,
               and bursar fee reconciliations.
             </p>
-            <div className="pt-2 flex items-center gap-2 text-xs text-emerald-300">
-              <span className="w-2 h-2 rounded-full bg-emerald-400" />
-              <span>Live deployment in active term operations</span>
-            </div>
+            <p className="text-xs text-surface/60 pt-1">
+              Active in Nigerian primary and secondary schools
+            </p>
           </div>
 
           {/* Col 1: Product */}

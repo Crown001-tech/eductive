@@ -1,12 +1,13 @@
 "use client";
 
 import React, { useEffect } from "react";
+import Link from "next/link";
 import { X, ArrowRight } from "lucide-react";
 
 export interface MobileMenuProps {
   isOpen: boolean;
   onClose: () => void;
-  links: Array<{ label: string; targetId: string }>;
+  links: Array<{ label: string; href?: string; targetId?: string; external?: boolean }>;
   onSelectSection?: (e: React.MouseEvent, targetId: string) => void;
 }
 
@@ -29,18 +30,8 @@ export function MobileMenu({
 
   if (!isOpen) return null;
 
-  const handleClick = (e: React.MouseEvent, targetId: string) => {
-    if (onSelectSection) {
-      onSelectSection(e, targetId);
-    } else {
-      e.preventDefault();
-      const el = document.getElementById(targetId);
-      if (el) {
-        el.scrollIntoView({ behavior: "smooth" });
-        window.history.pushState(null, "", `#${targetId}`);
-      }
-      onClose();
-    }
+  const handleClick = () => {
+    onClose();
   };
 
   return (
@@ -78,15 +69,28 @@ export function MobileMenu({
       <nav className="flex-1 px-6 py-8 flex flex-col justify-between overflow-y-auto">
         <ul className="flex flex-col gap-5">
           {links.map((link) => (
-            <li key={link.targetId}>
-              <a
-                href={`#${link.targetId}`}
-                onClick={(e) => handleClick(e, link.targetId)}
-                className="flex items-center justify-between py-2 text-2xl font-display font-bold text-white hover:text-emerald-300 transition-colors cursor-pointer border-b border-emerald-500/10 pb-3"
-              >
-                <span>{link.label}</span>
-                <ArrowRight className="w-5 h-5 text-emerald-400" />
-              </a>
+            <li key={link.label}>
+              {link.external ? (
+                <a
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={handleClick}
+                  className="flex items-center justify-between py-2 text-2xl font-display font-bold text-white hover:text-emerald-300 transition-colors cursor-pointer border-b border-emerald-500/10 pb-3"
+                >
+                  <span>{link.label}</span>
+                  <ArrowRight className="w-5 h-5 text-emerald-400" />
+                </a>
+              ) : (
+                <Link
+                  href={link.href || "/"}
+                  onClick={handleClick}
+                  className="flex items-center justify-between py-2 text-2xl font-display font-bold text-white hover:text-emerald-300 transition-colors cursor-pointer border-b border-emerald-500/10 pb-3"
+                >
+                  <span>{link.label}</span>
+                  <ArrowRight className="w-5 h-5 text-emerald-400" />
+                </Link>
+              )}
             </li>
           ))}
         </ul>
@@ -96,14 +100,14 @@ export function MobileMenu({
           <p className="text-xs uppercase tracking-widest text-emerald-300 font-semibold font-mono">
             Ready to synchronize your school?
           </p>
-          <a
+          <Link
             href="#demo-section"
-            onClick={(e) => handleClick(e, "demo-section")}
+            onClick={handleClick}
             className="w-full py-3.5 px-6 rounded-full bg-tangerine-500 hover:bg-tangerine-400 text-ink-900 font-bold text-sm flex items-center justify-center gap-2 shadow-lg transition-all cursor-pointer"
           >
             <span>Book a demo</span>
             <ArrowRight className="w-4 h-4" />
-          </a>
+          </Link>
           <p className="text-xs text-surface/60 text-center font-sans">
             Live demonstration & pilot deployment at Oakland Comprehensive High School.
           </p>

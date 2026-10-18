@@ -118,40 +118,10 @@ export function HeroSection() {
         <div className="relative h-full mx-auto z-10 max-w-[1440px]">
           
           {/* ===================================================================
-              THE GEOMETRIC RING ("The Line Thing" - z-15)
-              Clean, subtle architectural halo framing the student composition
-             =================================================================== */}
-          <div
-            className="pointer-events-none absolute z-15"
-            style={{
-              left: "calc(50% - 150px)",
-              top: "135px",
-              width: "680px",
-              height: "680px",
-            }}
-          >
-            <svg
-              className="w-full h-full overflow-visible"
-              viewBox="0 0 680 680"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              {/* Outer Primary Hairline Halo */}
-              <circle
-                cx="340"
-                cy="340"
-                r="330"
-                stroke="#12A26B"
-                strokeWidth="1.2"
-                className="opacity-20"
-              />
-            </svg>
-          </div>
-
-          {/* ===================================================================
-              SYNCHRONIZED THREAD SYSTEM (z-16: BEHIND PEOPLE)
-              - Thread sweeps from receipt around outer shoulder cleanly onto tablet screen
-              - Zero broken stubs, zero lines cutting through or emerging from cards
+              SYNCHRONIZED THREAD SYSTEM (z-16: BEHIND PEOPLE & CARDS)
+              - Line connects directly from celebrating students to principal's tablet
+              - From tablet, curves gracefully down to center-bottom into Section 2
+              - Passes strictly behind students (z-26), principal (z-20), and cards (z-24)
              =================================================================== */}
           <svg
             className="absolute inset-0 w-full h-full pointer-events-none z-16 overflow-visible"
@@ -162,10 +132,10 @@ export function HeroSection() {
           >
             <defs>
               {/* Thread Gradient: Tangerine to Emerald */}
-              <linearGradient id="threadGrad" x1="1" y1="0" x2="0" y2="1">
-                <stop stopColor="#FF6A1A" />
-                <stop offset="0.4" stopColor="#12A26B" />
-                <stop offset="1" stopColor="#3DDC97" />
+              <linearGradient id="threadGrad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stopColor="#3DDC97" />
+                <stop offset="0.5" stopColor="#12A26B" />
+                <stop offset="1" stopColor="#FF6A1A" />
               </linearGradient>
 
               <filter id="threadGlow" x="-20%" y="-20%" width="140%" height="140%">
@@ -177,52 +147,55 @@ export function HeroSection() {
               </filter>
             </defs>
 
-            {/* 1. THREAD PATH: Receipt stamp (1350, 305) -> sweeps around outer shoulder -> lands on tablet (1161, 727) */}
-            <AnimatePresence>
-              {sync.step >= 2 && (
-                <motion.path
-                  d="M 1350,305 C 1430,380 1435,540 1385,640 C 1345,710 1240,735 1161,727"
-                  stroke="url(#threadGrad)"
-                  strokeWidth="2.5"
-                  strokeDasharray="5 5"
-                  filter="url(#threadGlow)"
-                  initial={{ pathLength: 0, opacity: 0 }}
-                  animate={{ pathLength: 1, opacity: 0.95 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-                />
-              )}
-            </AnimatePresence>
-
-            {/* Glowing head dot travelling with the thread to the tablet */}
-            <AnimatePresence>
-              {sync.step === 2 && (
-                <motion.circle
-                  r="4"
-                  fill="#3DDC97"
-                  filter="url(#threadGlow)"
-                  initial={{ cx: 1350, cy: 305, opacity: 1 }}
-                  animate={{ cx: 1161, cy: 727, opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-                />
-              )}
-            </AnimatePresence>
-
-            {/* 2. CONTINUOUS WORKFLOW THREAD: Tablet (1161, 727) -> Class Register -> Center Bottom (720, 920) into Section 2 */}
-            <motion.path
-              d="M 1161,727 C 1040,770 940,760 850,755 C 770,750 735,820 720,920"
+            {/* 1. THREAD PATH: Continuous unbroken path from Celebrating Students (740, 360) -> Principal's Tablet (1165, 725) -> Section 2 (720, 920) */}
+            <path
+              d="M 740,360 C 860,390 1020,500 1090,610 C 1130,670 1145,705 1165,725 C 1050,775 920,800 840,845 C 775,880 740,905 720,920"
               stroke="url(#threadGrad)"
               strokeWidth="2.5"
-              strokeDasharray="5 5"
+              strokeDasharray="6 6"
+              strokeOpacity="0.55"
               filter="url(#threadGlow)"
-              initial={{ pathLength: 0.35, opacity: 0.35 }}
-              animate={{
-                pathLength: sync.step >= 3 ? 1 : 0.45,
-                opacity: sync.step >= 3 ? 0.95 : 0.45,
-              }}
-              transition={{ duration: 1.2, ease: "easeInOut" }}
             />
+
+            {/* ALWAYS-MOVING GLOWING BALL: Continuously glides along the thread indefinitely */}
+            <g>
+              <circle r="5" fill="#3DDC97" filter="url(#threadGlow)">
+                <animateMotion
+                  dur="6.8s"
+                  repeatCount="indefinite"
+                  path="M 740,360 C 860,390 1020,500 1090,610 C 1130,670 1145,705 1165,725 C 1050,775 920,800 840,845 C 775,880 740,905 720,920"
+                />
+              </circle>
+              <circle r="12" fill="#3DDC97" opacity="0.3" filter="url(#threadGlow)">
+                <animateMotion
+                  dur="6.8s"
+                  repeatCount="indefinite"
+                  path="M 740,360 C 860,390 1020,500 1090,610 C 1130,670 1145,705 1165,725 C 1050,775 920,800 840,845 C 775,880 740,905 720,920"
+                />
+              </circle>
+            </g>
+
+            {/* CONTACT POINTS (Showing contact at student origin, tablet node, and section 2 handoff) */}
+            {/* Contact 1: Students Origin (740, 360) */}
+            <g>
+              <circle cx="740" cy="360" r="14" fill="none" stroke="#3DDC97" strokeWidth="1.5" strokeDasharray="3 3" opacity="0.75" />
+              <circle cx="740" cy="360" r="6" fill="#12A26B" filter="url(#threadGlow)" />
+              <circle cx="740" cy="360" r="2.5" fill="#FFFFFF" />
+            </g>
+
+            {/* Contact 2: Principal Tablet (1165, 725) */}
+            <g>
+              <circle cx="1165" cy="725" r="16" fill="none" stroke="#3DDC97" strokeWidth="1.5" strokeDasharray="3 3" opacity="0.85" />
+              <circle cx="1165" cy="725" r="7" fill="#12A26B" filter="url(#threadGlow)" />
+              <circle cx="1165" cy="725" r="3" fill="#FFFFFF" />
+            </g>
+
+            {/* Contact 3: Bottom Handoff into Section 2 (720, 920) */}
+            <g>
+              <circle cx="720" cy="920" r="14" fill="none" stroke="#3DDC97" strokeWidth="1.5" strokeDasharray="3 3" opacity="0.75" />
+              <circle cx="720" cy="920" r="6" fill="#12A26B" filter="url(#threadGlow)" />
+              <circle cx="720" cy="920" r="2.5" fill="#FFFFFF" />
+            </g>
           </svg>
 
           {/* ===================================================================
@@ -362,7 +335,7 @@ export function HeroSection() {
               NIGERIAN SCHOOL OPERATING SYSTEM
             </motion.p>
 
-            {/* Display XL Headline with Balanced Break & Animated Emerald Underline */}
+            {/* Display XL Headline with Balanced Break */}
             <motion.h1
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
@@ -370,26 +343,17 @@ export function HeroSection() {
               className="font-display font-bold text-white text-[50px] xl:text-[58px] leading-[1.04] tracking-[-1.5px] mb-4 text-balance"
             >
               Discover order. <br />
-              <span className="relative inline-block text-emerald-300">
-                Synchronize
-                <motion.span
-                  initial={{ scaleX: 0 }}
-                  animate={{ scaleX: 1 }}
-                  transition={{ delay: 0.7, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-                  className="absolute left-0 bottom-1 w-full h-[3px] bg-emerald-400 origin-left"
-                />
-              </span> <br />
-              your school.
+              Synchronize your school.
             </motion.h1>
 
-            {/* Outcome-First Summary */}
+            {/* Outcome-First Summary (18 words, within 20-word cap) */}
             <motion.p
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-              className="text-[15.5px] xl:text-[16.5px] text-surface/90 leading-[1.55] font-sans max-w-[480px] mb-5"
+              className="text-[16px] xl:text-[17px] text-surface/90 leading-[1.6] font-sans max-w-[480px] mb-6"
             >
-              Manage tuition payments, track daily attendance, and prepare term report cards without paperwork stress. Simple, reliable, and built specifically for Nigerian schools.
+              Manage tuition payments, track daily attendance, and prepare term report cards without stress. Built for Nigerian schools.
             </motion.p>
 
             {/* 4 Interactive Module Station Tags (Subtle tags at idle, interactive pulse on click) */}
@@ -411,19 +375,12 @@ export function HeroSection() {
                     key={m.id}
                     id={`hero-chip-${m.id}`}
                     onClick={() => setActiveFeature(isActive ? null : m.id)}
-                    className={`px-3 py-1.5 rounded-full text-[12px] font-medium flex items-center gap-2 cursor-pointer transition-all duration-200 ${
+                    className={`px-3.5 py-1.5 rounded-full text-[12px] font-medium cursor-pointer transition-all duration-200 ${
                       isActive
                         ? "bg-emerald-500/25 border border-emerald-400 text-white shadow-[0_0_12px_rgba(61,220,151,0.3)] scale-[1.04]"
                         : "bg-ink-800/40 border border-emerald-400/20 text-surface/80 hover:bg-ink-800/70 hover:border-emerald-400/40 hover:text-white"
                     }`}
                   >
-                    <span
-                      className={`w-1.5 h-1.5 rounded-full transition-all ${
-                        isActive
-                          ? "bg-emerald-300 shadow-[0_0_6px_#3DDC97]"
-                          : "bg-emerald-400/60"
-                      }`}
-                    />
                     <span>{m.name}</span>
                   </button>
                 );
@@ -444,7 +401,7 @@ export function HeroSection() {
                   size="lg"
                   className="group px-8 py-4 rounded-full text-base font-bold shadow-lg shadow-tangerine-500/20 hover:shadow-tangerine-500/35 hover:scale-[1.02] transition-all flex items-center gap-3"
                 >
-                  <span>Book a Demo</span>
+                  <span>Book a demo</span>
                   <span className="w-7 h-7 rounded-full bg-ink-900 text-tangerine-400 flex items-center justify-center transition-transform group-hover:translate-x-1">
                     <ArrowRight className="w-4 h-4" />
                   </span>
@@ -487,22 +444,19 @@ export function HeroSection() {
           {/* Headline */}
           <h1 className="font-display font-bold text-white text-[38px] sm:text-[48px] leading-[1.05] tracking-tight mb-4">
             Discover order. <br />
-            <span className="text-emerald-300">Synchronize</span> <br />
-            your school.
+            Synchronize your school.
           </h1>
 
           <p className="text-sm sm:text-base text-surface/90 leading-relaxed mb-6 max-w-lg">
-            Manage tuition payments, track daily attendance, and prepare term report cards without paperwork stress. Simple, reliable, and built specifically for Nigerian schools.
+            Manage tuition payments, track daily attendance, and prepare term report cards without stress. Built for Nigerian schools.
           </p>
 
-          {/* Mobile Module Chips */}
-          <div className="flex flex-wrap items-center gap-2 mb-8">
+          {/* Mobile Module List */}
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5 mb-8 text-xs font-medium text-surface/80">
             {["Leadership", "Attendance", "Assessment", "Bursar fees"].map((name) => (
-              <span
-                key={name}
-                className="px-3 py-1 rounded-full bg-ink-800 border border-emerald-500/20 text-surface/90 text-xs"
-              >
-                {name}
+              <span key={name} className="flex items-center gap-1.5">
+                <span className="text-emerald-400">/</span>
+                <span>{name}</span>
               </span>
             ))}
           </div>
@@ -514,7 +468,7 @@ export function HeroSection() {
               size="lg"
               className="justify-center font-bold shadow-lg shadow-tangerine-500/20 flex items-center gap-2"
             >
-              <span>Book a Demo</span>
+              <span>Book a demo</span>
               <ArrowRight className="w-4 h-4" />
             </Button>
           </div>
@@ -557,14 +511,14 @@ export function HeroSection() {
           </div>
         </div>
 
-        {/* Mobile Section Transition Pill */}
-        <div className="flex justify-center -mt-5 pb-8 pointer-events-auto">
+        {/* Mobile Section Transition Link */}
+        <div className="flex justify-center -mt-4 pb-8 pointer-events-auto">
           <Link
             href="#how-it-works"
-            className="px-5 py-2.5 bg-white border border-line hover:border-emerald-500 rounded-full shadow-md text-xs font-bold text-charcoal-900 flex items-center gap-2"
+            className="text-xs font-semibold text-charcoal-600 hover:text-emerald-700 transition-colors flex items-center gap-1.5"
           >
-            <span className="w-2 h-2 rounded-full bg-emerald-500" />
-            <span>How Operations Synchronize ↓</span>
+            <span>See how operations synchronize</span>
+            <span>↓</span>
           </Link>
         </div>
       </div>

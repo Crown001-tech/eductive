@@ -231,7 +231,6 @@ export function SchoolPaperArtifacts({
               </p>
               <p className="text-[8.5px] text-charcoal-600">Monday Roll Call · 8:02 AM</p>
             </div>
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
           </div>
 
           {/* Ruled Student Rows */}
@@ -288,7 +287,6 @@ export function SchoolPaperArtifacts({
                   <p className="text-[11px] font-bold text-white leading-tight font-display">
                     Bank Transfer Confirmed
                   </p>
-                  <span className="text-[9px] text-emerald-300 font-mono">0.02s</span>
                 </div>
                 <p className="text-[10px] text-emerald-300 font-medium truncate font-sans">
                   ₦185,000 · Adeyemi Femi · Receipt #0417 Issued
