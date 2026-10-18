@@ -2,7 +2,7 @@
 
 import React, { useEffect } from "react";
 import Link from "next/link";
-import { X, ArrowRight } from "lucide-react";
+import { X, ArrowRight, ArrowUpRight, MessageCircle, Building2 } from "lucide-react";
 
 export interface MobileMenuProps {
   isOpen: boolean;
@@ -39,78 +39,123 @@ export function MobileMenu({
       role="dialog"
       aria-modal="true"
       aria-label="Mobile Navigation Menu"
-      className="fixed inset-0 z-50 flex flex-col bg-[#07332A] text-white animate-in fade-in duration-200"
+      className="fixed inset-0 z-50 flex flex-col bg-[#07332A] text-white animate-in fade-in duration-200 select-none overflow-hidden"
     >
+      {/* Background Architectural Grid Pattern */}
+      <div className="absolute inset-0 pointer-events-none opacity-5">
+        <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="mobileMenuGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+              <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#12A26B" strokeWidth="1" />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#mobileMenuGrid)" />
+        </svg>
+      </div>
+
+      {/* Atmospheric ambient lighting */}
+      <div className="absolute top-1/4 -right-20 w-[300px] h-[300px] bg-emerald-500/10 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute bottom-1/4 -left-20 w-[300px] h-[300px] bg-tangerine-500/10 rounded-full blur-[100px] pointer-events-none" />
+
       {/* Header bar */}
-      <div className="flex items-center justify-between px-6 py-5 border-b border-emerald-500/20">
-        <a
-          href="#"
-          onClick={(e) => {
-            e.preventDefault();
-            window.scrollTo({ top: 0, behavior: "smooth" });
-            window.history.pushState(null, "", " ");
-            onClose();
-          }}
+      <div className="relative z-10 flex items-center justify-between px-6 py-5 border-b border-emerald-500/20">
+        <Link
+          href="/"
+          onClick={handleClick}
           className="flex items-center gap-2 text-xl font-bold tracking-tight font-display text-white"
         >
           <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 shadow-[0_0_12px_#12A26B]" />
           <span>EDUCTIVE</span>
-        </a>
+        </Link>
+
+        {/* Close Button Pill */}
         <button
           onClick={onClose}
           aria-label="Close menu"
-          className="p-2 rounded-xl text-emerald-300 hover:text-white hover:bg-ink-800 transition-colors"
+          className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.08] hover:bg-white/[0.15] border border-white/15 text-surface transition-all cursor-pointer"
         >
-          <X className="w-6 h-6" />
+          <span className="text-[11px] font-mono font-bold tracking-wider uppercase text-emerald-300">
+            Close
+          </span>
+          <X className="w-4 h-4 text-white" />
         </button>
       </div>
 
-      {/* Navigation links */}
-      <nav className="flex-1 px-6 py-8 flex flex-col justify-between overflow-y-auto">
-        <ul className="flex flex-col gap-5">
-          {links.map((link) => (
-            <li key={link.label}>
-              {link.external ? (
-                <a
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={handleClick}
-                  className="flex items-center justify-between py-2 text-2xl font-display font-bold text-white hover:text-emerald-300 transition-colors cursor-pointer border-b border-emerald-500/10 pb-3"
-                >
-                  <span>{link.label}</span>
-                  <ArrowRight className="w-5 h-5 text-emerald-400" />
-                </a>
-              ) : (
-                <Link
-                  href={link.href || "/"}
-                  onClick={handleClick}
-                  className="flex items-center justify-between py-2 text-2xl font-display font-bold text-white hover:text-emerald-300 transition-colors cursor-pointer border-b border-emerald-500/10 pb-3"
-                >
-                  <span>{link.label}</span>
-                  <ArrowRight className="w-5 h-5 text-emerald-400" />
-                </Link>
-              )}
-            </li>
-          ))}
-        </ul>
+      {/* Navigation links & Content */}
+      <nav className="relative z-10 flex-1 px-6 py-8 flex flex-col justify-between overflow-y-auto">
+        <div className="space-y-6">
+          <span className="text-[10px] font-mono font-bold tracking-widest uppercase text-emerald-400/80 block">
+            NAVIGATION
+          </span>
 
-        {/* CTA in mobile menu */}
-        <div className="pt-8 border-t border-emerald-500/20 flex flex-col gap-4">
-          <p className="text-xs uppercase tracking-widest text-emerald-300 font-semibold font-mono">
-            Ready to synchronize your school?
-          </p>
+          <ul className="flex flex-col">
+            {links.map((link, idx) => {
+              const num = String(idx + 1).padStart(2, "0");
+              return (
+                <li key={link.label} className="border-b border-white/[0.08]">
+                  {link.external ? (
+                    <a
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={handleClick}
+                      className="group flex items-center justify-between py-4 text-2xl font-display font-bold text-white hover:text-emerald-300 transition-colors"
+                    >
+                      <div className="flex items-baseline gap-3">
+                        <span className="text-xs font-mono font-bold text-emerald-400/70">
+                          {num}
+                        </span>
+                        <span>{link.label}</span>
+                      </div>
+                      <ArrowUpRight className="w-5 h-5 text-emerald-400 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    </a>
+                  ) : (
+                    <Link
+                      href={link.href || "/"}
+                      onClick={handleClick}
+                      className="group flex items-center justify-between py-4 text-2xl font-display font-bold text-white hover:text-emerald-300 transition-colors"
+                    >
+                      <div className="flex items-baseline gap-3">
+                        <span className="text-xs font-mono font-bold text-emerald-400/70">
+                          {num}
+                        </span>
+                        <span>{link.label}</span>
+                      </div>
+                      <ArrowRight className="w-5 h-5 text-emerald-400 transition-transform group-hover:translate-x-1" />
+                    </Link>
+                  )}
+                </li>
+              );
+            })}
+          </ul>
+
+          {/* Quick Pilot Snapshot Badge */}
+          <div className="mt-4 p-4 rounded-2xl bg-white/[0.04] border border-white/10 flex items-start gap-3">
+            <Building2 className="w-5 h-5 text-emerald-400 flex-shrink-0 mt-0.5" />
+            <div className="text-xs">
+              <span className="font-bold text-white block">Oakland High Showcase</span>
+              <p className="text-surface/70 font-sans mt-0.5">
+                420 students, 14 class arms, zero fee debt disputes this term.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom CTA & Attribution */}
+        <div className="pt-6 border-t border-emerald-500/20 flex flex-col gap-3">
           <Link
             href="/demo"
             onClick={handleClick}
-            className="w-full py-3.5 px-6 rounded-full bg-tangerine-500 hover:bg-tangerine-400 text-ink-900 font-bold text-sm flex items-center justify-center gap-2 shadow-lg transition-all cursor-pointer"
+            className="w-full py-4 px-6 rounded-full bg-tangerine-500 hover:bg-tangerine-400 text-ink-900 font-sans font-bold text-sm flex items-center justify-center gap-2.5 shadow-lg shadow-tangerine-500/20 transition-all cursor-pointer"
           >
             <span>Book a demo</span>
             <ArrowRight className="w-4 h-4" />
           </Link>
-          <p className="text-xs text-surface/60 text-center font-sans">
-            Live demonstration & pilot deployment at Oakland Comprehensive High School.
-          </p>
+
+          <div className="flex items-center justify-between pt-2 text-[11px] text-surface/60 font-mono">
+            <span>Crown Tech Engineering</span>
+            <span>Lagos & Abuja</span>
+          </div>
         </div>
       </nav>
     </div>

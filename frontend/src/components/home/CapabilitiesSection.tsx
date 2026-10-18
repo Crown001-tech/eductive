@@ -169,14 +169,14 @@ export function CapabilitiesSection() {
             TACTILE DESK SELECTOR TABS (Architectural Desk Dock)
            ===================================================================== */}
         <div className="flex items-center justify-center mb-10 sm:mb-14">
-          <div className="inline-flex items-center p-1.5 rounded-full bg-ink-900/80 border border-emerald-500/25 backdrop-blur-md shadow-xl gap-1">
+          <div className="inline-flex items-center p-1 sm:p-1.5 rounded-full bg-ink-900/80 border border-emerald-500/25 backdrop-blur-md shadow-xl gap-0.5 sm:gap-1">
             {DESKS.map((desk, idx) => {
               const isActive = currentIndex === idx;
               return (
                 <button
                   key={desk.id}
                   onClick={() => goToSlide(idx)}
-                  className={`relative px-4 sm:px-6 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-sans font-semibold transition-all duration-300 cursor-pointer flex items-center gap-2 ${
+                  className={`relative px-2.5 sm:px-6 py-1.5 sm:py-2.5 rounded-full text-[11px] sm:text-sm font-sans font-semibold transition-all duration-300 cursor-pointer flex items-center gap-1.5 sm:gap-2 ${
                     isActive
                       ? "text-ink-900 font-bold"
                       : "text-surface/75 hover:text-white hover:bg-ink-800/50"
@@ -190,7 +190,7 @@ export function CapabilitiesSection() {
                       className="absolute inset-0 bg-emerald-400 rounded-full shadow-[0_0_16px_rgba(61,220,151,0.4)]"
                     />
                   )}
-                  <span className="relative z-10 font-mono text-[11px] opacity-70">
+                  <span className="relative z-10 font-mono text-[10px] sm:text-[11px] opacity-70 hidden sm:inline">
                     0{idx + 1}
                   </span>
                   <span className="relative z-10">{desk.tabLabel}</span>
@@ -218,7 +218,7 @@ export function CapabilitiesSection() {
                 initial="enter"
                 animate="center"
                 exit="exit"
-                className="w-full bg-[#05261F] border border-emerald-500/30 rounded-3xl p-6 sm:p-10 shadow-[0_24px_60px_rgba(0,0,0,0.35)] overflow-hidden"
+                className="w-full bg-[#05261F] border border-emerald-500/30 rounded-3xl p-4 sm:p-10 shadow-[0_24px_60px_rgba(0,0,0,0.35)] overflow-hidden"
               >
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 items-center">
                   
@@ -460,25 +460,25 @@ export function CapabilitiesSection() {
                         </div>
 
                         {/* Top Numbers Grid */}
-                        <div className="grid grid-cols-2 gap-3 mb-4">
-                          <div className="bg-ink-800/80 p-3 rounded-xl border border-emerald-500/20">
-                            <span className="text-[10px] text-surface/70 block uppercase">
+                        <div className="grid grid-cols-2 gap-2.5 sm:gap-3 mb-4">
+                          <div className="bg-ink-800/80 p-2.5 sm:p-3 rounded-xl border border-emerald-500/20 overflow-hidden">
+                            <span className="text-[10px] text-surface/70 block uppercase truncate">
                               Fee Collections
                             </span>
-                            <span className="font-display font-bold text-lg text-white mt-0.5 block">
-                              ₦42,850,000
+                            <span className="font-display font-bold text-base sm:text-lg text-white mt-0.5 block whitespace-nowrap">
+                              ₦42.85M
                             </span>
-                            <span className="text-[10px] text-emerald-300 font-medium">92% of target</span>
+                            <span className="text-[10px] text-emerald-300 font-medium block truncate">92% of target</span>
                           </div>
 
-                          <div className="bg-ink-800/80 p-3 rounded-xl border border-emerald-500/20">
-                            <span className="text-[10px] text-surface/70 block uppercase">
+                          <div className="bg-ink-800/80 p-2.5 sm:p-3 rounded-xl border border-emerald-500/20 overflow-hidden">
+                            <span className="text-[10px] text-surface/70 block uppercase truncate">
                               Daily Attendance
                             </span>
-                            <span className="font-display font-bold text-lg text-white mt-0.5 block">
+                            <span className="font-display font-bold text-base sm:text-lg text-white mt-0.5 block whitespace-nowrap">
                               98.4%
                             </span>
-                            <span className="text-[10px] text-emerald-300 font-medium">All 18 arms reported</span>
+                            <span className="text-[10px] text-emerald-300 font-medium block truncate">All 18 arms reported</span>
                           </div>
                         </div>
 

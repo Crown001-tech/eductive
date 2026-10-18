@@ -233,14 +233,14 @@ export function SynchronizedFlowSection() {
       </motion.div>
 
       {/* =======================================================================
-          NON-LINEAR CONNECTING THREAD & CONTACT SYSTEM
+          NON-LINEAR CONNECTING THREAD & CONTACT SYSTEM (Desktop lg:block only)
           - Enters at top center (720, 0) directly from Hero handoff
           - Continuous non-linear path with feeder branches to each card
           - Feature: ALWAYS-MOVING GLOWING BALL via native SVG animateMotion
           - Feature: Point showing contact at every card junction
          ======================================================================= */}
       <svg
-        className="absolute inset-0 w-full h-full pointer-events-none z-0 overflow-visible"
+        className="absolute inset-0 w-full h-full pointer-events-none z-0 overflow-visible hidden lg:block"
         viewBox="0 0 1440 1000"
         preserveAspectRatio="none"
         fill="none"
@@ -408,7 +408,30 @@ export function SynchronizedFlowSection() {
           {/* ===================================================================
               LEFT COLUMN: STEP NAVIGATION WITH CONTACT NODES (5 Cols)
              =================================================================== */}
-          <div className="lg:col-span-5 flex flex-col gap-3">
+          <div className="lg:col-span-5 flex flex-col gap-3.5 relative pl-6 sm:pl-8 lg:pl-0">
+            {/* Dedicated Mobile Connecting Line & Continuously Moving Ball (lg:hidden) */}
+            <div className="lg:hidden absolute left-2 sm:left-3 top-6 bottom-12 w-[2px] pointer-events-none z-0">
+              {/* Vertical Gradient Rail */}
+              <div className="w-full h-full bg-gradient-to-b from-[#3DDC97] via-[#12A26B] to-[#FF6A1A] opacity-40 rounded-full" />
+
+              {/* Mobile Continuously Moving Ball: Glides down smoothly and continuously without pause */}
+              <motion.div
+                animate={{
+                  top: ["0%", "100%"],
+                  opacity: [0, 1, 1, 0],
+                }}
+                transition={{
+                  duration: 8.2,
+                  repeat: Infinity,
+                  ease: "linear",
+                }}
+                className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-10"
+              >
+                <div className="w-3.5 h-3.5 rounded-full bg-[#3DDC97] shadow-[0_0_12px_#3DDC97]" />
+                <div className="absolute inset-[-4px] rounded-full bg-[#3DDC97]/30 blur-xs" />
+              </motion.div>
+            </div>
+
             {STEPS.map((step, idx) => {
               const isActive = activeStepIndex === idx;
               return (
@@ -421,8 +444,8 @@ export function SynchronizedFlowSection() {
                       : "bg-white/40 hover:bg-white border-line/60 hover:border-line text-charcoal-600"
                   }`}
                 >
-                  {/* CONTACT CONNECTOR STEM & DOCKING POINT (Showing contact with the thread) */}
-                  <div className="absolute -left-6 top-1/2 -translate-y-1/2 hidden sm:flex items-center">
+                  {/* CONTACT CONNECTOR STEM & DOCKING POINT (Desktop: lg:flex) */}
+                  <div className="absolute -left-6 top-1/2 -translate-y-1/2 hidden lg:flex items-center">
                     {/* Horizontal connector line reaching to card */}
                     <div
                       className={`h-[2px] w-5 transition-all duration-300 ${
@@ -448,6 +471,34 @@ export function SynchronizedFlowSection() {
                         />
                       </span>
                     </div>
+                  </div>
+
+                  {/* MOBILE CONTACT DOCKING NODE (lg:hidden: sits right on the mobile rail) */}
+                  <div className="absolute -left-6 sm:-left-8 top-6 -translate-y-1/2 flex lg:hidden items-center">
+                    <div className="relative flex items-center justify-center">
+                      {isActive && (
+                        <span className="absolute w-6 h-6 rounded-full bg-emerald-400/40 animate-ping" />
+                      )}
+                      <span
+                        className={`w-4 h-4 rounded-full flex items-center justify-center transition-all ${
+                          isActive
+                            ? "bg-emerald-600 border-2 border-emerald-300 shadow-[0_0_10px_#3DDC97] scale-110"
+                            : "bg-surface border border-line"
+                        }`}
+                      >
+                        <span
+                          className={`w-1.5 h-1.5 rounded-full ${
+                            isActive ? "bg-white" : "bg-charcoal-400"
+                          }`}
+                        />
+                      </span>
+                    </div>
+                    {/* Small horizontal bridge to card */}
+                    <div
+                      className={`h-[1.5px] w-2 transition-colors duration-300 ${
+                        isActive ? "bg-emerald-500" : "bg-line"
+                      }`}
+                    />
                   </div>
 
                   <div className="flex items-center justify-between mb-2">

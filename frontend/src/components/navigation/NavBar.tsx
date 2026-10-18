@@ -116,25 +116,26 @@ export function NavBar() {
             </Link>
           </div>
 
-          {/* Mobile Actions: Demo CTA + Hamburger */}
-          <div className="flex lg:hidden items-center gap-3">
-            <Link
-              href="/demo"
-              className="px-4 py-1.5 rounded-full text-xs font-bold bg-tangerine-500 text-ink-900 shadow-sm"
-            >
-              Book a demo
-            </Link>
-
+          {/* Mobile Action: Custom Architectural Hamburger Trigger */}
+          <div className="flex lg:hidden items-center">
             <button
               onClick={() => setMobileMenuOpen(true)}
               aria-label="Open navigation menu"
-              className={`p-2 rounded-xl transition-colors ${
+              className={`group flex items-center gap-2 px-3.5 py-2 rounded-full border transition-all duration-200 cursor-pointer ${
                 isScrolled
-                  ? "text-ink-900 hover:bg-surface"
-                  : "text-white hover:bg-ink-800"
+                  ? "bg-ink-900/[0.04] hover:bg-ink-900/[0.08] border-line text-ink-900"
+                  : isDarkHeroPage
+                  ? "bg-white/[0.08] hover:bg-white/[0.14] border-white/20 text-white backdrop-blur-md"
+                  : "bg-ink-900/[0.05] hover:bg-ink-900/[0.1] border-ink-900/15 text-ink-900"
               }`}
             >
-              <Menu className="w-6 h-6" />
+              <span className="text-[11px] font-mono font-bold tracking-widest uppercase">
+                Menu
+              </span>
+              <div className="flex flex-col items-end gap-1 w-4">
+                <span className="w-4 h-[2px] bg-current rounded-full transition-transform" />
+                <span className="w-2.5 h-[2px] bg-current rounded-full transition-all group-hover:w-4" />
+              </div>
             </button>
           </div>
         </div>

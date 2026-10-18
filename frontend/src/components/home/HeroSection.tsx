@@ -432,90 +432,160 @@ export function HeroSection() {
 
       {/* =========================================================================
           MOBILE & TABLET HERO (Screen width < 1200px)
+          - Unified deep forest green canvas (#07332A)
+          - Strict AGENTS.md caps: Headline <= 8 words, Subtext <= 20 words
+          - Layered Nigerian school imagery: Celebrating students + Principal
+          - Authentic Nigerian Bursary E-Receipt artifact (₦85,000 PAID · ₦0.00 Balance)
+          - Sentence-case CTA button ("Book a demo") linking to /demo
          ========================================================================= */}
-      <div className="xl:hidden flex flex-col w-full bg-white">
-        {/* Top Dark Header & Content Block */}
-        <div className="bg-ink-900 text-white px-6 sm:px-10 pt-24 pb-16 flex flex-col">
-          {/* Eyebrow */}
-          <p className="text-[11px] font-bold tracking-[2px] uppercase text-emerald-300 font-sans mb-3.5">
-            NIGERIAN SCHOOL OPERATING SYSTEM
-          </p>
+      <div className="xl:hidden relative w-full bg-[#07332A] text-white pt-28 pb-16 px-6 sm:px-10 overflow-hidden select-none">
+        {/* Background Grid Pattern */}
+        <div className="absolute inset-0 pointer-events-none opacity-5">
+          <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="mobileHeroGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#12A26B" strokeWidth="1" />
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#mobileHeroGrid)" />
+          </svg>
+        </div>
 
-          {/* Headline */}
-          <h1 className="font-display font-bold text-white text-[38px] sm:text-[48px] leading-[1.05] tracking-tight mb-4">
+        {/* Ambient atmospheric lighting */}
+        <div className="absolute top-1/4 -left-20 w-[350px] h-[350px] bg-emerald-500/15 rounded-full blur-[100px] pointer-events-none" />
+        <div className="absolute bottom-1/3 -right-20 w-[300px] h-[300px] bg-tangerine-500/10 rounded-full blur-[100px] pointer-events-none" />
+
+        {/* Top Text Content */}
+        <div className="relative z-10 flex flex-col items-start max-w-xl mx-auto">
+          {/* Eyebrow */}
+          <span className="text-[11px] font-mono font-bold tracking-[2px] uppercase text-emerald-300 mb-3">
+            NIGERIAN SCHOOL OPERATING SYSTEM
+          </span>
+
+          {/* Headline (AGENTS.md: <= 8 words) */}
+          <h1 className="font-display font-bold text-white text-[36px] sm:text-[44px] leading-[1.08] tracking-[-1px] mb-4 text-balance">
             Discover order. <br />
             Synchronize your school.
           </h1>
 
-          <p className="text-sm sm:text-base text-surface/90 leading-relaxed mb-6 max-w-lg">
-            Manage tuition payments, track daily attendance, and prepare term report cards without stress. Built for Nigerian schools.
+          {/* Subtext (AGENTS.md: <= 20 words) */}
+          <p className="text-sm sm:text-base text-surface/85 font-sans leading-relaxed mb-6 text-balance">
+            Tuition, attendance, and continuous assessment synchronized on one calm platform. Built for Nigerian schools.
           </p>
 
-          {/* Mobile Module List */}
-          <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5 mb-8 text-xs font-medium text-surface/80">
+          {/* Feature tags */}
+          <div className="flex flex-wrap items-center gap-2 mb-7">
             {["Leadership", "Attendance", "Assessment", "Bursar fees"].map((name) => (
-              <span key={name} className="flex items-center gap-1.5">
-                <span className="text-emerald-400">/</span>
-                <span>{name}</span>
+              <span
+                key={name}
+                className="px-3 py-1 rounded-full text-xs font-mono font-medium bg-white/[0.06] border border-white/10 text-emerald-200"
+              >
+                {name}
               </span>
             ))}
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 mb-6">
-            <Button
-              href="#demo-section"
-              variant="primary"
-              size="lg"
-              className="justify-center font-bold shadow-lg shadow-tangerine-500/20 flex items-center gap-2"
+          {/* Primary CTA & Trust Proof */}
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full mb-8">
+            <Link
+              href="/demo"
+              className="inline-flex items-center justify-center font-sans font-semibold rounded-full px-8 py-4 text-sm bg-tangerine-500 hover:bg-tangerine-400 text-ink-900 shadow-lg shadow-tangerine-500/20 gap-2.5 transition-all"
             >
               <span>Book a demo</span>
               <ArrowRight className="w-4 h-4" />
-            </Button>
-          </div>
+            </Link>
 
-          <div className="flex items-center gap-2 text-xs text-emerald-300/90">
-            <span>✓</span>
-            <span>
-              In active use at{" "}
-              <a
-                href="https://oakland-school.onrender.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline underline-offset-4 hover:text-white font-bold transition-colors"
-              >
-                Oakland Comprehensive High School
-              </a>
-            </span>
+            <div className="flex items-center gap-2 text-xs text-emerald-300/90 font-sans">
+              <span className="w-4 h-4 rounded-full bg-emerald-400 text-ink-900 flex items-center justify-center text-[10px] font-bold flex-shrink-0">
+                ✓
+              </span>
+              <span>
+                In active use at{" "}
+                <a
+                  href="https://oakland-school.onrender.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline underline-offset-4 text-white hover:text-emerald-200 font-bold"
+                >
+                  Oakland Comprehensive High School
+                </a>
+              </span>
+            </div>
           </div>
         </div>
 
-        {/* Celebrating Students & Principal Image on Light Surface */}
-        <div className="relative bg-white pt-8 pb-14 px-6 flex flex-col items-center overflow-hidden">
-          <div className="relative w-full max-w-[480px] flex flex-col items-center">
+        {/* Visual Scene: Layered Students + Principal + Floating Receipt */}
+        <div className="relative z-10 max-w-lg mx-auto mt-2">
+          {/* Celebrating students cutout in background */}
+          <div className="relative w-full flex justify-center">
             <Image
               src="/images/students-hero-transparent.png"
               alt="Celebrating Nigerian secondary school students"
-              width={710}
-              height={650}
+              width={650}
+              height={580}
               priority
-              className="w-full h-auto object-contain drop-shadow-xl mb-4"
+              className="w-full max-w-[420px] h-auto object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.4)]"
             />
-            <Image
-              src="/images/principal-teacher-transparent.png"
-              alt="Nigerian school principal with management tablet"
-              width={777}
-              height={1117}
-              priority
-              className="w-48 h-auto object-contain drop-shadow-md -mt-10"
-            />
+          </div>
+
+          {/* Principal & Stamped Receipt Composition */}
+          <div className="relative -mt-16 sm:-mt-20 flex flex-col sm:flex-row items-center sm:items-end justify-between gap-4">
+            
+            {/* The Authentic Stamped WhatsApp Receipt Artifact */}
+            <div className="w-full sm:max-w-[280px] bg-[#FFFDF8] rounded-2xl border border-[#D8CEBA] p-4 shadow-[0_16px_36px_rgba(0,0,0,0.35)] text-charcoal-900 font-mono text-[11px] relative overflow-hidden order-2 sm:order-1">
+              <div className="flex items-center justify-between border-b border-dashed border-[#D2C7B2] pb-2 mb-2">
+                <div>
+                  <p className="font-display font-bold text-ink-900 text-xs">OAKLAND HIGH</p>
+                  <p className="text-[9px] text-charcoal-500 font-sans">BURSARY E-RECEIPT #0417</p>
+                </div>
+                <div className="border border-emerald-700/60 rounded px-1.5 py-0.5 bg-emerald-700/10">
+                  <span className="font-display font-black text-emerald-800 text-[10px] tracking-wider uppercase">
+                    PAID
+                  </span>
+                </div>
+              </div>
+
+              <div className="space-y-1 font-sans text-[11px] mb-2.5">
+                <div className="flex justify-between">
+                  <span className="text-charcoal-500">Student:</span>
+                  <span className="font-bold text-ink-900">Adeyemi Femi (JSS 2 Gold)</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-charcoal-500">Amount Paid:</span>
+                  <span className="font-mono font-bold text-emerald-700">₦85,000.00</span>
+                </div>
+                <div className="flex justify-between border-t border-dashed border-[#E5DEC9] pt-1">
+                  <span className="text-charcoal-500">Balance:</span>
+                  <span className="font-mono font-black text-emerald-700">₦0.00</span>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-1.5 pt-2 border-t border-[#EDE6D8] text-[10px] text-emerald-800 font-sans font-medium">
+                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse flex-shrink-0" />
+                <span>WhatsApp receipt sent · 08:12 AM</span>
+              </div>
+            </div>
+
+            {/* Principal with live tablet */}
+            <div className="w-40 sm:w-48 flex-shrink-0 order-1 sm:order-2 flex justify-end">
+              <Image
+                src="/images/principal-teacher-transparent.png"
+                alt="Nigerian school principal with management tablet"
+                width={777}
+                height={1117}
+                priority
+                className="w-full h-auto object-contain drop-shadow-[0_16px_36px_rgba(0,0,0,0.45)]"
+              />
+            </div>
+
           </div>
         </div>
 
-        {/* Mobile Section Transition Link */}
-        <div className="flex justify-center -mt-4 pb-8 pointer-events-auto">
+        {/* Transition Link to Section 2 */}
+        <div className="relative z-10 flex justify-center mt-12 pb-4">
           <Link
             href="#how-it-works"
-            className="text-xs font-semibold text-charcoal-600 hover:text-emerald-700 transition-colors flex items-center gap-1.5"
+            className="text-xs font-semibold text-surface/75 hover:text-white transition-colors flex items-center gap-1.5 py-2 px-4 rounded-full bg-white/[0.04] border border-white/10"
           >
             <span>See how operations synchronize</span>
             <span>↓</span>
