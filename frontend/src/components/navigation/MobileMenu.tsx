@@ -101,7 +101,7 @@ export function MobileMenu({
             Ready to synchronize your school?
           </p>
           <Link
-            href="#demo-section"
+            href="/demo"
             onClick={handleClick}
             className="w-full py-3.5 px-6 rounded-full bg-tangerine-500 hover:bg-tangerine-400 text-ink-900 font-bold text-sm flex items-center justify-center gap-2 shadow-lg transition-all cursor-pointer"
           >

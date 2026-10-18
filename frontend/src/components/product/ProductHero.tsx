@@ -45,7 +45,7 @@ export function ProductHero() {
           {/* CTA & Trust Signal */}
           <div className="flex flex-col sm:flex-row items-center gap-4 mb-6">
             <Button
-              href="#demo-section"
+              href="/demo"
               variant="primary"
               size="lg"
               className="px-8 py-4 rounded-full font-bold shadow-lg shadow-tangerine-500/20 hover:scale-[1.02] flex items-center gap-2.5"

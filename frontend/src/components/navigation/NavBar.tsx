@@ -7,8 +7,8 @@ import { ArrowRight, Menu } from "lucide-react";
 import { MobileMenu } from "./MobileMenu";
 
 export const NAV_LINKS = [
-  { label: "About", href: "/#how-it-works" },
   { label: "Product", href: "/product" },
+  { label: "About", href: "/about" },
   { label: "School", href: "https://oakland-school.onrender.com", external: true },
   { label: "FAQ", href: "/#faq" },
 ];
@@ -29,6 +29,7 @@ export function NavBar() {
   }, []);
 
   const isHome = pathname === "/" || pathname === "";
+  const isDarkHeroPage = pathname === "/product" || pathname === "/about";
 
   const getLinkClasses = (isActive: boolean) => {
     if (isScrolled) {
@@ -36,15 +37,15 @@ export function NavBar() {
         ? "text-emerald-700 font-extrabold"
         : "text-charcoal-800 hover:text-emerald-700";
     }
-    if (isHome) {
+    if (isDarkHeroPage) {
       return isActive
-        ? "text-emerald-700 font-extrabold"
-        : "text-charcoal-900 hover:text-emerald-700";
+        ? "text-emerald-300 font-extrabold"
+        : "text-white/90 hover:text-white";
     }
-    // Dark-hero pages (like /product) before scroll
+    // Default light background / Home
     return isActive
-      ? "text-emerald-300 font-extrabold"
-      : "text-white/90 hover:text-white";
+      ? "text-emerald-700 font-extrabold"
+      : "text-charcoal-900 hover:text-emerald-700";
   };
 
   return (
@@ -73,9 +74,9 @@ export function NavBar() {
           <div className="hidden lg:flex items-center gap-8">
             <nav className="flex items-center gap-7" aria-label="Main Navigation">
               {NAV_LINKS.map((link) => {
-                const isProductActive = link.href === "/product" && pathname === "/product";
+                const isActive = link.href === pathname;
                 const linkClasses = `text-[13px] font-bold tracking-[1.2px] uppercase transition-all duration-200 py-1.5 px-1 relative ${getLinkClasses(
-                  isProductActive
+                  isActive
                 )}`;
 
                 return link.external ? (
@@ -95,7 +96,7 @@ export function NavBar() {
                     className={linkClasses}
                   >
                     <span>{link.label}</span>
-                    {isProductActive && (
+                    {isActive && (
                       <span className="absolute bottom-0 left-1 right-1 h-0.5 bg-emerald-500 rounded-full" />
                     )}
                   </Link>
@@ -105,7 +106,7 @@ export function NavBar() {
 
             {/* Desktop CTA Button */}
             <Link
-              href="#demo-section"
+              href="/demo"
               className="inline-flex items-center justify-center font-sans font-semibold rounded-full pl-6 pr-2 py-2 text-[13px] bg-tangerine-500 hover:bg-tangerine-400 text-ink-900 gap-2.5 shadow-md transition-all duration-200 group cursor-pointer"
             >
               <span>Book a demo</span>
@@ -118,7 +119,7 @@ export function NavBar() {
           {/* Mobile Actions: Demo CTA + Hamburger */}
           <div className="flex lg:hidden items-center gap-3">
             <Link
-              href="#demo-section"
+              href="/demo"
               className="px-4 py-1.5 rounded-full text-xs font-bold bg-tangerine-500 text-ink-900 shadow-sm"
             >
               Book a demo

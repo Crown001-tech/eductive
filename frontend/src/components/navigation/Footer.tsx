@@ -92,13 +92,13 @@ export function Footer() {
             </h4>
             <ul className="flex flex-col gap-2.5 text-sm text-surface/75">
               <li>
-                <Link href="#about" className="hover:text-white transition-colors focus-ring-dark">
+                <Link href="/about" className="hover:text-white transition-colors focus-ring-dark">
                   About EDUCTIVE
                 </Link>
               </li>
               <li>
                 <Link
-                  href="#demo-section"
+                  href="/demo"
                   className="inline-flex items-center gap-1 text-tangerine-500 font-semibold hover:text-white transition-colors focus-ring-dark"
                 >
                   <span>Book a Demo</span>
@@ -124,7 +124,7 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-surface/60">
-          <p>© 2026 EDUCTIVE Technologies. All rights reserved.</p>
+          <p>© 2026 EDUCTIVE. Engineered by Crown Tech. All rights reserved.</p>
           <div className="flex items-center gap-6">
             <span>Verified WCAG 2.1 AA Contrast</span>
             <span className="hidden sm:inline">•</span>
