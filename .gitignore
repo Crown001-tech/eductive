@@ -31,6 +31,8 @@ pnpm-debug.log*
 *.sln
 *.sw?
 
-# Agent customizations and skills
+# Agent customizations, rules, and design system
 .agents/
-
+AGENTS.md
+Agent.md
+design-system/
