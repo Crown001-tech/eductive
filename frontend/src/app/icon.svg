@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#094337" />
+      <stop offset="100%" stop-color="#041F19" />
+    </linearGradient>
+    <linearGradient id="emeraldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3DDC97" />
+      <stop offset="100%" stop-color="#12A26B" />
+    </linearGradient>
+    <filter id="beaconGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="#3DDC97" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+  <!-- Forest Green Tile -->
+  <rect width="64" height="64" rx="16" fill="url(#bgGrad)" />
+  <rect width="60" height="60" x="2" y="2" rx="14" fill="none" stroke="#12A26B" stroke-width="1.2" stroke-opacity="0.35" />
+
+  <!-- EDUCTIVE Geometric E Monogram -->
+  <!-- Vertical Spine -->
+  <rect x="15" y="15" width="8" height="34" rx="4" fill="#FFFFFF" />
+  
+  <!-- Top Bar (Emerald) -->
+  <rect x="15" y="15" width="28" height="8" rx="4" fill="url(#emeraldGrad)" />
+  
+  <!-- Middle Bar (White) -->
+  <rect x="15" y="28" width="18" height="7" rx="3.5" fill="#FFFFFF" opacity="0.95" />
+  
+  <!-- Bottom Bar (Emerald) -->
+  <rect x="15" y="41" width="26" height="8" rx="4" fill="url(#emeraldGrad)" />
+
+  <!-- Synchronized Beacon Dot -->
+  <circle cx="47" cy="31.5" r="4" fill="#3DDC97" filter="url(#beaconGlow)" />
+  <circle cx="47" cy="31.5" r="6.5" fill="none" stroke="#3DDC97" stroke-width="1" opacity="0.5" />
+</svg>

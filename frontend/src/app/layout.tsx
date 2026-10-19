@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Bricolage_Grotesque, DM_Sans } from "next/font/google";
 import { SmoothScroll } from "@/components/ui/SmoothScroll";
+import { ServiceWorkerRegister } from "@/components/pwa/ServiceWorkerRegister";
 import "./globals.css";
 
 const bricolageGrotesque = Bricolage_Grotesque({
@@ -53,8 +54,21 @@ export const metadata: Metadata = {
     description:
       "One coordinated operating platform for school leadership, academic registers, bursar reconciliations, and continuous assessment.",
   },
+  manifest: "/manifest.webmanifest",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "EDUCTIVE",
+  },
   icons: {
-    icon: "/favicon.ico",
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+    ],
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
   },
 };
 
@@ -73,6 +87,7 @@ export default function RootLayout({
         suppressHydrationWarning
         className="min-h-full flex flex-col bg-white text-charcoal-900 selection:bg-emerald-300 selection:text-ink-900"
       >
+        <ServiceWorkerRegister />
         <SmoothScroll>{children}</SmoothScroll>
       </body>
     </html>
