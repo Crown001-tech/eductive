@@ -8,9 +8,9 @@ import { PaperComparisonSection } from "@/components/product/PaperComparisonSect
 import { DemoCtaSection } from "@/components/home/DemoCtaSection";
 
 export const metadata: Metadata = {
-  title: "Product Overview — EDUCTIVE Nigerian School Operating System",
+  title: "Product Overview — EDUCTIVE School Management System",
   description:
-    "Explore the complete school operating system for Nigerian primary and secondary schools. Purpose-built for Proprietors, Principals, Teachers, and Bursars.",
+    "Discover the tools that help schools manage student information, academic processes, finances and administration in a coordinated working environment.",
 };
 
 export default function ProductPage() {

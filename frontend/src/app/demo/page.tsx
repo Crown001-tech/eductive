@@ -5,9 +5,9 @@ import { DemoBookingCard } from "@/components/demo/DemoBookingCard";
 import { Check, ShieldCheck, PhoneCall, Building2 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Book a Demo — EDUCTIVE Nigerian School Operating System",
+  title: "Request a Demo — EDUCTIVE School Management System",
   description:
-    "Schedule a 15-minute personalized walkthrough of Eductive for your school. See how bursary receipts, class registers, and CA broadsheets run on your mobile phone.",
+    "Request a personalised walkthrough of EDUCTIVE. Explore the features relevant to your school and discuss your administrative, academic and financial workflows with our team.",
 };
 
 export default function DemoPage() {
@@ -36,14 +36,16 @@ export default function DemoPage() {
             
             {/* Left Column: Why Book a Walkthrough (5 Cols) */}
             <div className="lg:col-span-5 flex flex-col items-start text-left">
-              {/* Strict AGENTS.md: Heading <= 6 words */}
+              <span className="text-xs font-mono font-bold tracking-widest uppercase text-emerald-300 mb-3 block">
+                SEE EDUCTIVE IN ACTION
+              </span>
+
               <h1 className="font-display font-bold text-white text-3xl sm:text-4xl xl:text-[46px] leading-[1.08] tracking-[-1.2px] mb-4 text-balance">
-                See Eductive in your school.
+                See how EDUCTIVE fits your school.
               </h1>
 
-              {/* Strict AGENTS.md: Intro line <= 18 words */}
               <p className="text-base sm:text-lg text-surface/80 font-sans leading-relaxed mb-8 text-balance">
-                Book a 15-minute walkthrough. We show you how fees, attendance, and broadsheets run on your phone.
+                Request a personalised walkthrough of the platform. Explore the features relevant to your school and discuss your administrative, academic and financial workflows with our team.
               </p>
 
               {/* 3 Calm Proof Points */}
@@ -53,9 +55,9 @@ export default function DemoPage() {
                     <Check className="w-4 h-4 stroke-[3]" />
                   </div>
                   <div>
-                    <span className="font-bold text-sm text-white block">Real school data</span>
+                    <span className="font-bold text-sm text-white block">A practical walkthrough</span>
                     <p className="text-xs text-surface/75 font-sans mt-0.5">
-                      See ₦85,000 fee receipts, JSS 2 Gold registers, and automated CA score broadsheets.
+                      See relevant features through the actual platform rather than relying on descriptions alone.
                     </p>
                   </div>
                 </div>
@@ -65,9 +67,9 @@ export default function DemoPage() {
                     <Check className="w-4 h-4 stroke-[3]" />
                   </div>
                   <div>
-                    <span className="font-bold text-sm text-white block">Zero computer lab needed</span>
+                    <span className="font-bold text-sm text-white block">Relevant to your school</span>
                     <p className="text-xs text-surface/75 font-sans mt-0.5">
-                      Runs on everyday Android phones and staff laptops with zero costly server setup.
+                      Tell us about your school's size, structure and priorities so the walkthrough can focus on what matters to you.
                     </p>
                   </div>
                 </div>
@@ -77,9 +79,9 @@ export default function DemoPage() {
                     <Check className="w-4 h-4 stroke-[3]" />
                   </div>
                   <div>
-                    <span className="font-bold text-sm text-white block">Crown Tech deployment</span>
+                    <span className="font-bold text-sm text-white block">A clear next step</span>
                     <p className="text-xs text-surface/75 font-sans mt-0.5">
-                      Our Nigerian engineering team handles your roster setup and trains your teachers.
+                      Discuss the available features, setup requirements and what adopting EDUCTIVE would involve.
                     </p>
                   </div>
                 </div>
@@ -93,7 +95,7 @@ export default function DemoPage() {
                 <div className="text-xs">
                   <p className="font-bold text-white">Oakland Comprehensive High School</p>
                   <p className="text-surface/60 font-sans mt-0.5">
-                    Live pilot: 420 students, 14 class arms, zero debt disputes this term.
+                    Demonstration school: Explore sample student records, class registers and fee receipt workflows.
                   </p>
                 </div>
               </div>

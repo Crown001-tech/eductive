@@ -18,12 +18,10 @@ export function Footer() {
               <span>EDUCTIVE</span>
             </Link>
             <p className="text-sm text-surface/80 max-w-sm leading-relaxed">
-              The unified operating system for Nigerian primary and secondary schools.
-              Synchronizing school leadership, attendance registers, continuous assessment,
-              and bursar fee reconciliations.
+              EDUCTIVE is a school management system designed to help primary and secondary schools manage academic, administrative and financial operations through one coordinated platform.
             </p>
             <p className="text-xs text-surface/60 pt-1">
-              Active in Nigerian primary and secondary schools
+              Designed for primary and secondary schools
             </p>
           </div>
 
@@ -34,23 +32,23 @@ export function Footer() {
             </h4>
             <ul className="flex flex-col gap-2.5 text-sm text-surface/75">
               <li>
-                <Link href="#capabilities" className="hover:text-white transition-colors focus-ring-dark">
-                  All 8 Capabilities
+                <Link href="/product#features" className="hover:text-white transition-colors focus-ring-dark">
+                  All Feature Areas
                 </Link>
               </li>
               <li>
-                <Link href="#how-it-works" className="hover:text-white transition-colors focus-ring-dark">
-                  Real-time Sync Flow
+                <Link href="/#how-it-works" className="hover:text-white transition-colors focus-ring-dark">
+                  How Eductive Works
                 </Link>
               </li>
               <li>
-                <Link href="#capabilities" className="hover:text-white transition-colors focus-ring-dark">
-                  Bursar Fee Ledger
+                <Link href="/product" className="hover:text-white transition-colors focus-ring-dark">
+                  Role-Based Workspaces
                 </Link>
               </li>
               <li>
-                <Link href="#capabilities" className="hover:text-white transition-colors focus-ring-dark">
-                  Continuous Assessment
+                <Link href="/product" className="hover:text-white transition-colors focus-ring-dark">
+                  Security & Reception
                 </Link>
               </li>
             </ul>
@@ -59,27 +57,27 @@ export function Footer() {
           {/* Col 2: Schools */}
           <div className="flex flex-col gap-3">
             <h4 className="text-xs font-bold uppercase tracking-wider text-emerald-300 font-body">
-              Schools
+              Roles
             </h4>
             <ul className="flex flex-col gap-2.5 text-sm text-surface/75">
               <li>
-                <Link href="#case-study" className="hover:text-white transition-colors focus-ring-dark">
-                  Oakland High Pilot Transformation
-                </Link>
-              </li>
-              <li>
-                <Link href="#roles" className="hover:text-white transition-colors focus-ring-dark">
+                <Link href="/product#roles-orbital" className="hover:text-white transition-colors focus-ring-dark">
                   For School Proprietors
                 </Link>
               </li>
               <li>
-                <Link href="#roles" className="hover:text-white transition-colors focus-ring-dark">
-                  For School Principals
+                <Link href="/product#roles-orbital" className="hover:text-white transition-colors focus-ring-dark">
+                  For Principals & Admins
                 </Link>
               </li>
               <li>
-                <Link href="#roles" className="hover:text-white transition-colors focus-ring-dark">
+                <Link href="/product#roles-orbital" className="hover:text-white transition-colors focus-ring-dark">
                   For School Bursars
+                </Link>
+              </li>
+              <li>
+                <Link href="/product#roles-orbital" className="hover:text-white transition-colors focus-ring-dark">
+                  For Teachers & Security
                 </Link>
               </li>
             </ul>
@@ -101,7 +99,7 @@ export function Footer() {
                   href="/demo"
                   className="inline-flex items-center gap-1 text-tangerine-500 font-semibold hover:text-white transition-colors focus-ring-dark"
                 >
-                  <span>Book a Demo</span>
+                  <span>Request a Demo</span>
                   <ArrowUpRight className="w-3.5 h-3.5" />
                 </Link>
               </li>
@@ -115,7 +113,7 @@ export function Footer() {
               </li>
               <li>
                 <span className="text-xs text-charcoal-600 block pt-1">
-                  Lagos & Abuja, Nigeria
+                  Crown Tech · Software & Technology
                 </span>
               </li>
             </ul>
@@ -124,11 +122,11 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-surface/60">
-          <p>© 2026 EDUCTIVE. Engineered by Crown Tech. All rights reserved.</p>
+          <p>© 2026 EDUCTIVE. Developed by Crown Tech. All rights reserved.</p>
           <div className="flex items-center gap-6">
-            <span>Verified WCAG 2.1 AA Contrast</span>
+            <span>Primary & Secondary School Management</span>
             <span className="hidden sm:inline">•</span>
-            <span>Live Pilot with Oakland Comprehensive High School</span>
+            <span>Demonstration School: Oakland Comprehensive High School</span>
           </div>
         </div>
       </div>

@@ -21,69 +21,69 @@ const ROLES: RoleAccess[] = [
   {
     id: "proprietor",
     name: "Dr. A. Adeleke",
-    title: "Proprietor & Founder",
+    title: "School Proprietor / Owner",
     department: "Executive Board",
     avatar: "/images/avatars/proprietor.jpg",
     angleDeg: -55,
     orbitRing: 3,
-    headline: "Cashflow transparency across school accounts.",
+    headline: "Oversight across school operations and finances.",
     summary:
-      "Inspect total term fees, monitor multi-bank balances, and track daily attendance across all classes in real time.",
+      "Access high-level financial records, fee collections, attendance trends and key approvals from any device.",
     permissions: [
-      "Live term fee collections and balance tracking",
-      "Approve departmental expense vouchers with one click",
-      "Zero cash discrepancies between school books and banks",
+      "Fee collections and outstanding balance summaries",
+      "Review and approve departmental expense vouchers",
+      "Operational visibility across all school departments",
     ],
   },
   {
     id: "principal",
     name: "Rev. Dr. Okonjo",
-    title: "Principal & Head of School",
+    title: "Principal / Head of School",
     department: "Academic Leadership",
     avatar: "/images/principal-teacher-transparent.png",
     angleDeg: 30,
     orbitRing: 2,
-    headline: "Approve broadsheets and oversee daily operations.",
+    headline: "Academic coordination and school process reviews.",
     summary:
-      "Sign off terminal report cards, vet weekly teacher lesson plans, and resolve student attendance queries from your phone.",
+      "Review academic submissions, sign off on broadsheets, monitor teacher activity and oversee everyday school processes.",
     permissions: [
-      "One-click approval for end-of-term broadsheets",
-      "Digital vetting for weekly subject lesson notes",
-      "Instant query alerts for unexcused student absences",
+      "Review and approve continuous assessment and broadsheets",
+      "Oversee teacher submissions and curriculum coverage",
+      "Monitor class attendance and resolve student queries",
     ],
   },
   {
     id: "bursar",
     name: "Mrs. F. Adebayo",
-    title: "School Bursar & Accountant",
+    title: "School Bursar / Accountant",
     department: "Bursary & Accounts",
     avatar: "/images/avatars/bursar.jpg",
     angleDeg: 140,
     orbitRing: 3,
-    headline: "Record payments with zero fake teller disputes.",
+    headline: "Record payments, manage fee balances and issue receipts.",
     summary:
-      "Match bank transfers in seconds, issue tamper-proof stamped receipts, and export clean defaulters lists with one click.",
+      "Keep clear financial records, track student fee payments, generate stamped receipts and export accurate balance lists.",
     permissions: [
-      "Automated ₦0.00 balance update upon payment",
-      "Official stamped receipt sent straight to WhatsApp",
-      "Instant defaulters and debtors list by class arm",
+      "Record student fee payments and verify bank deposits",
+      "Generate official stamped receipts for parents",
+      "Export class balance lists and fee defaulter records",
     ],
   },
   {
     id: "class-teacher",
     name: "Mrs. B. Okon",
-    title: "Homeroom Class Teacher",
+    title: "Class Teacher",
     department: "JSS 2 Gold",
     avatar: "/images/avatars/class-teacher.jpg",
     angleDeg: -145,
     orbitRing: 2,
-    headline: "Take morning roll-call in thirty seconds.",
+    headline: "Manage classroom records and student attendance.",
     summary:
-      "Mark attendance on any mobile phone. The system notifies parents immediately and flags absent students by 8:15 AM.",
+      "Record daily attendance, track class academic performance and update student profiles directly from your mobile device or computer.",
     permissions: [
-      "Paperless register that never gets lost or torn",
-      "Automatic arrival timestamps sent to parents",
-      "Compute termly attendance percentages automatically",
+      "Digital morning roll-call with attendance records",
+      "Compile termly attendance records automatically",
+      "Direct academic updates for assigned classes",
     ],
   },
   {
@@ -94,13 +94,30 @@ const ROLES: RoleAccess[] = [
     avatar: "/images/avatars/subject-teacher.jpg",
     angleDeg: -10,
     orbitRing: 1,
-    headline: "Enter test marks once. Broadsheets compute.",
+    headline: "Enter continuous assessment and exam scores.",
     summary:
-      "Enter continuous assessment test marks once. The system calculates class positions and WAEC A1 to F9 grades automatically.",
+      "Record continuous assessment marks, calculate student term totals, and submit scores for class teacher and principal review.",
     permissions: [
-      "WAEC and NECO standard grading scales built in",
+      "Continuous assessment and examination score entry",
       "Built-in score limits prevent accidental typing errors",
-      "Class position and cumulative rank computed instantly",
+      "Automated subject rankings and grade computation",
+    ],
+  },
+  {
+    id: "security",
+    name: "Officer S. Danjuma",
+    title: "Security & Reception Officer",
+    department: "Main Gate & Front Desk",
+    avatar: "/images/avatars/security-officer.jpg",
+    angleDeg: 85,
+    orbitRing: 2,
+    headline: "Visitor logs, pickup verification and gate records.",
+    summary:
+      "Record visitor details, monitor arrivals and departures, verify student pickups with authorized guardians, and maintain gate access records.",
+    permissions: [
+      "Visitor registration and daily gate check-in logs",
+      "Guardian verification for safe student pickups",
+      "Access-controlled records for campus entry and departure",
     ],
   },
 ];
@@ -157,10 +174,10 @@ export function RoleOrbitalStation() {
             ROLE-BASED GOVERNANCE
           </span>
           <h2 className="font-display font-bold text-white text-2xl sm:text-4xl xl:text-[44px] leading-[1.15] tracking-[-1.2px] mb-3 text-balance">
-            Clear roles for every staff member.
+            Designed around responsibilities, not just accounts.
           </h2>
-          <p className="text-sm sm:text-base text-surface/80 font-sans leading-relaxed text-balance">
-            Tap any profile on the orbit to inspect what they do.
+          <p className="text-sm sm:text-base text-surface/85 font-sans leading-relaxed text-balance">
+            Different people perform different jobs in a school. EDUCTIVE provides role-based workspaces intended to give users access to the functions and information relevant to their responsibilities.
           </p>
         </div>
 
@@ -176,6 +193,30 @@ export function RoleOrbitalStation() {
              =================================================================== */}
           <div className="lg:col-span-6 flex flex-col items-center justify-center">
             
+            {/* Action Prompt with Large Clear Typography & Animated Pointer Sign */}
+            <div className="mb-6 flex flex-col items-center text-center select-none">
+              <div className="inline-flex items-center gap-2.5 sm:gap-3">
+                <h3 className="font-display font-bold text-xl sm:text-2xl xl:text-3xl text-white tracking-tight">
+                  Click any profile to switch
+                </h3>
+                <motion.div
+                  animate={{ y: [0, 5, 0] }}
+                  transition={{ duration: 1.2, repeat: Infinity, ease: "easeInOut" }}
+                  className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-emerald-400 text-ink-900 flex items-center justify-center shadow-[0_0_18px_#3DDC97] shrink-0"
+                  aria-hidden="true"
+                >
+                  <svg
+                    className="w-4 h-4 sm:w-5 sm:h-5 text-ink-900 stroke-[3]"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                  </svg>
+                </motion.div>
+              </div>
+            </div>
+
             {/* The Orbital Stage Container */}
             <div
               ref={containerRef}
@@ -306,7 +347,7 @@ export function RoleOrbitalStation() {
                         className={`w-10 h-10 sm:w-14 sm:h-14 rounded-full overflow-hidden border-2 transition-all duration-300 relative shadow-xl ${
                           isActive
                             ? "border-emerald-400 ring-4 ring-emerald-400/30 shadow-[0_0_24px_#3DDC97] scale-110"
-                            : "border-emerald-500/40 group-hover:border-emerald-400 group-hover:scale-105"
+                            : "border-emerald-500/40 group-hover:border-emerald-300 group-hover:scale-110 group-hover:shadow-[0_0_18px_rgba(61,220,151,0.5)]"
                         }`}
                       >
                         <Image
@@ -320,10 +361,10 @@ export function RoleOrbitalStation() {
 
                       {/* Role Name Chip below Avatar */}
                       <span
-                        className={`absolute top-full mt-1 px-2 py-0.5 rounded-full text-[9px] sm:text-[10px] font-sans font-bold whitespace-nowrap transition-all duration-300 pointer-events-none shadow-md ${
+                        className={`absolute top-full mt-1.5 px-2.5 py-0.5 rounded-full text-[9px] sm:text-[10px] font-sans font-bold whitespace-nowrap transition-all duration-300 pointer-events-none shadow-md ${
                           isActive
-                            ? "bg-emerald-400 text-ink-900 shadow-md font-extrabold"
-                            : "bg-[#041D17]/90 text-surface/80 border border-emerald-500/30 group-hover:text-white"
+                            ? "bg-emerald-400 text-ink-900 shadow-md font-extrabold scale-105"
+                            : "bg-[#041D17]/95 text-surface/90 border border-emerald-500/40 group-hover:bg-emerald-500 group-hover:text-ink-900 group-hover:border-emerald-300 group-hover:font-extrabold group-hover:scale-105"
                         }`}
                       >
                         {role.title.split("&")[0].trim()}
@@ -334,12 +375,6 @@ export function RoleOrbitalStation() {
               })}
 
             </div>
-
-            {/* Hint below the orbit */}
-            <p className="mt-7 text-[11px] sm:text-xs font-mono text-emerald-300/70 flex items-center gap-1.5">
-              <span className="text-emerald-400">●</span>
-              <span>Tap any profile node to view workspace</span>
-            </p>
           </div>
 
           {/* ===================================================================
@@ -429,14 +464,14 @@ export function RoleOrbitalStation() {
                       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2.5 border-b border-emerald-500/20 pb-2.5">
                         <div className="min-w-0">
                           <p className="font-bold text-white text-xs sm:text-sm">JSS 2 Gold Mathematics Broadsheet</p>
-                          <p className="text-[11px] text-surface/70 mt-0.5">42 students · WAEC Scheme Computed</p>
+                          <p className="text-[11px] text-surface/70 mt-0.5">42 students · Term Results Compiled</p>
                         </div>
                         <span className="self-start sm:self-auto px-3 py-1 bg-tangerine-500 text-ink-900 rounded-full font-bold text-[11px] shrink-0 text-center whitespace-nowrap shadow-sm">
                           Approve Broadsheet
                         </span>
                       </div>
                       <p className="text-[11px] text-emerald-300 leading-normal">
-                        Zero marks altered without written principal passkey override.
+                        Review scores and approve terminal broadsheet submissions.
                       </p>
                     </div>
                   )}
@@ -458,10 +493,10 @@ export function RoleOrbitalStation() {
                     <div className="space-y-2 text-xs font-sans">
                       <div className="flex flex-col xs:flex-row xs:items-center xs:justify-between gap-1 border-b border-emerald-500/20 pb-2">
                         <span className="text-white font-bold text-xs">Monday Morning Roll-Call</span>
-                        <span className="text-emerald-300 font-mono text-[11px]">8:04 AM Signed</span>
+                        <span className="text-emerald-300 font-mono text-[11px]">8:04 AM Recorded</span>
                       </div>
                       <p className="text-[11px] text-surface/80 leading-relaxed">
-                        38 Present · 2 Absent. WhatsApp alerts dispatched to parent phones.
+                        38 Present · 2 Absent. Morning attendance record updated.
                       </p>
                     </div>
                   )}
@@ -473,7 +508,19 @@ export function RoleOrbitalStation() {
                         <span className="text-emerald-300 font-mono text-[11px]">Position 3rd of 42</span>
                       </div>
                       <p className="text-[11px] text-surface/80 leading-relaxed">
-                        Adeyemi Femi: CA (28) + Exam (52) = 80% · WAEC Grade: A1.
+                        Adeyemi Femi: CA (28) + Exam (52) = 80% · Score submitted for review.
+                      </p>
+                    </div>
+                  )}
+
+                  {activeRole.id === "security" && (
+                    <div className="space-y-2 text-xs font-sans">
+                      <div className="flex flex-col xs:flex-row xs:items-center xs:justify-between gap-1 border-b border-emerald-500/20 pb-2">
+                        <span className="text-white font-bold text-xs">Campus Visitor & Gate Log</span>
+                        <span className="text-emerald-300 font-mono text-[11px]">Active · 18 Logged</span>
+                      </div>
+                      <p className="text-[11px] text-surface/80 leading-relaxed">
+                        Guardian matched for Adeyemi Femi pickup · Gate 1 & 2 pass records updated.
                       </p>
                     </div>
                   )}

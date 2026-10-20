@@ -12,23 +12,23 @@ interface ComparisonRow {
 const COMPARISONS: ComparisonRow[] = [
   {
     aspect: "Fee Receipts",
-    paperProblem: "Torn carbon receipt booklets and disputes over paper bank teller slips.",
-    eductiveSolution: "Official stamped digital receipt sent directly to parent WhatsApp in seconds.",
+    paperProblem: "Paper receipts and manual bank teller reconciliation can lead to conflicting records.",
+    eductiveSolution: "Official digital receipt recorded immediately with automatic fee balance updates.",
   },
   {
     aspect: "Class Registers",
-    paperProblem: "Bulky paper registers that get soaked in the rain, damaged, or misplaced.",
-    eductiveSolution: "Thirty-second roll-call on any phone with permanent attendance records.",
+    paperProblem: "Physical registers take time to manage and make historical attendance harder to review.",
+    eductiveSolution: "Direct digital roll-call with permanent attendance records and term summaries.",
   },
   {
-    aspect: "Exam Broadsheets",
-    paperProblem: "Teachers staying awake late with calculators calculating class ranks.",
-    eductiveSolution: "Automatic WAEC A1 to F9 grading and terminal positions with one click.",
+    aspect: "Results & Broadsheets",
+    paperProblem: "Compiling continuous assessment and terminal examinations manually increases review delays.",
+    eductiveSolution: "Standardised score entry, automated grade computation and structured approval reviews.",
   },
   {
     aspect: "School Oversight",
-    paperProblem: "Proprietors waiting weeks for paper reports to know who owes school fees.",
-    eductiveSolution: "Live collection totals across all school accounts visible from your pocket.",
+    paperProblem: "School leaders often lack immediate visibility into fee collections, attendance and approvals.",
+    eductiveSolution: "Clear, role-based operational visibility across departments from any supported device.",
   },
 ];
 
@@ -40,13 +40,13 @@ export function PaperComparisonSection() {
         {/* Section Header */}
         <div className="flex flex-col items-center text-center max-w-2xl mx-auto mb-16 xl:mb-20">
           <span className="text-xs font-mono font-bold tracking-widest uppercase text-emerald-700 mb-3">
-            PAPERWORK VS ORDER
+            PRACTICAL WORKFLOWS
           </span>
           <h2 className="font-display font-bold text-ink-900 text-3xl sm:text-4xl xl:text-[46px] leading-[1.1] tracking-[-1.2px] mb-4 text-balance">
-            Replace paper chaos with calm order.
+            See the platform in action.
           </h2>
           <p className="text-base sm:text-lg text-charcoal-600 font-sans leading-relaxed text-balance">
-            Everything you used to write on paper, stored safely and delivered instantly.
+            Explore how EDUCTIVE supports everyday school activities through its actual interface and workflows.
           </p>
         </div>
 

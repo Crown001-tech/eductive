@@ -24,43 +24,46 @@ export function AboutHero() {
 
       <div className="relative max-w-[1240px] mx-auto px-6 sm:px-12 xl:px-16 flex flex-col items-center text-center z-10">
         
-        {/* Strict AGENTS.md: Hero headline max 8 words */}
+        {/* Eyebrow */}
+        <span className="text-xs font-mono font-bold tracking-widest uppercase text-emerald-300 mb-3 block">
+          ABOUT EDUCTIVE
+        </span>
+
+        {/* Headline */}
         <h1 className="font-display font-bold text-white text-4xl sm:text-5xl xl:text-[56px] leading-[1.08] tracking-[-1.5px] mb-6 max-w-3xl text-balance">
-          Built for Nigerian school reality.
+          Better organised schools start with better systems.
         </h1>
 
-        {/* Strict AGENTS.md: Hero subtext max 20 words */}
+        {/* Supporting Copy */}
         <p className="text-base sm:text-lg xl:text-xl text-surface/80 font-sans leading-relaxed max-w-2xl mb-10 text-balance">
-          Eductive replaces lost registers, fake tellers, and broadsheet math with one calm operating system.
+          EDUCTIVE was created to help schools bring essential academic, administrative and financial activities into a more organised digital environment.
         </p>
 
-        {/* Primary CTA & Live Pilot Link */}
+        {/* Primary CTA & Secondary Link */}
         <div className="flex flex-col sm:flex-row items-center gap-4">
           <Link
-            href="/demo"
+            href="/product"
             className="inline-flex items-center justify-center font-sans font-semibold rounded-full px-8 py-3.5 text-sm bg-tangerine-500 hover:bg-tangerine-400 text-ink-900 shadow-lg hover:shadow-xl transition-all duration-200 cursor-pointer"
           >
-            Book a demo
+            Explore the Platform
           </Link>
 
-          <a
-            href="https://oakland-school.onrender.com"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/demo"
             className="inline-flex items-center gap-2 text-sm font-semibold text-surface/80 hover:text-white px-4 py-3 transition-colors"
           >
-            <span>See Oakland High pilot</span>
+            <span>Request a Demo</span>
             <ArrowRight className="w-4 h-4 text-emerald-400" />
-          </a>
+          </Link>
         </div>
 
         {/* Subtle verification footnote */}
         <div className="mt-14 pt-8 border-t border-emerald-500/15 flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-xs font-mono text-emerald-300/80">
-          <span>Engineered in Nigeria</span>
+          <span>Designed for School Operations</span>
           <span className="w-1 h-1 rounded-full bg-emerald-500/40" />
-          <span>Parent WhatsApp Receipts</span>
+          <span>Primary & Secondary Schools</span>
           <span className="w-1 h-1 rounded-full bg-emerald-500/40" />
-          <span>Zero Computer Lab Required</span>
+          <span>Developed by Crown Tech</span>
         </div>
 
       </div>

@@ -2,18 +2,33 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 
 export function ProductHero() {
   return (
     <section className="relative w-full bg-[#07332A] text-white pt-32 pb-20 xl:pt-40 xl:pb-28 overflow-hidden select-none">
+      {/* Background Campus Environment Grounding (Vivid Architectural Presence) */}
+      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+        <Image
+          src="/images/school-campus-hero-bg.jpg"
+          alt="Nigerian secondary school campus quadrangle"
+          fill
+          priority
+          className="object-cover object-center scale-105 opacity-60 sm:opacity-65"
+        />
+        {/* Cinematic forest green tone curve & vignette ensuring crisp text contrast */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#07332A]/80 via-[#07332A]/50 to-[#07332A]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(7,51,42,0.45)_0%,rgba(7,51,42,0.85)_100%)]" />
+      </div>
+
       {/* Ambient background light */}
-      <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-emerald-500/10 rounded-full blur-[160px] pointer-events-none" />
-      <div className="absolute bottom-0 right-10 w-[500px] h-[500px] bg-tangerine-500/5 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-emerald-500/15 rounded-full blur-[160px] pointer-events-none" />
+      <div className="absolute bottom-0 right-10 w-[500px] h-[500px] bg-tangerine-500/10 rounded-full blur-[140px] pointer-events-none" />
 
       {/* Background architectural grid */}
-      <div className="absolute inset-0 pointer-events-none opacity-5">
+      <div className="absolute inset-0 pointer-events-none opacity-10">
         <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <pattern id="prodHeroGrid" width="60" height="60" patternUnits="userSpaceOnUse">
@@ -28,18 +43,18 @@ export function ProductHero() {
         <div className="flex flex-col items-center text-center max-w-3xl mx-auto">
           
           {/* Eyebrow */}
-          <p className="text-[11px] sm:text-xs font-bold tracking-[2.5px] uppercase text-emerald-300 font-sans mb-4">
-            PRODUCT ARCHITECTURE
+          <p className="text-[11px] sm:text-xs font-bold tracking-[2.5px] uppercase text-emerald-300 font-sans mb-4 drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]">
+            EXPLORE EDUCTIVE
           </p>
 
-          {/* Headline (<= 6 words) */}
-          <h1 className="font-display font-bold text-white text-4xl sm:text-5xl xl:text-[62px] leading-[1.05] tracking-[-1.5px] mb-5 text-balance">
-            The complete school operating system.
+          {/* Headline */}
+          <h1 className="font-display font-bold text-white text-4xl sm:text-5xl xl:text-[62px] leading-[1.05] tracking-[-1.5px] mb-5 text-balance drop-shadow-[0_4px_16px_rgba(0,0,0,0.65)]">
+            One platform for your school&apos;s operations.
           </h1>
 
-          {/* Subtitle (<= 18 words) */}
-          <p className="text-base sm:text-lg text-surface/85 font-sans leading-relaxed mb-8 max-w-xl text-balance">
-            Attendance, exam broadsheets, and bursary fee records synchronized on one calm platform. Built for Nigerian schools.
+          {/* Subtitle */}
+          <p className="text-base sm:text-lg text-surface/95 font-sans leading-relaxed mb-8 max-w-xl text-balance drop-shadow-[0_2px_8px_rgba(0,0,0,0.65)]">
+            Discover the tools that help schools manage student information, academic processes, finances and administration in a coordinated working environment.
           </p>
 
           {/* CTA & Trust Signal */}
@@ -50,15 +65,15 @@ export function ProductHero() {
               size="lg"
               className="px-8 py-4 rounded-full font-bold shadow-lg shadow-tangerine-500/20 hover:scale-[1.02] flex items-center gap-2.5"
             >
-              <span>Book a demo</span>
+              <span>Request a Demo</span>
               <ArrowRight className="w-4 h-4" />
             </Button>
 
             <a
-              href="#roles-orbital"
+              href="#operating-engines"
               className="text-xs font-semibold text-emerald-300 hover:text-white transition-colors flex items-center gap-1.5 py-2 px-4"
             >
-              <span>Explore roles on orbit</span>
+              <span>Explore Features</span>
               <span>↓</span>
             </a>
           </div>
@@ -67,14 +82,14 @@ export function ProductHero() {
           <div className="flex items-center gap-2 text-xs text-emerald-300/80 font-medium">
             <span>✓</span>
             <span>
-              In active use at{" "}
+              Designed for primary and secondary schools ·{" "}
               <a
                 href="https://oakland-school.onrender.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="underline underline-offset-4 text-white hover:text-emerald-200 font-bold"
               >
-                Oakland Comprehensive High School
+                Demonstration School
               </a>
             </span>
           </div>

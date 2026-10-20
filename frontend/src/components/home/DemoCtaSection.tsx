@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Link from "next/link";
 import { ArrowRight, Check, MessageSquare } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 
@@ -40,21 +41,18 @@ export function DemoCtaSection() {
         <div className="max-w-2xl mx-auto flex flex-col items-center text-center">
           
           {/* ===================================================================
-              SECTION HEADLINE & INTRO LINE (Strict word caps)
-              Heading: <= 6 words ("See your school in order.")
-              Intro: <= 18 words ("Book a short walkthrough and see EDUCTIVE set up for your classes.")
+              SECTION HEADLINE & INTRO LINE
              =================================================================== */}
           <h2 className="font-display font-bold text-white text-3xl sm:text-4xl xl:text-[50px] leading-[1.08] tracking-[-1.2px] mb-4 text-balance">
-            See your school in order.
+            Give your school a more organised way to work.
           </h2>
 
           <p className="text-base sm:text-lg text-surface/85 font-sans leading-relaxed mb-10 max-w-lg text-balance">
-            Book a short walkthrough and see EDUCTIVE set up for your classes.
+            See how EDUCTIVE can support the way your school manages its people, records and everyday operations.
           </p>
 
           {/* ===================================================================
               CALM INTERACTIVE DEMO CARD
-              Single focused action, 2 essential fields, terracotta pill button
              =================================================================== */}
           <div className="w-full max-w-lg rounded-3xl bg-[#05261F] border border-emerald-500/30 p-7 sm:p-9 shadow-[0_24px_60px_rgba(0,0,0,0.35)]">
             {submitted ? (
@@ -63,11 +61,11 @@ export function DemoCtaSection() {
                   <Check className="w-7 h-7 stroke-[3]" />
                 </div>
                 <h3 className="font-display font-bold text-white text-2xl mb-2">
-                  Walkthrough requested
+                  Thank you for your interest.
                 </h3>
                 <p className="text-sm text-surface/80 font-sans max-w-sm leading-relaxed mb-6">
-                  Our Lagos team will message you on WhatsApp at{" "}
-                  <strong className="text-emerald-300 font-mono">{phone}</strong> within two hours to confirm your demonstration.
+                  Your request has been received. Our team will review your details and contact you at{" "}
+                  <strong className="text-emerald-300 font-mono">{phone}</strong> to discuss a suitable time for your walkthrough.
                 </p>
                 <button
                   onClick={() => {
@@ -77,7 +75,7 @@ export function DemoCtaSection() {
                   }}
                   className="text-xs text-emerald-400 hover:text-white underline font-sans cursor-pointer"
                 >
-                  Book for another school
+                  Submit another request
                 </button>
               </div>
             ) : (
@@ -101,7 +99,7 @@ export function DemoCtaSection() {
                 {/* WhatsApp Phone Number */}
                 <div>
                   <label htmlFor="cta-phone" className="block text-xs font-semibold text-surface/80 mb-1.5">
-                    WhatsApp phone number
+                    WhatsApp or phone number
                   </label>
                   <input
                     id="cta-phone"
@@ -120,7 +118,7 @@ export function DemoCtaSection() {
                     type="submit"
                     className="w-full py-4 px-8 rounded-full bg-tangerine-500 hover:bg-tangerine-400 text-ink-900 font-bold text-base flex items-center justify-center gap-3 shadow-lg shadow-tangerine-500/20 hover:shadow-tangerine-500/35 hover:scale-[1.01] transition-all cursor-pointer group"
                   >
-                    <span>Book a demo</span>
+                    <span>Request a Demo</span>
                     <span className="w-6 h-6 rounded-full bg-ink-900 text-tangerine-400 flex items-center justify-center transition-transform group-hover:translate-x-1">
                       <ArrowRight className="w-3.5 h-3.5" />
                     </span>
@@ -136,18 +134,16 @@ export function DemoCtaSection() {
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4 text-xs font-sans text-surface/70">
             <span className="flex items-center gap-1.5">
               <span className="w-2 h-2 rounded-full bg-emerald-400" />
-              <span>In active use at Oakland Comprehensive High School</span>
+              <span>Designed for primary and secondary schools</span>
             </span>
             <span className="hidden sm:inline text-surface/40">·</span>
-            <a
-              href="https://wa.me/2348000000000?text=Hello%20Eductive,%20we%20would%20like%20to%20schedule%20a%20walkthrough."
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/product"
               className="text-emerald-300 hover:text-white underline underline-offset-4 font-semibold transition-colors flex items-center gap-1"
             >
-              <MessageSquare className="w-3.5 h-3.5" />
-              <span>Chat with Lagos support desk</span>
-            </a>
+              <span>Explore the Platform</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
           </div>
 
         </div>

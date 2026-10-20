@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { Check, CheckCheck } from "lucide-react";
+import { CheckCheck } from "lucide-react";
 
 export interface SyncState {
   step: number; // 0: idle, 1: transfer slides in, 2: receipt stamped, 3: tablet pulses, 4: ring unspools, 5: synced
@@ -19,77 +19,12 @@ export function SchoolPaperArtifacts({
   sync = { step: 0, paid: false, balance: 185000 },
   activeFeature = null,
 }: SchoolPaperArtifactsProps) {
-  const isAssessmentActive = activeFeature === "assessment";
   const isBursarActive = activeFeature === "bursar";
-  const isAttendanceActive = activeFeature === "attendance";
 
   return (
     <div className="absolute inset-0 pointer-events-none z-24 select-none">
       {/* =====================================================================
-          ARTIFACT 1 (SUPPORTING - LEVEL 1 SHADOW): CONTINUOUS ASSESSMENT (CA) SLIP
-          - Soft supporting detail, smaller width (230px), light elevation
-          - Positioned at (450px, 35px), completely clear of the girl's raised arm/fist
-          - Out-of-phase floating breathing motion: 6.4s, delay 1.6s
-          - Interactive highlight when "Assessment" feature is clicked
-         ===================================================================== */}
-      <motion.div
-        initial={{ opacity: 0, y: 16 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.3 }}
-        className="absolute"
-        style={{
-          left: "450px",
-          top: "35px",
-          width: "230px",
-        }}
-      >
-        <motion.div
-          animate={{
-            y: [5, -5, 5],
-            rotate: [-1.5, 1, -1.5],
-            scale: isAssessmentActive ? 1.05 : 1,
-          }}
-          transition={{ duration: 6.4, repeat: Infinity, ease: "easeInOut", delay: 1.6 }}
-          className={`relative bg-white/95 text-charcoal-800 rounded-[8px] border transition-all duration-300 p-2.5 font-sans text-[10.5px] ${
-            isAssessmentActive
-              ? "border-emerald-400 ring-2 ring-emerald-400/40 shadow-[0_12px_28px_rgba(18,162,107,0.25)]"
-              : "border-line/70 shadow-[0_6px_16px_rgba(7,51,42,0.06)]"
-          }`}
-        >
-          <div className="flex items-center justify-between border-b border-line/70 pb-1 mb-1.5">
-            <span className="text-[9.5px] font-bold text-ink-900 uppercase font-display tracking-wider">
-              CONTINUOUS ASSESSMENT
-            </span>
-            <span className="text-[8.5px] bg-emerald-500/10 text-emerald-800 font-bold px-1.5 py-0.2 rounded font-sans">
-              TERM 2
-            </span>
-          </div>
-          <div className="flex items-center justify-between text-[9.5px] font-medium text-charcoal-600 mb-1">
-            <span className="text-ink-900 font-bold">Mathematics (SS 2)</span>
-            <span className="text-emerald-700 font-semibold">Pos: 3rd / 42</span>
-          </div>
-          <div className="grid grid-cols-4 gap-1 text-center font-mono text-[8.5px] pt-1 border-t border-line/50">
-            <div className="bg-surface/70 p-1 rounded">
-              <span className="text-charcoal-600 block text-[7.5px]">CA (40)</span>
-              <span className="font-bold text-ink-900">28</span>
-            </div>
-            <div className="bg-surface/70 p-1 rounded">
-              <span className="text-charcoal-600 block text-[7.5px]">EXAM (60)</span>
-              <span className="font-bold text-ink-900">52</span>
-            </div>
-            <div className="bg-emerald-500/10 p-1 rounded border border-emerald-500/25">
-              <span className="text-emerald-700 block text-[7.5px] font-bold">TOTAL</span>
-              <span className="font-bold text-emerald-800">80</span>
-            </div>
-            <div className="bg-emerald-700 text-white p-1 rounded font-display font-bold text-[9.5px] flex items-center justify-center">
-              A1
-            </div>
-          </div>
-        </motion.div>
-      </motion.div>
-
-      {/* =====================================================================
-          ARTIFACT 2 (HERO ANCHOR - LEVEL 3 SHADOW): OAKLAND COMPREHENSIVE BURSARY FEE RECEIPT
+          ARTIFACT (HERO ANCHOR - LEVEL 3 SHADOW): OAKLAND COMPREHENSIVE BURSARY FEE RECEIPT
           - Prominent hero artifact (350px wide), deep rich shadow, high contrast
           - Anchored at far right (right: 25px, top: 100px) — completely clear of the boy!
           - 100% matched financial data: Tuition ₦185,000 for Adeyemi Femi (JSS 2 Gold)
@@ -169,7 +104,7 @@ export function SchoolPaperArtifacts({
           <div className="flex items-end justify-between pt-2 border-t border-[#EDE6D8] mt-1">
             <div className="text-[9.5px] text-charcoal-600 font-mono space-y-0.5">
               <p>CHANNEL: DIRECT BANK TRANSFER</p>
-              <p className="text-emerald-800 font-bold">STATUS: RECONCILED & CLEARED</p>
+              <p className="text-emerald-800 font-bold">STATUS: RECORDED & CLEARED</p>
             </div>
 
             {/* Dedicated Tangerine PAID Stamp Space - Never covers any text */}
@@ -184,74 +119,6 @@ export function SchoolPaperArtifacts({
                   </span>
                 </div>
               </div>
-            </div>
-          </div>
-        </motion.div>
-      </motion.div>
-
-      {/* =====================================================================
-          ARTIFACT 3 (SUPPORTING - LEVEL 2 SHADOW): RULED ATTENDANCE REGISTER
-          - Compact supporting detail (235px wide), medium elevation
-          - Shifted to (640px, 625px), floating cleanly below the students' leap!
-          - Out-of-phase floating breathing motion: 5.9s, delay 3.2s
-          - Interactive highlight when "Attendance" feature is clicked
-         ===================================================================== */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.5 }}
-        className="absolute"
-        style={{
-          left: "640px",
-          top: "625px",
-          width: "235px",
-        }}
-      >
-        <motion.div
-          animate={{
-            y: [-6, 4, -6],
-            rotate: [1.5, 3.5, 1.5],
-            scale: isAttendanceActive ? 1.05 : 1,
-          }}
-          transition={{ duration: 5.9, repeat: Infinity, ease: "easeInOut", delay: 3.2 }}
-          className={`relative bg-[#FAF9F5]/95 text-charcoal-800 rounded-[6px] border transition-all duration-300 p-3 font-sans text-[10px] overflow-hidden ${
-            isAttendanceActive
-              ? "border-emerald-400 ring-2 ring-emerald-400/40 shadow-[0_14px_30px_rgba(18,162,107,0.25)]"
-              : "border-[#E5DEC9]/80 shadow-[0_8px_20px_rgba(7,51,42,0.08)]"
-          }`}
-        >
-          {/* Red Left Margin Line */}
-          <div className="absolute top-0 bottom-0 left-[24px] w-[1px] bg-red-400/40" />
-
-          {/* Register Header */}
-          <div className="pl-3.5 pb-1 border-b border-[#E5DEC9] mb-1 flex items-center justify-between">
-            <div>
-              <p className="font-bold text-[9.5px] text-ink-900 uppercase tracking-wider font-display">
-                CLASS REGISTER · JSS 2 GOLD
-              </p>
-              <p className="text-[8.5px] text-charcoal-600">Monday Roll Call · 8:02 AM</p>
-            </div>
-          </div>
-
-          {/* Ruled Student Rows */}
-          <div className="pl-3.5 space-y-1 text-[9.5px]">
-            <div className="flex items-center justify-between border-b border-[#F0EAE1] pb-0.5">
-              <span className="text-charcoal-800 font-medium">1. Abubakar Ibrahim</span>
-              <span className="text-emerald-700 font-bold flex items-center gap-0.5 text-[8.5px]">
-                <Check className="w-2.5 h-2.5 stroke-[3]" /> 8:00am
-              </span>
-            </div>
-            <div className="flex items-center justify-between border-b border-[#F0EAE1] pb-0.5">
-              <span className="text-charcoal-900 font-bold text-emerald-800">2. Adeyemi Femi</span>
-              <span className="text-emerald-700 font-bold flex items-center gap-0.5 text-[8.5px]">
-                <Check className="w-2.5 h-2.5 stroke-[3]" /> 7:58am
-              </span>
-            </div>
-            <div className="flex items-center justify-between bg-tangerine-500/10 px-1 -mx-1 rounded py-0.5">
-              <span className="text-tangerine-600 font-semibold">3. Chukwuma David</span>
-              <span className="text-tangerine-500 font-black text-[8.5px] uppercase tracking-wide">
-                ABSENT
-              </span>
             </div>
           </div>
         </motion.div>
@@ -285,7 +152,7 @@ export function SchoolPaperArtifacts({
               <div className="flex-1 min-w-0">
                 <div className="flex items-center justify-between">
                   <p className="text-[11px] font-bold text-white leading-tight font-display">
-                    Bank Transfer Confirmed
+                    Bank Payment Recorded
                   </p>
                 </div>
                 <p className="text-[10px] text-emerald-300 font-medium truncate font-sans">

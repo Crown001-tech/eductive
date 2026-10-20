@@ -27,10 +27,10 @@ export function CrownTechSection() {
         {/* Section Header */}
         <div className="flex flex-col items-center text-center max-w-2xl mx-auto mb-16">
           <h2 className="font-display font-bold text-white text-3xl sm:text-4xl xl:text-[44px] leading-tight tracking-tight mb-4 text-balance">
-            Engineered by Crown Tech.
+            Developed by Crown Tech.
           </h2>
           <p className="text-base sm:text-lg text-surface/80 font-sans leading-relaxed text-balance">
-            Built by Nigerian software engineers to solve administrative bottlenecks in primary and secondary schools.
+            EDUCTIVE is developed by Crown Tech, a software and technology company focused on building practical digital solutions.
           </p>
         </div>
 
@@ -56,12 +56,12 @@ export function CrownTechSection() {
                 Crown Tech
               </h3>
               <p className="text-xs sm:text-sm text-emerald-300 font-mono font-medium mb-4">
-                Software Engineering & Technology
+                Software & Technology Solutions
               </p>
 
               <div className="flex items-center gap-2 text-xs text-surface/70 font-sans">
                 <MapPin className="w-3.5 h-3.5 text-emerald-400" />
-                <span>Lagos & Abuja, Nigeria</span>
+                <span>Nigeria</span>
               </div>
             </div>
           </div>
@@ -70,28 +70,28 @@ export function CrownTechSection() {
           <div className="lg:col-span-7 flex flex-col gap-6 text-left">
             <div className="bg-white/[0.03] rounded-2xl border border-white/10 p-6 sm:p-7">
               <span className="text-xs font-mono font-bold text-emerald-300 uppercase tracking-wider block mb-2">
-                01 · THE PROBLEM WE SAW
+                01 · REAL OPERATIONAL CHALLENGES
               </span>
               <p className="text-sm sm:text-base text-surface/85 font-sans leading-relaxed">
-                Nigerian school owners were drowning in paper receipts and soaked register books. Teachers spent whole weekends calculating terminal broadsheets by hand.
+                Our approach combines software engineering with an understanding of the operational challenges that schools face every day.
               </p>
             </div>
 
             <div className="bg-white/[0.03] rounded-2xl border border-white/10 p-6 sm:p-7">
               <span className="text-xs font-mono font-bold text-emerald-300 uppercase tracking-wider block mb-2">
-                02 · HOW WE BUILT EDUCTIVE
+                02 · BUILDING FOR REAL WORKFLOWS
               </span>
               <p className="text-sm sm:text-base text-surface/85 font-sans leading-relaxed">
-                Crown Tech designed Eductive to work on basic smartphones without costly computer hardware. Payments, roll-call, and exam marks update in one place.
+                We believe school software should do more than display dashboards. It should help people complete tasks, maintain reliable records and follow the right processes.
               </p>
             </div>
 
             <div className="bg-white/[0.03] rounded-2xl border border-white/10 p-6 sm:p-7">
               <span className="text-xs font-mono font-bold text-emerald-300 uppercase tracking-wider block mb-2">
-                03 · LOCAL SUPPORT NATIONWIDE
+                03 · FOCUS ON PRACTICALITY
               </span>
               <p className="text-sm sm:text-base text-surface/85 font-sans leading-relaxed">
-                Our engineering team sets up your school roster, trains your teachers, and provides direct support on phone and WhatsApp.
+                That means paying attention to how records are created, who reviews them, which actions require approval and what information each role should be able to access.
               </p>
             </div>
           </div>

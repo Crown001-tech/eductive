@@ -7,27 +7,27 @@ export function SchoolPrinciplesSection() {
   const principles = [
     {
       num: "01",
-      tag: "CURRENCY & CLASSES",
-      title: "Naira and local terms",
-      desc: "Tuition balances use Naira (₦), and classes follow real JSS and SS arms.",
+      tag: "CORE PRINCIPLE",
+      title: "Clarity",
+      desc: "School teams should be able to understand their responsibilities and find the information relevant to their work.",
     },
     {
       num: "02",
-      tag: "ASSESSMENT FORMULA",
-      title: "CA exam structure",
-      desc: "The system follows the official 20/20/60 continuous assessment formula with zero math errors.",
+      tag: "RESPONSIBILITY",
+      title: "Accountability",
+      desc: "Important school records and decisions should follow appropriate responsibilities and review processes.",
     },
     {
       num: "03",
-      tag: "DISPATCH CHANNEL",
-      title: "Parent WhatsApp receipts",
-      desc: "Official stamped receipts land on parent WhatsApp numbers seconds after bursar payment entry.",
+      tag: "INTEGRATION",
+      title: "Coordination",
+      desc: "Academic, administrative and financial activities are easier to manage when relevant information is organised in one system.",
     },
     {
       num: "04",
-      tag: "INFRASTRUCTURE",
-      title: "Intermittent power ready",
-      desc: "Teachers record roll-call on mobile phones, with zero expensive computer servers needed.",
+      tag: "REALITY",
+      title: "Practicality",
+      desc: "School management software should support real school operations and the devices schools reasonably use.",
     },
   ];
 
@@ -38,10 +38,10 @@ export function SchoolPrinciplesSection() {
         {/* Section Header */}
         <div className="flex flex-col items-center text-center max-w-2xl mx-auto mb-16">
           <h2 className="font-display font-bold text-ink-900 text-3xl sm:text-4xl xl:text-[44px] leading-tight tracking-tight mb-4 text-balance">
-            Four standards we never break.
+            What guides the product.
           </h2>
           <p className="text-base sm:text-lg text-charcoal-600 font-sans leading-relaxed text-balance">
-            Every screen respects the daily rhythms, class structures, and payment terms of Nigerian schools.
+            Practical requirements that shape how EDUCTIVE is built for real school operations.
           </p>
         </div>
 
@@ -70,7 +70,7 @@ export function SchoolPrinciplesSection() {
               </div>
               <div className="mt-6 pt-3 border-t border-line/50 flex items-center gap-1.5 text-xs text-emerald-700 font-medium font-sans">
                 <Check className="w-3.5 h-3.5 stroke-[3]" />
-                <span>Verified in school trials</span>
+                <span>Designed for school workflows</span>
               </div>
             </div>
           ))}

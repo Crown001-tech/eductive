@@ -13,51 +13,51 @@ interface FaqItem {
 
 const FAQS: FaqItem[] = [
   {
-    id: "offline",
+    id: "what-is-eductive",
     num: "01",
-    question: "What if our school internet goes down?",
+    question: "What is EDUCTIVE?",
     answer:
-      "Teachers can take roll-call and record marks completely offline. Everything saves on your device and updates once network returns.",
+      "EDUCTIVE is a school management system that helps schools organise academic, administrative and financial operations through one platform.",
   },
   {
-    id: "fees",
+    id: "who-is-it-for",
     num: "02",
-    question: "How do we record fees and receipts?",
+    question: "Who is EDUCTIVE designed for?",
     answer:
-      "Your bursar records each payment in seconds. The student balance updates to zero and parents receive a stamped receipt on WhatsApp.",
+      "It is designed for primary and secondary schools, including school owners, principals, administrators and bursars. Teacher, student and parent access depends on the available portals and enabled features.",
   },
   {
-    id: "teachers",
+    id: "what-can-manage",
     num: "03",
-    question: "Is it simple for older teachers?",
+    question: "What can my school manage with EDUCTIVE?",
     answer:
-      "If a teacher can send a message on WhatsApp, they can use this. Taking morning roll-call takes under thirty seconds.",
+      "Depending on the modules enabled, schools can manage student records, admissions, attendance, academic activities, results, fees, staff information, communications and other administrative processes.",
   },
   {
-    id: "security",
+    id: "access-levels",
     num: "04",
-    question: "Can anyone alter approved exam marks?",
+    question: "Can different staff members have different access levels?",
     answer:
-      "No. Once the principal signs off a broadsheet, scores are locked. Only the principal can grant permission to make changes.",
+      "EDUCTIVE supports role-based access so users can work within the responsibilities assigned to their roles. The precise permissions depend on the configured roles and workflows.",
   },
   {
-    id: "setup",
+    id: "see-platform",
     num: "05",
-    question: "How long does setup take?",
+    question: "Can we see the platform before deciding?",
     answer:
-      "Two to three days. Send us your class registers or Excel sheets, and our team sets up your school for you.",
+      "Yes. Request a demo to arrange a walkthrough of the platform and discuss your school's needs.",
   },
   {
-    id: "parents",
+    id: "get-started",
     num: "06",
-    question: "Do parents need to install an app?",
+    question: "How do we get started?",
     answer:
-      "No. Parents receive official receipts, daily notices, and terminal report cards directly on WhatsApp and SMS.",
+      "Submit a demo request. The EDUCTIVE team can discuss your school, demonstrate the relevant features and explain the applicable setup process.",
   },
 ];
 
 export function FaqSection() {
-  const [openId, setOpenId] = useState<string | null>("offline");
+  const [openId, setOpenId] = useState<string | null>("what-is-eductive");
 
   const toggleFaq = (id: string) => {
     setOpenId(openId === id ? null : id);
@@ -81,14 +81,14 @@ export function FaqSection() {
               LEFT COLUMN: SECTION HEADER & DIRECT WHATSAPP DESK (5 Cols)
              ------------------------------------------------------------------- */}
           <div className="lg:col-span-5 lg:sticky lg:top-32 flex flex-col items-start">
-            {/* Section Headline (<= 6 words) */}
+            {/* Section Headline */}
             <h2 className="font-display font-bold text-ink-900 text-3xl sm:text-4xl xl:text-[46px] leading-[1.1] tracking-[-1.2px] mb-4 text-balance">
-              Common questions from school owners.
+              Frequently asked questions
             </h2>
 
-            {/* Intro Line (<= 18 words) */}
+            {/* Intro Line */}
             <p className="text-base sm:text-lg text-charcoal-600 font-sans leading-relaxed mb-8 max-w-md text-balance">
-              Clear answers about daily use, internet needs, and school setup.
+              Clear answers about EDUCTIVE, role access, and how to get started.
             </p>
 
             {/* Direct Lagos Implementation Desk Card */}

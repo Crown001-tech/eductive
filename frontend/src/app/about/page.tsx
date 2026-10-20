@@ -8,9 +8,9 @@ import { SchoolPrinciplesSection } from "@/components/about/SchoolPrinciplesSect
 import { DemoCtaSection } from "@/components/home/DemoCtaSection";
 
 export const metadata: Metadata = {
-  title: "About EDUCTIVE — Engineered by Crown Tech for Nigerian Schools",
+  title: "About EDUCTIVE — Developed by Crown Tech",
   description:
-    "Learn why Crown Tech engineered Eductive, the unified school operating system for Nigerian primary and secondary schools. Zero paper headaches, parent WhatsApp receipts, and total clarity for school owners.",
+    "EDUCTIVE was created to help schools bring essential academic, administrative and financial activities into a more organised digital environment.",
 };
 
 export default function AboutPage() {

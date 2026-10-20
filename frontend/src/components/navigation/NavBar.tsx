@@ -29,13 +29,19 @@ export function NavBar() {
   }, []);
 
   const isHome = pathname === "/" || pathname === "";
-  const isDarkHeroPage = pathname === "/product" || pathname === "/about";
+  const isDemoPage = pathname === "/demo";
+  const isDarkHeroPage = pathname === "/product" || pathname === "/about" || pathname === "/demo";
 
   const getLinkClasses = (isActive: boolean) => {
+    if (isDemoPage) {
+      return isActive
+        ? "text-emerald-300 font-extrabold"
+        : "text-white/85 hover:text-white";
+    }
     if (isScrolled) {
       return isActive
         ? "text-emerald-700 font-extrabold"
-        : "text-charcoal-800 hover:text-emerald-700";
+        : "text-charcoal-900 hover:text-emerald-700";
     }
     if (isDarkHeroPage) {
       return isActive
@@ -52,7 +58,11 @@ export function NavBar() {
     <>
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled
+          isDemoPage
+            ? isScrolled
+              ? "bg-[#07332A]/90 backdrop-blur-md border-b border-emerald-500/20 shadow-[0_4px_24px_rgba(0,0,0,0.25)] h-20"
+              : "bg-transparent h-24"
+            : isScrolled
             ? "bg-white/95 backdrop-blur-md border-b border-line/80 shadow-[0_4px_24px_rgba(7,51,42,0.06)] h-20"
             : "bg-transparent h-24"
         }`}
@@ -63,7 +73,7 @@ export function NavBar() {
           <Link
             href="/"
             className={`flex items-center gap-2.5 text-2xl font-bold tracking-tight font-display transition-colors rounded-sm focus-ring-dark ${
-              isScrolled ? "text-ink-900" : "text-white"
+              isDemoPage ? "text-white" : isScrolled ? "text-ink-900" : "text-white"
             }`}
           >
             <span className="w-3 h-3 rounded-full bg-emerald-500 shadow-[0_0_12px_#12A26B]" />
@@ -109,7 +119,7 @@ export function NavBar() {
               href="/demo"
               className="inline-flex items-center justify-center font-sans font-semibold rounded-full pl-6 pr-2 py-2 text-[13px] bg-tangerine-500 hover:bg-tangerine-400 text-ink-900 gap-2.5 shadow-md transition-all duration-200 group cursor-pointer"
             >
-              <span>Book a demo</span>
+              <span>Request a Demo</span>
               <span className="w-7 h-7 rounded-full bg-ink-900 text-tangerine-500 flex items-center justify-center transition-transform group-hover:translate-x-0.5">
                 <ArrowRight className="w-3.5 h-3.5" />
               </span>
@@ -122,7 +132,9 @@ export function NavBar() {
               onClick={() => setMobileMenuOpen(true)}
               aria-label="Open navigation menu"
               className={`group flex items-center gap-2 px-3.5 py-2 rounded-full border transition-all duration-200 cursor-pointer ${
-                isScrolled
+                isDemoPage
+                  ? "bg-white/[0.08] hover:bg-white/[0.14] border-white/20 text-white backdrop-blur-md"
+                  : isScrolled
                   ? "bg-ink-900/[0.04] hover:bg-ink-900/[0.08] border-line text-ink-900"
                   : isDarkHeroPage
                   ? "bg-white/[0.08] hover:bg-white/[0.14] border-white/20 text-white backdrop-blur-md"

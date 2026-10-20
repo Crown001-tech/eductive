@@ -25,45 +25,45 @@ const STEPS: StepData[] = [
   {
     id: "bursar",
     stepNum: "01",
-    title: "Bursar fees",
-    subtitle: "Accounts Desk",
-    summary: "Record tuition payments in seconds and generate official stamped digital receipts.",
+    title: "Organise your school",
+    subtitle: "Structure & Setup",
+    summary: "Set up the school's relevant records, classes, staff roles and operating structure.",
     highlights: [
-      "Student balance updates immediately to ₦0.00",
-      "Parents receive stamped receipt on WhatsApp",
+      "Configure classes, arms, and student rosters",
+      "Assign staff roles with appropriate access levels",
     ],
   },
   {
     id: "attendance",
     stepNum: "02",
-    title: "Attendance",
-    subtitle: "Homeroom & Gate",
-    summary: "Take daily morning roll-call in thirty seconds from any phone or computer.",
+    title: "Manage everyday activities",
+    subtitle: "Daily Operations",
+    summary: "Use the appropriate tools to manage academic, administrative and financial tasks.",
     highlights: [
-      "Paperless registers that cannot tear or go missing",
-      "Instant arrival updates sent to parent phones",
+      "Record daily attendance and classroom activities",
+      "Manage fee records, payments, and school administration",
     ],
   },
   {
     id: "assessment",
     stepNum: "03",
-    title: "Assessment",
-    subtitle: "Staff Room & Exams",
-    summary: "Enter test scores once. Broadsheets and report cards compute on their own.",
+    title: "Review and approve",
+    subtitle: "Verification & Oversight",
+    summary: "Support the review and approval steps required for important school processes.",
     highlights: [
-      "Standard WAEC and NECO grading scales built in",
-      "Terminal report cards ready the day exams finish",
+      "Verify continuous assessment scores and broadsheets",
+      "Ensure multi-step approval before official release",
     ],
   },
   {
     id: "leadership",
     stepNum: "04",
-    title: "Leadership",
-    subtitle: "Principal & Proprietor",
-    summary: "Inspect fee collections, daily attendance, and academic progress from anywhere.",
+    title: "Maintain visibility",
+    subtitle: "Executive Clarity",
+    summary: "Give authorised school leaders access to relevant records and operational information.",
     highlights: [
-      "Live cashflow view across school bank accounts",
-      "One-click approval for end-of-term results",
+      "Clear oversight across academic and administrative records",
+      "Reliable information to support informed decisions",
     ],
   },
 ];
@@ -391,12 +391,15 @@ export function SynchronizedFlowSection() {
             SECTION HEADER (Clean, no AI pill tags, strict copy limits)
            ===================================================================== */}
         <div className="flex flex-col items-center text-center max-w-2xl mx-auto mb-16 xl:mb-20">
+          <span className="text-[11px] font-mono font-bold tracking-[2px] uppercase text-emerald-700 mb-3">
+            FROM DAILY TASKS TO BETTER OVERSIGHT
+          </span>
           <h2 className="font-display font-bold text-ink-900 text-3xl sm:text-4xl xl:text-[46px] leading-[1.1] tracking-[-1.2px] mb-4 text-balance">
-            How your school stays synchronized.
+            Connected processes. Clearer responsibilities.
           </h2>
 
           <p className="text-base sm:text-lg text-charcoal-600 font-sans leading-relaxed text-balance">
-            Every payment, attendance mark, and exam score connects across all four departments automatically.
+            EDUCTIVE is designed to support the work happening across your school, not just store information.
           </p>
         </div>
 
@@ -560,7 +563,7 @@ export function SynchronizedFlowSection() {
                 href="/product"
                 className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-700 hover:text-emerald-800 transition-colors group cursor-pointer"
               >
-                <span>See all features in product</span>
+                <span>Explore the Platform</span>
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </div>

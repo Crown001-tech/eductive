@@ -147,9 +147,9 @@ export function HeroSection() {
               </filter>
             </defs>
 
-            {/* 1. THREAD PATH: Continuous unbroken path from Celebrating Students (740, 360) -> Principal's Tablet (1165, 725) -> Section 2 (720, 920) */}
+            {/* 1. THREAD PATH: Continuous unbroken path from Celebrating Students (740, 360) -> Principal's Tablet (1165, 725) -> Section 2 Seam (720, 880) */}
             <path
-              d="M 740,360 C 860,390 1020,500 1090,610 C 1130,670 1145,705 1165,725 C 1050,775 920,800 840,845 C 775,880 740,905 720,920"
+              d="M 740,360 C 860,390 1020,500 1090,610 C 1130,670 1145,705 1165,725 C 1050,760 820,830 720,880"
               stroke="url(#threadGrad)"
               strokeWidth="2.5"
               strokeDasharray="6 6"
@@ -163,19 +163,19 @@ export function HeroSection() {
                 <animateMotion
                   dur="6.8s"
                   repeatCount="indefinite"
-                  path="M 740,360 C 860,390 1020,500 1090,610 C 1130,670 1145,705 1165,725 C 1050,775 920,800 840,845 C 775,880 740,905 720,920"
+                  path="M 740,360 C 860,390 1020,500 1090,610 C 1130,670 1145,705 1165,725 C 1050,760 820,830 720,880"
                 />
               </circle>
               <circle r="12" fill="#3DDC97" opacity="0.3" filter="url(#threadGlow)">
                 <animateMotion
                   dur="6.8s"
                   repeatCount="indefinite"
-                  path="M 740,360 C 860,390 1020,500 1090,610 C 1130,670 1145,705 1165,725 C 1050,775 920,800 840,845 C 775,880 740,905 720,920"
+                  path="M 740,360 C 860,390 1020,500 1090,610 C 1130,670 1145,705 1165,725 C 1050,760 820,830 720,880"
                 />
               </circle>
             </g>
 
-            {/* CONTACT POINTS (Showing contact at student origin, tablet node, and section 2 handoff) */}
+            {/* CONTACT POINTS (Showing contact at student origin and tablet node) */}
             {/* Contact 1: Students Origin (740, 360) */}
             <g>
               <circle cx="740" cy="360" r="14" fill="none" stroke="#3DDC97" strokeWidth="1.5" strokeDasharray="3 3" opacity="0.75" />
@@ -188,13 +188,6 @@ export function HeroSection() {
               <circle cx="1165" cy="725" r="16" fill="none" stroke="#3DDC97" strokeWidth="1.5" strokeDasharray="3 3" opacity="0.85" />
               <circle cx="1165" cy="725" r="7" fill="#12A26B" filter="url(#threadGlow)" />
               <circle cx="1165" cy="725" r="3" fill="#FFFFFF" />
-            </g>
-
-            {/* Contact 3: Bottom Handoff into Section 2 (720, 920) */}
-            <g>
-              <circle cx="720" cy="920" r="14" fill="none" stroke="#3DDC97" strokeWidth="1.5" strokeDasharray="3 3" opacity="0.75" />
-              <circle cx="720" cy="920" r="6" fill="#12A26B" filter="url(#threadGlow)" />
-              <circle cx="720" cy="920" r="2.5" fill="#FFFFFF" />
             </g>
           </svg>
 
@@ -332,7 +325,7 @@ export function HeroSection() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="text-[12px] font-bold tracking-[2.5px] uppercase text-emerald-300 font-sans mb-3.5"
             >
-              NIGERIAN SCHOOL OPERATING SYSTEM
+              SCHOOL MANAGEMENT, CONNECTED
             </motion.p>
 
             {/* Display XL Headline with Balanced Break */}
@@ -342,18 +335,18 @@ export function HeroSection() {
               transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
               className="font-display font-bold text-white text-[50px] xl:text-[58px] leading-[1.04] tracking-[-1.5px] mb-4 text-balance"
             >
-              Discover order. <br />
-              Synchronize your school.
+              Everything your school runs on. <br />
+              In one place.
             </motion.h1>
 
-            {/* Outcome-First Summary (18 words, within 20-word cap) */}
+            {/* Outcome-First Summary */}
             <motion.p
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
               className="text-[16px] xl:text-[17px] text-surface/90 leading-[1.6] font-sans max-w-[480px] mb-6"
             >
-              Manage tuition payments, track daily attendance, and prepare term report cards without stress. Built for Nigerian schools.
+              From student records and academic activities to school finances and daily administration, EDUCTIVE brings essential school operations together in one organised system.
             </motion.p>
 
             {/* 4 Interactive Module Station Tags (Subtle tags at idle, interactive pulse on click) */}
@@ -396,25 +389,28 @@ export function HeroSection() {
             >
               <div className="flex items-center">
                 <Button
-                  href="#demo-section"
+                  href="/demo"
                   variant="primary"
                   size="lg"
                   className="group px-8 py-4 rounded-full text-base font-bold shadow-lg shadow-tangerine-500/20 hover:shadow-tangerine-500/35 hover:scale-[1.02] transition-all flex items-center gap-3"
                 >
-                  <span>Book a demo</span>
+                  <span>Request a Demo</span>
                   <span className="w-7 h-7 rounded-full bg-ink-900 text-tangerine-400 flex items-center justify-center transition-transform group-hover:translate-x-1">
                     <ArrowRight className="w-4 h-4" />
                   </span>
                 </Button>
               </div>
 
-              {/* Trust Signal: Oakland Comprehensive High School (Real Customer) */}
-              <div className="flex items-center gap-2.5 text-[13px] text-emerald-300/90 font-medium tracking-normal pt-1 max-w-[420px]">
-                <span className="w-4 h-4 rounded-full bg-emerald-400 text-ink-900 flex items-center justify-center text-[10px] font-black flex-shrink-0">
-                  ✓
-                </span>
-                <span>
-                  In active use at{" "}
+              {/* Supporting Line & Demonstration School Note */}
+              <div className="flex flex-col gap-1 text-[13px] text-emerald-300/90 font-medium tracking-normal pt-1 max-w-[460px]">
+                <div className="flex items-center gap-2">
+                  <span className="w-4 h-4 rounded-full bg-emerald-400 text-ink-900 flex items-center justify-center text-[10px] font-black flex-shrink-0">
+                    ✓
+                  </span>
+                  <span>Designed for the way primary and secondary schools operate.</span>
+                </div>
+                <div className="text-[12px] text-surface/75 pl-6">
+                  Demonstration School:{" "}
                   <a
                     href="https://oakland-school.onrender.com"
                     target="_blank"
@@ -423,7 +419,7 @@ export function HeroSection() {
                   >
                     Oakland Comprehensive High School
                   </a>
-                </span>
+                </div>
               </div>
             </motion.div>
           </div>
@@ -432,11 +428,6 @@ export function HeroSection() {
 
       {/* =========================================================================
           MOBILE & TABLET HERO (Screen width < 1200px)
-          - Unified deep forest green canvas (#07332A)
-          - Strict AGENTS.md caps: Headline <= 8 words, Subtext <= 20 words
-          - Layered Nigerian school imagery: Celebrating students + Principal
-          - Authentic Nigerian Bursary E-Receipt artifact (₦85,000 PAID · ₦0.00 Balance)
-          - Sentence-case CTA button ("Book a demo") linking to /demo
          ========================================================================= */}
       <div className="xl:hidden relative w-full bg-[#07332A] text-white pt-28 pb-16 px-6 sm:px-10 overflow-hidden select-none">
         {/* Background Grid Pattern */}
@@ -459,18 +450,18 @@ export function HeroSection() {
         <div className="relative z-10 flex flex-col items-start max-w-xl mx-auto">
           {/* Eyebrow */}
           <span className="text-[11px] font-mono font-bold tracking-[2px] uppercase text-emerald-300 mb-3">
-            NIGERIAN SCHOOL OPERATING SYSTEM
+            SCHOOL MANAGEMENT, CONNECTED
           </span>
 
-          {/* Headline (AGENTS.md: <= 8 words) */}
+          {/* Headline */}
           <h1 className="font-display font-bold text-white text-[36px] sm:text-[44px] leading-[1.08] tracking-[-1px] mb-4 text-balance">
-            Discover order. <br />
-            Synchronize your school.
+            Everything your school runs on. <br />
+            In one place.
           </h1>
 
-          {/* Subtext (AGENTS.md: <= 20 words) */}
+          {/* Subtext */}
           <p className="text-sm sm:text-base text-surface/85 font-sans leading-relaxed mb-6 text-balance">
-            Tuition, attendance, and continuous assessment synchronized on one calm platform. Built for Nigerian schools.
+            From student records and academic activities to school finances and daily administration, EDUCTIVE brings essential school operations together in one organised system.
           </p>
 
           {/* Feature tags */}
@@ -485,13 +476,13 @@ export function HeroSection() {
             ))}
           </div>
 
-          {/* Primary CTA & Trust Proof */}
+          {/* Primary CTA & Supporting Note */}
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full mb-8">
             <Link
               href="/demo"
               className="inline-flex items-center justify-center font-sans font-semibold rounded-full px-8 py-4 text-sm bg-tangerine-500 hover:bg-tangerine-400 text-ink-900 shadow-lg shadow-tangerine-500/20 gap-2.5 transition-all"
             >
-              <span>Book a demo</span>
+              <span>Request a Demo</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
 
@@ -500,15 +491,7 @@ export function HeroSection() {
                 ✓
               </span>
               <span>
-                In active use at{" "}
-                <a
-                  href="https://oakland-school.onrender.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="underline underline-offset-4 text-white hover:text-emerald-200 font-bold"
-                >
-                  Oakland Comprehensive High School
-                </a>
+                Designed for primary and secondary schools
               </span>
             </div>
           </div>
@@ -531,7 +514,7 @@ export function HeroSection() {
           {/* Principal & Stamped Receipt Composition */}
           <div className="relative -mt-16 sm:-mt-20 flex flex-col sm:flex-row items-center sm:items-end justify-between gap-4">
             
-            {/* The Authentic Stamped WhatsApp Receipt Artifact */}
+            {/* The Authentic Stamped Receipt Artifact */}
             <div className="w-full sm:max-w-[280px] bg-[#FFFDF8] rounded-2xl border border-[#D8CEBA] p-4 shadow-[0_16px_36px_rgba(0,0,0,0.35)] text-charcoal-900 font-mono text-[11px] relative overflow-hidden order-2 sm:order-1">
               <div className="flex items-center justify-between border-b border-dashed border-[#D2C7B2] pb-2 mb-2">
                 <div>
@@ -562,7 +545,7 @@ export function HeroSection() {
 
               <div className="flex items-center gap-1.5 pt-2 border-t border-[#EDE6D8] text-[10px] text-emerald-800 font-sans font-medium">
                 <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse flex-shrink-0" />
-                <span>WhatsApp receipt sent · 08:12 AM</span>
+                <span>Bursary payment record cleared</span>
               </div>
             </div>
 
@@ -584,10 +567,10 @@ export function HeroSection() {
         {/* Transition Link to Section 2 */}
         <div className="relative z-10 flex justify-center mt-12 pb-4">
           <Link
-            href="#how-it-works"
+            href="/product"
             className="text-xs font-semibold text-surface/75 hover:text-white transition-colors flex items-center gap-1.5 py-2 px-4 rounded-full bg-white/[0.04] border border-white/10"
           >
-            <span>See how operations synchronize</span>
+            <span>Explore the Platform</span>
             <span>↓</span>
           </Link>
         </div>

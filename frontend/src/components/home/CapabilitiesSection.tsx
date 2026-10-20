@@ -32,39 +32,48 @@ interface WorkspaceDesk {
 const DESKS: WorkspaceDesk[] = [
   {
     id: "parents",
-    tabLabel: "Parents",
-    role: "Parents on WhatsApp",
-    title: "Parents on WhatsApp",
+    tabLabel: "Admissions",
+    role: "Student Information & Admissions",
+    title: "Student records and enrolment",
     description:
-      "Instant fee receipts and terminal report cards delivered straight to parents' phones.",
-    actionText: "See parent WhatsApp delivery",
+      "Manage student records and support the admissions process, from initial applications through review and enrolment.",
+    actionText: "Explore All Features",
   },
   {
     id: "teachers",
-    tabLabel: "Teachers",
-    role: "Teachers in the classroom",
-    title: "Teachers in class",
+    tabLabel: "Attendance",
+    role: "Attendance & Daily Operations",
+    title: "Attendance and roll-call",
     description:
-      "Take morning roll-call and record continuous assessment marks in thirty seconds.",
-    actionText: "See teacher mobile register",
+      "Record attendance and make relevant information available to authorised members of staff.",
+    actionText: "Explore All Features",
   },
   {
     id: "bursar",
     tabLabel: "Bursary",
-    role: "Bursar at accounts desk",
-    title: "Bursar at desk",
+    role: "Fees & Financial Records",
+    title: "Fees and financial records",
     description:
-      "Clear tuition payments and match bank transfers with zero fake teller disputes.",
-    actionText: "See bursary payment matching",
+      "Record payments, issue receipts, track outstanding balances and help the bursary maintain organised financial records.",
+    actionText: "Explore All Features",
   },
   {
     id: "principal",
-    tabLabel: "Principal",
-    role: "Principal on the move",
-    title: "Principal on the go",
+    tabLabel: "Academics",
+    role: "Academic Management",
+    title: "Academic records and results",
     description:
-      "Inspect daily fee collections and sign off termly broadsheets from anywhere.",
-    actionText: "See principal executive console",
+      "Support class and subject structures, timetables, continuous assessment and the preparation and review of academic results.",
+    actionText: "Explore All Features",
+  },
+  {
+    id: "security",
+    tabLabel: "Security",
+    role: "Security & Reception Portal",
+    title: "Visitor and gate records",
+    description:
+      "Every visitor accounted for. Every arrival under control. Record visitor details, track arrivals and departures, and support student pickup verification.",
+    actionText: "Explore All Features",
   },
 ];
 
@@ -151,17 +160,18 @@ export function CapabilitiesSection() {
       <div className="relative max-w-[1440px] mx-auto px-6 sm:px-12 xl:px-16 z-10">
         
         {/* =====================================================================
-            SECTION HEADER (Under hard word caps, zero banned buzzwords)
-            Heading: <= 6 words ("Built for your school's people.")
-            Intro Line: <= 18 words ("Each person gets a clear tool designed for their daily school work.")
+            SECTION HEADER
            ===================================================================== */}
         <div className="flex flex-col items-center text-center max-w-2xl mx-auto mb-12 xl:mb-16">
+          <span className="text-[11px] font-mono font-bold tracking-[2px] uppercase text-emerald-300 mb-3">
+            ONE CONNECTED PLATFORM
+          </span>
           <h2 className="font-display font-bold text-white text-3xl sm:text-4xl xl:text-[46px] leading-[1.1] tracking-[-1.2px] mb-4 text-balance">
-            Built for your school&apos;s people.
+            The essential work of your school, organised.
           </h2>
 
           <p className="text-base sm:text-lg text-surface/80 font-sans leading-relaxed text-balance">
-            Each person gets a clear tool designed for their daily school work.
+            Explore the key areas EDUCTIVE supports, from everyday administration to academic management and financial records.
           </p>
         </div>
 
@@ -241,10 +251,10 @@ export function CapabilitiesSection() {
 
                     {/* Direct Action Link */}
                     <Link
-                      href="/product"
+                      href="/product#features"
                       className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-300 hover:text-white transition-colors group cursor-pointer"
                     >
-                      <span>Explore this workspace</span>
+                      <span>Explore All Features</span>
                       <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                     </Link>
                   </div>
@@ -493,6 +503,60 @@ export function CapabilitiesSection() {
                           <span className="px-3 py-1 bg-tangerine-500 text-ink-900 rounded-full font-bold text-xs shadow-md">
                             Approved
                           </span>
+                        </div>
+                      </div>
+                    )}
+
+                    {/* =========================================================
+                        SLIDE 5: SECURITY & RECEPTION PORTAL
+                        - Visitor registration, gate activity, student pickup verification
+                       ========================================================= */}
+                    {activeDesk.id === "security" && (
+                      <div className="w-full max-w-[440px] bg-[#07332A] text-white rounded-2xl border border-emerald-500/30 shadow-2xl p-5 sm:p-6 font-sans text-xs">
+                        <div className="flex items-center justify-between border-b border-emerald-500/20 pb-3 mb-4">
+                          <div>
+                            <p className="font-display font-bold text-sm text-white">
+                              SECURITY & RECEPTION PORTAL
+                            </p>
+                            <p className="text-[10px] text-emerald-300/80">Main Gate & Front Desk</p>
+                          </div>
+                          <span className="text-[10px] bg-emerald-500/20 text-emerald-300 font-bold px-2 py-0.5 rounded border border-emerald-400/30">
+                            Access Controlled
+                          </span>
+                        </div>
+
+                        {/* Activity Rows */}
+                        <div className="space-y-2.5 mb-4 text-xs">
+                          <div className="p-2.5 rounded-xl bg-ink-900/70 border border-emerald-500/20 flex items-center justify-between">
+                            <div>
+                              <span className="text-white font-bold block">1. Visitor Registration</span>
+                              <span className="text-[10px] text-surface/75">Alh. G. Mohammed · Parent Enquiry</span>
+                            </div>
+                            <span className="text-emerald-300 font-mono text-[10px] font-bold">08:15 AM</span>
+                          </div>
+
+                          <div className="p-2.5 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-between">
+                            <div>
+                              <span className="text-white font-bold block">2. Student Pickup Verification</span>
+                              <span className="text-[10px] text-emerald-300">Adeyemi Femi (JSS 2 Gold) · Guardian Matched</span>
+                            </div>
+                            <span className="px-2 py-0.5 rounded bg-emerald-700 text-white font-bold text-[10px]">
+                              Verified
+                            </span>
+                          </div>
+
+                          <div className="p-2.5 rounded-xl bg-ink-900/70 border border-emerald-500/20 flex items-center justify-between">
+                            <div>
+                              <span className="text-white font-bold block">3. Gate Departure Log</span>
+                              <span className="text-[10px] text-surface/75">Delivery Vehicle · Pass #G-042</span>
+                            </div>
+                            <span className="text-surface/60 font-mono text-[10px]">Signed out</span>
+                          </div>
+                        </div>
+
+                        <div className="pt-3 border-t border-emerald-500/20 flex items-center justify-between text-[10px] text-surface/75">
+                          <span>Front-desk coordination</span>
+                          <span className="text-emerald-300 font-mono font-bold">14 logs today</span>
                         </div>
                       </div>
                     )}
