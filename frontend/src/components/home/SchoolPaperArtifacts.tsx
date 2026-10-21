@@ -152,11 +152,11 @@ export function SchoolPaperArtifacts({
               <div className="flex-1 min-w-0">
                 <div className="flex items-center justify-between">
                   <p className="text-[11px] font-bold text-white leading-tight font-display">
-                    Bank Payment Recorded
+                    Payment recorded · Receipt #0417
                   </p>
                 </div>
                 <p className="text-[10px] text-emerald-300 font-medium truncate font-sans">
-                  ₦185,000 · Adeyemi Femi · Receipt #0417 Issued
+                  ₦185,000 · Adeyemi Femi (JSS 2 Gold)
                 </p>
               </div>
               <CheckCheck className="w-4 h-4 text-emerald-400 flex-shrink-0" />

@@ -4,13 +4,12 @@ import { Footer } from "@/components/navigation/Footer";
 import { AboutHero } from "@/components/about/AboutHero";
 import { WhatIsEductive } from "@/components/about/WhatIsEductive";
 import { CrownTechSection } from "@/components/about/CrownTechSection";
-import { SchoolPrinciplesSection } from "@/components/about/SchoolPrinciplesSection";
 import { DemoCtaSection } from "@/components/home/DemoCtaSection";
 
 export const metadata: Metadata = {
-  title: "About EDUCTIVE — Developed by Crown Tech",
+  title: "About EDUCTIVE — Built for Nigerian Schools",
   description:
-    "EDUCTIVE was created to help schools bring essential academic, administrative and financial activities into a more organised digital environment.",
+    "EDUCTIVE replaces scattered registers, receipt books and spreadsheets with one connected platform for the whole school.",
 };
 
 export default function AboutPage() {
@@ -20,7 +19,6 @@ export default function AboutPage() {
       <AboutHero />
       <WhatIsEductive />
       <CrownTechSection />
-      <SchoolPrinciplesSection />
       <DemoCtaSection />
       <Footer />
     </main>

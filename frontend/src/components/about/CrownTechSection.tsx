@@ -2,11 +2,11 @@
 
 import React from "react";
 import Image from "next/image";
-import { ShieldCheck, MapPin, Sparkles } from "lucide-react";
+import { MapPin } from "lucide-react";
 
 export function CrownTechSection() {
   return (
-    <section className="relative w-full bg-[#07332A] text-white py-24 xl:py-32 border-t border-emerald-500/20 overflow-hidden select-none">
+    <section className="relative w-full bg-[#07332A] text-white py-20 xl:py-28 border-t border-emerald-500/20 overflow-hidden select-none">
       {/* Background Architectural Grid Pattern */}
       <div className="absolute inset-0 pointer-events-none opacity-5">
         <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
@@ -22,31 +22,31 @@ export function CrownTechSection() {
       {/* Atmospheric Ambient Glow */}
       <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[500px] h-[500px] bg-emerald-500/10 rounded-full blur-[140px] pointer-events-none" />
 
-      <div className="relative max-w-[1240px] mx-auto px-6 sm:px-12 xl:px-16 z-10">
+      <div className="relative max-w-[1240px] mx-auto px-4 sm:px-8 xl:px-14 z-10">
         
-        {/* Section Header */}
-        <div className="flex flex-col items-center text-center max-w-2xl mx-auto mb-16">
-          <h2 className="font-display font-bold text-white text-3xl sm:text-4xl xl:text-[44px] leading-tight tracking-tight mb-4 text-balance">
+        {/* Section Header (Heading <= 6 words, Intro <= 18 words) */}
+        <div className="flex flex-col items-center text-center max-w-2xl mx-auto mb-14">
+          <h2 className="font-display font-bold text-white text-2xl sm:text-4xl xl:text-[44px] leading-tight tracking-tight mb-3 text-balance">
             Developed by Crown Tech.
           </h2>
-          <p className="text-base sm:text-lg text-surface/80 font-sans leading-relaxed text-balance">
-            EDUCTIVE is developed by Crown Tech, a software and technology company focused on building practical digital solutions.
+          <p className="text-sm sm:text-base text-surface/85 font-sans leading-relaxed text-balance">
+            Building practical software for how Nigerian schools actually run.
           </p>
         </div>
 
-        {/* Content Showcase: Logo & Engineering Philosophy */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 xl:gap-14 items-center">
+        {/* Content Showcase: Logo & 3 Steps Narrative */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 xl:gap-12 items-center">
           
-          {/* Left Column: Crown Tech Logo Frame (5 Cols) */}
+          {/* Left Column: Crown Tech Brand Card (5 Cols) */}
           <div className="lg:col-span-5 flex justify-center">
-            <div className="relative p-8 sm:p-10 rounded-3xl bg-white/[0.04] border border-white/10 backdrop-blur-md shadow-[0_24px_50px_rgba(0,0,0,0.3)] flex flex-col items-center text-center">
-              {/* Logo Glow Ring */}
-              <div className="relative w-36 h-36 sm:w-44 sm:h-44 rounded-2xl bg-white p-4 shadow-xl flex items-center justify-center mb-6 overflow-hidden">
+            <div className="w-full max-w-[360px] p-6 sm:p-8 rounded-3xl bg-white/[0.04] border border-white/10 backdrop-blur-md shadow-[0_24px_50px_rgba(0,0,0,0.3)] flex flex-col items-center text-center">
+              {/* Logo Container */}
+              <div className="relative w-32 h-32 sm:w-36 sm:h-36 rounded-2xl bg-white p-3 shadow-xl flex items-center justify-center mb-5 overflow-hidden">
                 <Image
                   src="/images/crown-tech-logo.png"
                   alt="Crown Tech Official Logo"
-                  width={160}
-                  height={160}
+                  width={140}
+                  height={140}
                   className="object-contain"
                   priority
                 />
@@ -55,43 +55,43 @@ export function CrownTechSection() {
               <h3 className="font-display font-bold text-white text-xl sm:text-2xl mb-1">
                 Crown Tech
               </h3>
-              <p className="text-xs sm:text-sm text-emerald-300 font-mono font-medium mb-4">
-                Software & Technology Solutions
+              <p className="text-xs sm:text-sm text-emerald-300 font-mono font-medium mb-3">
+                Software &amp; Technology
               </p>
 
-              <div className="flex items-center gap-2 text-xs text-surface/70 font-sans">
+              <div className="flex items-center gap-1.5 text-xs text-surface/75 font-sans">
                 <MapPin className="w-3.5 h-3.5 text-emerald-400" />
                 <span>Nigeria</span>
               </div>
             </div>
           </div>
 
-          {/* Right Column: The Crown Tech Story (7 Cols) */}
-          <div className="lg:col-span-7 flex flex-col gap-6 text-left">
-            <div className="bg-white/[0.03] rounded-2xl border border-white/10 p-6 sm:p-7">
-              <span className="text-xs font-mono font-bold text-emerald-300 uppercase tracking-wider block mb-2">
-                01 · REAL OPERATIONAL CHALLENGES
+          {/* Right Column: 3 Pillars Narrative (7 Cols) */}
+          <div className="lg:col-span-7 flex flex-col gap-4 text-left">
+            <div className="bg-white/[0.04] rounded-2xl border border-white/10 p-5 sm:p-6">
+              <span className="text-[11px] font-mono font-bold text-emerald-300 uppercase tracking-wider block mb-1.5">
+                01 · THE PROBLEM
               </span>
-              <p className="text-sm sm:text-base text-surface/85 font-sans leading-relaxed">
-                Our approach combines software engineering with an understanding of the operational challenges that schools face every day.
+              <p className="text-xs sm:text-sm text-surface/90 font-sans leading-relaxed">
+                Schools were running on paper receipts, soaked registers and spreadsheets. Teachers spent weekends working out broadsheets by hand.
               </p>
             </div>
 
-            <div className="bg-white/[0.03] rounded-2xl border border-white/10 p-6 sm:p-7">
-              <span className="text-xs font-mono font-bold text-emerald-300 uppercase tracking-wider block mb-2">
-                02 · BUILDING FOR REAL WORKFLOWS
+            <div className="bg-white/[0.04] rounded-2xl border border-white/10 p-5 sm:p-6">
+              <span className="text-[11px] font-mono font-bold text-emerald-300 uppercase tracking-wider block mb-1.5">
+                02 · THE SOLUTION
               </span>
-              <p className="text-sm sm:text-base text-surface/85 font-sans leading-relaxed">
-                We believe school software should do more than display dashboards. It should help people complete tasks, maintain reliable records and follow the right processes.
+              <p className="text-xs sm:text-sm text-surface/90 font-sans leading-relaxed">
+                We designed EDUCTIVE to work on ordinary smartphones, with no costly hardware. Fees, attendance, exams, classwork and the school gate live in one place.
               </p>
             </div>
 
-            <div className="bg-white/[0.03] rounded-2xl border border-white/10 p-6 sm:p-7">
-              <span className="text-xs font-mono font-bold text-emerald-300 uppercase tracking-wider block mb-2">
-                03 · FOCUS ON PRACTICALITY
+            <div className="bg-white/[0.04] rounded-2xl border border-white/10 p-5 sm:p-6">
+              <span className="text-[11px] font-mono font-bold text-emerald-300 uppercase tracking-wider block mb-1.5">
+                03 · FULL SUPPORT
               </span>
-              <p className="text-sm sm:text-base text-surface/85 font-sans leading-relaxed">
-                That means paying attention to how records are created, who reviews them, which actions require approval and what information each role should be able to access.
+              <p className="text-xs sm:text-sm text-surface/90 font-sans leading-relaxed">
+                We set up your classes and staff, train your teachers, and support you by phone and WhatsApp.
               </p>
             </div>
           </div>

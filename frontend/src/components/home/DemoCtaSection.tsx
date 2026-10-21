@@ -44,11 +44,11 @@ export function DemoCtaSection() {
               SECTION HEADLINE & INTRO LINE
              =================================================================== */}
           <h2 className="font-display font-bold text-white text-3xl sm:text-4xl xl:text-[50px] leading-[1.08] tracking-[-1.2px] mb-4 text-balance">
-            Give your school a more organised way to work.
+            Ready to see all eight portals?
           </h2>
 
           <p className="text-base sm:text-lg text-surface/85 font-sans leading-relaxed mb-10 max-w-lg text-balance">
-            See how EDUCTIVE can support the way your school manages its people, records and everyday operations.
+            Get a short walkthrough using your school's own classes.
           </p>
 
           {/* ===================================================================
@@ -118,7 +118,7 @@ export function DemoCtaSection() {
                     type="submit"
                     className="w-full py-4 px-8 rounded-full bg-tangerine-500 hover:bg-tangerine-400 text-ink-900 font-bold text-base flex items-center justify-center gap-3 shadow-lg shadow-tangerine-500/20 hover:shadow-tangerine-500/35 hover:scale-[1.01] transition-all cursor-pointer group"
                   >
-                    <span>Request a Demo</span>
+                    <span>Request a demo</span>
                     <span className="w-6 h-6 rounded-full bg-ink-900 text-tangerine-400 flex items-center justify-center transition-transform group-hover:translate-x-1">
                       <ArrowRight className="w-3.5 h-3.5" />
                     </span>
@@ -134,14 +134,14 @@ export function DemoCtaSection() {
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4 text-xs font-sans text-surface/70">
             <span className="flex items-center gap-1.5">
               <span className="w-2 h-2 rounded-full bg-emerald-400" />
-              <span>Designed for primary and secondary schools</span>
+              <span>Designed for Nigerian primary and secondary schools</span>
             </span>
             <span className="hidden sm:inline text-surface/40">·</span>
             <Link
               href="/product"
               className="text-emerald-300 hover:text-white underline underline-offset-4 font-semibold transition-colors flex items-center gap-1"
             >
-              <span>Explore the Platform</span>
+              <span>Meet the eight portals</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </Link>
           </div>

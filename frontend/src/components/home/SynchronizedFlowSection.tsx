@@ -25,45 +25,45 @@ const STEPS: StepData[] = [
   {
     id: "bursar",
     stepNum: "01",
-    title: "Organise your school",
-    subtitle: "Structure & Setup",
-    summary: "Set up the school's relevant records, classes, staff roles and operating structure.",
+    title: "Tuition fees",
+    subtitle: "Accounts Desk",
+    summary: "Record a payment. The balance updates and the parent can see it in their portal.",
     highlights: [
-      "Configure classes, arms, and student rosters",
-      "Assign staff roles with appropriate access levels",
+      "Record payments in seconds",
+      "Balances and receipts update live",
     ],
   },
   {
     id: "attendance",
     stepNum: "02",
-    title: "Manage everyday activities",
-    subtitle: "Daily Operations",
-    summary: "Use the appropriate tools to manage academic, administrative and financial tasks.",
+    title: "Attendance",
+    subtitle: "Homeroom",
+    summary: "Take roll-call from any phone in under a minute.",
     highlights: [
-      "Record daily attendance and classroom activities",
-      "Manage fee records, payments, and school administration",
+      "One-tap roll-call on any phone",
+      "Absences visible to leadership immediately",
     ],
   },
   {
     id: "assessment",
     stepNum: "03",
-    title: "Review and approve",
-    subtitle: "Verification & Oversight",
-    summary: "Support the review and approval steps required for important school processes.",
+    title: "Assessment",
+    subtitle: "Staff Room",
+    summary: "Enter scores once. Totals, grades and positions work themselves out.",
     highlights: [
-      "Verify continuous assessment scores and broadsheets",
-      "Ensure multi-step approval before official release",
+      "Automatic totals, grades and positions",
+      "Principal locks scores after approval",
     ],
   },
   {
     id: "leadership",
     stepNum: "04",
-    title: "Maintain visibility",
-    subtitle: "Executive Clarity",
-    summary: "Give authorised school leaders access to relevant records and operational information.",
+    title: "Leadership",
+    subtitle: "Principal & Proprietor",
+    summary: "Check fees, attendance and results from your phone, wherever you are.",
     highlights: [
-      "Clear oversight across academic and administrative records",
-      "Reliable information to support informed decisions",
+      "Live fee totals and attendance rate",
+      "Morning summary on your phone",
     ],
   },
 ];
@@ -391,15 +391,12 @@ export function SynchronizedFlowSection() {
             SECTION HEADER (Clean, no AI pill tags, strict copy limits)
            ===================================================================== */}
         <div className="flex flex-col items-center text-center max-w-2xl mx-auto mb-16 xl:mb-20">
-          <span className="text-[11px] font-mono font-bold tracking-[2px] uppercase text-emerald-700 mb-3">
-            FROM DAILY TASKS TO BETTER OVERSIGHT
-          </span>
           <h2 className="font-display font-bold text-ink-900 text-3xl sm:text-4xl xl:text-[46px] leading-[1.1] tracking-[-1.2px] mb-4 text-balance">
-            Connected processes. Clearer responsibilities.
+            Start with the desks you know.
           </h2>
 
           <p className="text-base sm:text-lg text-charcoal-600 font-sans leading-relaxed text-balance">
-            EDUCTIVE is designed to support the work happening across your school, not just store information.
+            Fees, registers, results and oversight, already connected. And that's before the part most schools don't expect.
           </p>
         </div>
 
@@ -563,7 +560,7 @@ export function SynchronizedFlowSection() {
                 href="/product"
                 className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-700 hover:text-emerald-800 transition-colors group cursor-pointer"
               >
-                <span>Explore the Platform</span>
+                <span>See everything it does</span>
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </div>
@@ -669,7 +666,7 @@ export function SynchronizedFlowSection() {
                         <p className="text-xs text-charcoal-600">Monday Roll-Call · 8:02 AM</p>
                       </div>
                       <span className="text-[11px] font-bold text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded border border-emerald-200">
-                        38 Present / 2 Absent
+                        41 Present / 1 Absent
                       </span>
                     </div>
 
@@ -694,7 +691,7 @@ export function SynchronizedFlowSection() {
                       <div className="flex items-center justify-between bg-tangerine-500/10 px-2 -mx-2 rounded py-1">
                         <span className="text-tangerine-700 font-medium">3. Chukwuma David</span>
                         <span className="text-tangerine-600 font-bold text-[10px] uppercase tracking-wider">
-                          ABSENT · SMS SENT
+                          ABSENT · NOTIFIED IN APP
                         </span>
                       </div>
                     </div>
@@ -784,8 +781,8 @@ export function SynchronizedFlowSection() {
                     <div className="grid grid-cols-2 gap-3 mb-4">
                       <div className="bg-ink-800/80 p-3 rounded-lg border border-emerald-500/20">
                         <span className="text-surface/70 block text-[11px] mb-1">Fee Collection</span>
-                        <span className="font-display font-bold text-lg text-white">₦42.8M</span>
-                        <span className="text-[10px] text-emerald-300 block mt-0.5">92% reconciled</span>
+                        <span className="font-display font-bold text-lg text-white">₦42.85M</span>
+                        <span className="text-[10px] text-emerald-300 block mt-0.5">92.8% reconciled</span>
                       </div>
                       <div className="bg-ink-800/80 p-3 rounded-lg border border-emerald-500/20">
                         <span className="text-surface/70 block text-[11px] mb-1">Daily Attendance</span>

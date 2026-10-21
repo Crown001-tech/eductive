@@ -26,27 +26,24 @@ export function ProductEnginesSection() {
         {/* =====================================================================
             SECTION HEADER (Strict AGENTS.md: Heading <= 6 words, Intro <= 18 words)
            ===================================================================== */}
-        {/* =====================================================================
-            SECTION HEADER
-           ===================================================================== */}
         <div className="flex flex-col items-center text-center max-w-2xl mx-auto mb-10 sm:mb-16 xl:mb-20">
           <h2 className="font-display font-bold text-ink-900 text-2xl sm:text-4xl xl:text-[46px] leading-[1.15] tracking-[-1.2px] mb-3 text-balance">
-            More than a place to store school records.
+            Four desks every school knows.
           </h2>
           <p className="text-sm sm:text-base text-charcoal-600 font-sans leading-relaxed text-balance">
-            EDUCTIVE supports the processes behind a school's daily operations. It brings relevant information and tasks together while helping different users work within their assigned responsibilities.
+            Fees, attendance, results and oversight: the paperwork you already do, without the paper.
           </p>
         </div>
 
         {/* =====================================================================
-            ASYMMETRIC BENTO MATRIX (All 4 Engines Visible · Zero Picking/Tabs)
+            ASYMMETRIC BENTO MATRIX (All 4 Desks Visible · Zero Picking/Tabs)
             Row 1: 7 Cols (Bursary) + 5 Cols (Attendance)
-            Row 2: 5 Cols (Assessment) + 7 Cols (Leadership Rollup)
+            Row 2: 5 Cols (Assessment) + 7 Cols (Principal's Morning View)
            ===================================================================== */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-6 xl:gap-8">
           
           {/* -------------------------------------------------------------------
-              CARD 01: BURSARY & FEE CLEARANCE (7 Columns)
+              CARD 01: TUITION FEES (7 Columns)
              ------------------------------------------------------------------- */}
           <div className="lg:col-span-7 bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-7 xl:p-8 border border-line/80 shadow-[0_12px_36px_rgba(7,51,42,0.06)] hover:shadow-[0_20px_50px_rgba(7,51,42,0.1)] transition-all duration-300 flex flex-col justify-between relative overflow-hidden group">
             {/* Watermark Number */}
@@ -57,10 +54,10 @@ export function ProductEnginesSection() {
             {/* Header & Copy */}
             <div className="mb-5 sm:mb-6 relative z-10">
               <h3 className="font-display font-bold text-ink-900 text-xl sm:text-[26px] leading-tight mb-2">
-                Fees & Financial Management
+                Fees and receipts
               </h3>
               <p className="text-xs sm:text-base text-charcoal-600 font-sans leading-relaxed max-w-xl">
-                Record fee payments, track student fee balances, generate official receipts, and maintain clearer financial summaries.
+                Record payments in seconds. Balances update and parents see receipts in their portal.
               </p>
             </div>
 
@@ -94,11 +91,11 @@ export function ProductEnginesSection() {
                 </div>
                 <div>
                   <span className="text-[10px] sm:text-[11px] text-charcoal-500 block">Tuition & Levies</span>
-                  <span className="font-mono font-bold text-ink-900">₦85,000.00</span>
+                  <span className="font-mono font-bold text-ink-900">₦185,000.00</span>
                 </div>
                 <div>
                   <span className="text-[10px] sm:text-[11px] text-charcoal-500 block">Amount Paid (Direct Transfer)</span>
-                  <span className="font-mono font-bold text-emerald-700">₦85,000.00</span>
+                  <span className="font-mono font-bold text-emerald-700">₦185,000.00</span>
                 </div>
                 <div>
                   <span className="text-[10px] sm:text-[11px] text-charcoal-500 block">Outstanding Balance</span>
@@ -134,10 +131,10 @@ export function ProductEnginesSection() {
             {/* Header & Copy */}
             <div className="mb-5 sm:mb-6 relative z-10">
               <h3 className="font-display font-bold text-ink-900 text-xl sm:text-[26px] leading-tight mb-2">
-                Attendance Management
+                Daily attendance register
               </h3>
               <p className="text-xs sm:text-base text-charcoal-600 font-sans leading-relaxed">
-                Record class attendance, track student attendance history, and compile reliable term attendance summaries.
+                Teachers take roll-call on any phone. Absences are visible to leadership as soon as it's saved.
               </p>
             </div>
 
@@ -160,23 +157,23 @@ export function ProductEnginesSection() {
 
               <div className="pl-3 sm:pl-4 space-y-2 text-xs">
                 <div className="flex items-center justify-between border-b border-[#F0EAE1] pb-1.5">
-                  <span className="text-charcoal-800 font-medium">1. Adeyemi Femi</span>
+                  <span className="text-charcoal-800 font-medium">1. Abubakar Ibrahim</span>
                   <span className="text-emerald-700 font-bold flex items-center gap-1 font-mono text-[11px] shrink-0">
-                    <Check className="w-3 h-3 stroke-[3]" /> 07:48 AM
+                    <Check className="w-3 h-3 stroke-[3]" /> 08:00 AM
                   </span>
                 </div>
 
                 <div className="flex items-center justify-between border-b border-[#F0EAE1] pb-1.5">
-                  <span className="text-charcoal-800 font-medium">2. Okon Blessing</span>
+                  <span className="text-charcoal-800 font-medium">2. Adeyemi Femi</span>
                   <span className="text-emerald-700 font-bold flex items-center gap-1 font-mono text-[11px] shrink-0">
-                    <Check className="w-3 h-3 stroke-[3]" /> 07:54 AM
+                    <Check className="w-3 h-3 stroke-[3]" /> 07:58 AM
                   </span>
                 </div>
 
                 <div className="flex items-center justify-between bg-tangerine-500/10 px-2 -mx-1 sm:-mx-2 rounded py-1">
                   <span className="text-tangerine-900 font-medium truncate mr-2">3. Chukwuma David</span>
                   <span className="text-tangerine-700 font-bold text-[10px] font-mono uppercase shrink-0 whitespace-nowrap">
-                    ABSENT · RECORDED
+                    ABSENT · NOTIFIED
                   </span>
                 </div>
               </div>
@@ -189,7 +186,7 @@ export function ProductEnginesSection() {
           </div>
 
           {/* -------------------------------------------------------------------
-              CARD 03: CONTINUOUS ASSESSMENT BROADSHEET (5 Columns)
+              CARD 03: RESULTS & BROADSHEETS (5 Columns)
              ------------------------------------------------------------------- */}
           <div className="lg:col-span-5 bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-7 xl:p-8 border border-line/80 shadow-[0_12px_36px_rgba(7,51,42,0.06)] hover:shadow-[0_20px_50px_rgba(7,51,42,0.1)] transition-all duration-300 flex flex-col justify-between relative overflow-hidden group">
             {/* Watermark Number */}
@@ -200,10 +197,10 @@ export function ProductEnginesSection() {
             {/* Header & Copy */}
             <div className="mb-5 sm:mb-6 relative z-10">
               <h3 className="font-display font-bold text-ink-900 text-xl sm:text-[26px] leading-tight mb-2">
-                Academic Management & Results
+                Results and broadsheets
               </h3>
               <p className="text-xs sm:text-base text-charcoal-600 font-sans leading-relaxed">
-                Enter continuous assessment scores, calculate term totals, and support results review and approval workflows.
+                Enter scores once. Totals, grades and positions are worked out, then the principal approves and locks them.
               </p>
             </div>
 
@@ -224,7 +221,7 @@ export function ProductEnginesSection() {
                 </div>
               </div>
 
-              {/* Assessment Breakdown: 20 + 20 + 60 */}
+              {/* Assessment Breakdown: 18 + 17 + 52 = 87 */}
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-center mb-3">
                 <div className="bg-white rounded-lg p-2 border border-[#E8E2D2]">
                   <span className="text-[9px] text-charcoal-500 block uppercase">1st CA (20)</span>
@@ -232,31 +229,31 @@ export function ProductEnginesSection() {
                 </div>
                 <div className="bg-white rounded-lg p-2 border border-[#E8E2D2]">
                   <span className="text-[9px] text-charcoal-500 block uppercase">2nd CA (20)</span>
-                  <span className="font-bold text-ink-900 text-sm">19</span>
+                  <span className="font-bold text-ink-900 text-sm">17</span>
                 </div>
                 <div className="bg-white rounded-lg p-2 border border-[#E8E2D2]">
                   <span className="text-[9px] text-charcoal-500 block uppercase">Exam (60)</span>
-                  <span className="font-bold text-ink-900 text-sm">54</span>
+                  <span className="font-bold text-ink-900 text-sm">52</span>
                 </div>
                 <div className="bg-emerald-50 rounded-lg p-2 border border-emerald-200 text-emerald-800">
                   <span className="text-[9px] block uppercase font-bold">Total (100)</span>
-                  <span className="font-black text-sm">91</span>
+                  <span className="font-black text-sm">87</span>
                 </div>
               </div>
 
               <div className="flex items-center justify-between pt-2.5 border-t border-[#EDE6D8] font-sans">
                 <div className="text-[10px] sm:text-[11px] text-charcoal-600">
-                  Grade: <span className="font-bold font-mono text-emerald-700">A (Distinction)</span>
+                  Grade: <span className="font-bold font-mono text-emerald-700">A1 (Distinction)</span>
                 </div>
                 <div className="text-[10px] sm:text-[11px] font-bold text-ink-900">
-                  Position: <span className="text-emerald-700 font-mono">1st of 42</span>
+                  Position: <span className="text-emerald-700 font-mono">3rd of 42</span>
                 </div>
               </div>
             </div>
           </div>
 
           {/* -------------------------------------------------------------------
-              CARD 04: SECURITY & RECEPTION PORTAL (7 Columns)
+              CARD 04: PRINCIPAL'S MORNING VIEW (7 Columns)
              ------------------------------------------------------------------- */}
           <div className="lg:col-span-7 bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-7 xl:p-8 border border-line/80 shadow-[0_12px_36px_rgba(7,51,42,0.06)] hover:shadow-[0_20px_50px_rgba(7,51,42,0.1)] transition-all duration-300 flex flex-col justify-between relative overflow-hidden group">
             {/* Watermark Number */}
@@ -267,69 +264,69 @@ export function ProductEnginesSection() {
             {/* Header & Copy */}
             <div className="mb-5 sm:mb-6 relative z-10">
               <h3 className="font-display font-bold text-ink-900 text-xl sm:text-[26px] leading-tight mb-2">
-                Security & Reception Portal
+                Principal's morning view
               </h3>
               <p className="text-xs sm:text-base text-charcoal-600 font-sans leading-relaxed max-w-xl">
-                Record visitor details, track arrivals and departures, support student pickup verification, and maintain access-controlled gate records.
+                Attendance, fees and staff on duty on one screen, from the office or your phone.
               </p>
             </div>
 
-            {/* Authentic Nigerian School Paperwork Artifact: Security & Reception Desk */}
-            <div className="relative z-10 bg-[#FAF9F5] rounded-xl sm:rounded-2xl border border-[#E5DEC9] p-4 sm:p-6 shadow-[0_4px_20px_rgba(0,0,0,0.03)] font-sans text-xs">
-              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 border-b border-[#E5DEC9] pb-3 mb-4">
+            {/* Authentic Nigerian School Paperwork Artifact: Leadership Morning Console */}
+            <div className="relative z-10 bg-[#07332A] text-white rounded-xl sm:rounded-2xl border border-emerald-500/30 p-4 sm:p-6 shadow-[0_4px_20px_rgba(0,0,0,0.1)] font-sans text-xs">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 border-b border-emerald-500/20 pb-3 mb-4">
                 <div className="min-w-0">
-                  <p className="font-display font-bold text-ink-900 text-xs sm:text-sm">
-                    SECURITY & RECEPTION DESK
+                  <p className="font-display font-bold text-white text-xs sm:text-sm">
+                    OAKLAND EXECUTIVE LEADERSHIP CONSOLE
                   </p>
-                  <p className="text-[10px] text-charcoal-500 font-mono">
-                    OAKLAND HIGH · DAILY VISITOR & GATE LOG
+                  <p className="text-[10px] text-emerald-300/80 font-mono">
+                    Morning Rollup · Term 2 Active
                   </p>
                 </div>
-                <div className="self-start sm:self-auto flex items-center gap-1.5 text-[10px] sm:text-[11px] text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded border border-emerald-200 font-bold shrink-0 whitespace-nowrap">
+                <div className="self-start sm:self-auto flex items-center gap-1.5 text-[10px] sm:text-[11px] text-emerald-300 bg-emerald-500/20 px-2.5 py-1 rounded border border-emerald-400/30 font-bold shrink-0 whitespace-nowrap">
                   <ShieldCheck className="w-3.5 h-3.5 shrink-0" />
-                  <span>ACCESS VERIFIED</span>
+                  <span>ALL 18 ARMS REPORTED</span>
                 </div>
               </div>
 
               {/* 3 Executive Metric Tiles */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3 mb-4">
-                <div className="bg-white rounded-xl p-3 border border-[#E8E2D2]">
-                  <span className="text-[10px] text-charcoal-500 font-mono uppercase block mb-1">
-                    Visitors Logged
+                <div className="bg-ink-800/80 rounded-xl p-3 border border-emerald-500/20">
+                  <span className="text-[10px] text-surface/70 font-mono uppercase block mb-1">
+                    Fee Collection
                   </span>
                   <div className="flex items-baseline gap-1.5">
-                    <span className="font-display font-bold text-ink-900 text-base sm:text-lg">18</span>
-                    <span className="text-[10px] text-emerald-700 font-mono font-bold">16 Departed</span>
+                    <span className="font-display font-bold text-white text-base sm:text-lg">₦42.85M</span>
+                    <span className="text-[10px] text-emerald-300 font-mono">92.8%</span>
                   </div>
                 </div>
 
-                <div className="bg-white rounded-xl p-3 border border-[#E8E2D2]">
-                  <span className="text-[10px] text-charcoal-500 font-mono uppercase block mb-1">
-                    Student Pickups
+                <div className="bg-ink-800/80 rounded-xl p-3 border border-emerald-500/20">
+                  <span className="text-[10px] text-surface/70 font-mono uppercase block mb-1">
+                    Daily Attendance
                   </span>
                   <div className="flex items-baseline gap-1.5">
-                    <span className="font-display font-bold text-emerald-800 text-base sm:text-lg">24 Verified</span>
-                    <span className="text-[10px] text-charcoal-500 font-mono">Matched</span>
+                    <span className="font-display font-bold text-emerald-300 text-base sm:text-lg">98.4%</span>
+                    <span className="text-[10px] text-surface/60 font-mono">Present</span>
                   </div>
                 </div>
 
-                <div className="bg-white rounded-xl p-3 border border-[#E8E2D2]">
-                  <span className="text-[10px] text-charcoal-500 font-mono uppercase block mb-1">
-                    Gate Access
+                <div className="bg-ink-800/80 rounded-xl p-3 border border-emerald-500/20">
+                  <span className="text-[10px] text-surface/70 font-mono uppercase block mb-1">
+                    Staff on Duty
                   </span>
                   <div className="flex items-baseline gap-1.5">
-                    <span className="font-display font-bold text-ink-900 text-base sm:text-lg">Gates 1 & 2</span>
-                    <span className="text-[10px] text-emerald-700 font-mono font-bold">Active</span>
+                    <span className="font-display font-bold text-white text-base sm:text-lg">34 / 34</span>
+                    <span className="text-[10px] text-emerald-300 font-mono">Checked In</span>
                   </div>
                 </div>
               </div>
 
-              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1.5 pt-3 border-t border-[#EDE6D8] text-[10px] sm:text-[11px]">
-                <span className="text-charcoal-600">
-                  Duty Officer: <span className="font-bold text-ink-900">S. Danjuma</span>
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1.5 pt-3 border-t border-emerald-500/20 text-[10px] sm:text-[11px] text-surface/75">
+                <span>
+                  Principal: <span className="font-bold text-white">Rev. Dr. Okonjo</span>
                 </span>
-                <span className="font-mono text-emerald-700 font-bold">
-                  Access Controlled Gate Records
+                <span className="font-mono text-emerald-300 font-bold">
+                  Synced across office & mobile
                 </span>
               </div>
             </div>
@@ -337,6 +334,14 @@ export function ProductEnginesSection() {
 
         </div>
 
+        {/* =====================================================================
+            BOTTOM CONNECTED RIBBON
+           ===================================================================== */}
+        <div className="mt-12 sm:mt-16 text-center py-4 px-6 rounded-2xl bg-white border border-line/80 shadow-sm max-w-xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-2 text-xs sm:text-sm text-charcoal-700">
+          <span className="font-bold text-emerald-800 font-display">ONE RECORD · NO DUPLICATE WORK</span>
+          <span className="hidden sm:inline text-charcoal-400">·</span>
+          <span>Record something once. Everyone who needs it can see it.</span>
+        </div>
 
       </div>
     </section>

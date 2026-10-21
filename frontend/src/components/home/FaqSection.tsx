@@ -13,51 +13,51 @@ interface FaqItem {
 
 const FAQS: FaqItem[] = [
   {
-    id: "what-is-eductive",
+    id: "need-app",
     num: "01",
-    question: "What is EDUCTIVE?",
+    question: "Do parents and teachers need to install an app?",
     answer:
-      "EDUCTIVE is a school management system that helps schools organise academic, administrative and financial operations through one platform.",
+      "No. EDUCTIVE runs in any mobile browser. Parents and teachers can add it to their home screen like an app.",
   },
   {
-    id: "who-is-it-for",
+    id: "slow-internet",
     num: "02",
-    question: "Who is EDUCTIVE designed for?",
+    question: "What happens when the internet is slow?",
     answer:
-      "It is designed for primary and secondary schools, including school owners, principals, administrators and bursars. Teacher, student and parent access depends on the available portals and enabled features.",
+      "EDUCTIVE is built to work on regular Nigerian mobile data. Pages are light and load quickly.",
   },
   {
-    id: "what-can-manage",
+    id: "older-teachers",
     num: "03",
-    question: "What can my school manage with EDUCTIVE?",
+    question: "Can our older teachers use this easily?",
     answer:
-      "Depending on the modules enabled, schools can manage student records, admissions, attendance, academic activities, results, fees, staff information, communications and other administrative processes.",
+      "Yes. Each teacher sees only what their day requires: roll-call, classwork and marks. We train your staff directly.",
   },
   {
-    id: "access-levels",
+    id: "change-marks",
     num: "04",
-    question: "Can different staff members have different access levels?",
+    question: "Can a teacher change marks after submission?",
     answer:
-      "EDUCTIVE supports role-based access so users can work within the responsibilities assigned to their roles. The precise permissions depend on the configured roles and workflows.",
+      "No. Once the principal approves continuous assessment or exam scores, they are locked permanently.",
   },
   {
-    id: "see-platform",
+    id: "staff-privacy",
     num: "05",
-    question: "Can we see the platform before deciding?",
+    question: "Can staff see each other's records or salaries?",
     answer:
-      "Yes. Request a demo to arrange a walkthrough of the platform and discuss your school's needs.",
+      "No. Every portal is strictly isolated. Teachers see only their classes, bursars see fees, and leaders see the whole school.",
   },
   {
-    id: "get-started",
+    id: "setup-time",
     num: "06",
-    question: "How do we get started?",
+    question: "How long does setup take for our school?",
     answer:
-      "Submit a demo request. The EDUCTIVE team can discuss your school, demonstrate the relevant features and explain the applicable setup process.",
+      "We set up your school classes, subjects and staff rosters, usually within a few days.",
   },
 ];
 
 export function FaqSection() {
-  const [openId, setOpenId] = useState<string | null>("what-is-eductive");
+  const [openId, setOpenId] = useState<string | null>("need-app");
 
   const toggleFaq = (id: string) => {
     setOpenId(openId === id ? null : id);
@@ -88,7 +88,7 @@ export function FaqSection() {
 
             {/* Intro Line */}
             <p className="text-base sm:text-lg text-charcoal-600 font-sans leading-relaxed mb-8 max-w-md text-balance">
-              Clear answers about EDUCTIVE, role access, and how to get started.
+              Straight answers on devices, internet, access and setup.
             </p>
 
             {/* Direct Lagos Implementation Desk Card */}

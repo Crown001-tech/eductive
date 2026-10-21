@@ -27,12 +27,12 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   title: "EDUCTIVE — Coordinated School Management for Modern Nigerian Schools",
   description:
-    "EDUCTIVE synchronizes school administration, academic management, attendance registers, and bursar fee recordkeeping into one clear, reliable operating platform.",
+    "EDUCTIVE synchronizes school administration, academic management, attendance registers, and tuition fee recordkeeping into one clear, reliable operating platform.",
   keywords: [
     "school management software",
     "Nigerian school platform",
     "school administration software",
-    "bursar fee tracking",
+    "tuition fee tracking",
     "student report cards Nigeria",
     "school portal Nigeria",
     "Oakland School",

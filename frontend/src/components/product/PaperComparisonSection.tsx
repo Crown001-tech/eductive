@@ -11,62 +11,73 @@ interface ComparisonRow {
 
 const COMPARISONS: ComparisonRow[] = [
   {
-    aspect: "Fee Receipts",
-    paperProblem: "Paper receipts and manual bank teller reconciliation can lead to conflicting records.",
-    eductiveSolution: "Official digital receipt recorded immediately with automatic fee balance updates.",
+    aspect: "Fee receipts",
+    paperProblem: "Lost receipts and manual bank teller confusion.",
+    eductiveSolution: "Every payment recorded once, with a digital receipt the parent can open anytime.",
   },
   {
-    aspect: "Class Registers",
-    paperProblem: "Physical registers take time to manage and make historical attendance harder to review.",
-    eductiveSolution: "Direct digital roll-call with permanent attendance records and term summaries.",
+    aspect: "Class registers",
+    paperProblem: "Registers that tear, get soaked or go missing.",
+    eductiveSolution: "Roll-call on any phone, with permanent attendance records.",
   },
   {
-    aspect: "Results & Broadsheets",
-    paperProblem: "Compiling continuous assessment and terminal examinations manually increases review delays.",
-    eductiveSolution: "Standardised score entry, automated grade computation and structured approval reviews.",
+    aspect: "Exam broadsheets",
+    paperProblem: "Teachers spending weekends working out totals and positions by hand.",
+    eductiveSolution: "Totals, grades and class positions worked out for you.",
   },
   {
-    aspect: "School Oversight",
-    paperProblem: "School leaders often lack immediate visibility into fee collections, attendance and approvals.",
-    eductiveSolution: "Clear, role-based operational visibility across departments from any supported device.",
+    aspect: "School oversight",
+    paperProblem: "Waiting until end of term to know what fees were paid.",
+    eductiveSolution: "Live fee totals and attendance, visible from your phone.",
+  },
+  {
+    aspect: "Visitors",
+    paperProblem: "A gate book nobody checks.",
+    eductiveSolution: "Every visitor and entry recorded, visible to leadership.",
+  },
+  {
+    aspect: "Parents",
+    paperProblem: "Parents chasing the school for results and balances.",
+    eductiveSolution: "Results, attendance and fee records in the parent portal.",
   },
 ];
 
 export function PaperComparisonSection() {
   return (
-    <section className="relative w-full bg-white text-charcoal-900 py-24 xl:py-36 border-t border-line/70 select-none overflow-hidden">
-      <div className="relative max-w-[1440px] mx-auto px-6 sm:px-12 xl:px-16 z-10">
+    <section className="relative w-full bg-white text-charcoal-900 py-16 sm:py-24 xl:py-32 border-t border-line/70 select-none overflow-hidden">
+      <div className="relative max-w-[1400px] mx-auto px-4 sm:px-8 xl:px-14 z-10">
         
-        {/* Section Header */}
-        <div className="flex flex-col items-center text-center max-w-2xl mx-auto mb-16 xl:mb-20">
-          <span className="text-xs font-mono font-bold tracking-widest uppercase text-emerald-700 mb-3">
-            PRACTICAL WORKFLOWS
-          </span>
-          <h2 className="font-display font-bold text-ink-900 text-3xl sm:text-4xl xl:text-[46px] leading-[1.1] tracking-[-1.2px] mb-4 text-balance">
-            See the platform in action.
+        {/* =====================================================================
+            SECTION HEADER (Strict AGENTS.md: Heading <= 6 words, Intro <= 18 words)
+           ===================================================================== */}
+        <div className="flex flex-col items-center text-center max-w-2xl mx-auto mb-12 sm:mb-16 xl:mb-20">
+          <h2 className="font-display font-bold text-ink-900 text-2xl sm:text-4xl xl:text-[46px] leading-[1.15] tracking-[-1.2px] mb-3 text-balance">
+            From paper chaos to one record.
           </h2>
-          <p className="text-base sm:text-lg text-charcoal-600 font-sans leading-relaxed text-balance">
-            Explore how EDUCTIVE supports everyday school activities through its actual interface and workflows.
+          <p className="text-sm sm:text-base text-charcoal-600 font-sans leading-relaxed text-balance">
+            Everything you used to write on paper, stored safely and always at hand.
           </p>
         </div>
 
-        {/* Comparison Grid */}
-        <div className="max-w-4xl mx-auto space-y-4">
+        {/* =====================================================================
+            COMPARISON MATRIX (6 Rows · Bespoke Tactile Styling)
+           ===================================================================== */}
+        <div className="max-w-4xl mx-auto space-y-3.5">
           {COMPARISONS.map((row, idx) => (
             <div
               key={idx}
-              className="grid grid-cols-1 md:grid-cols-12 rounded-2xl border border-line overflow-hidden shadow-sm"
+              className="grid grid-cols-1 md:grid-cols-12 rounded-2xl border border-[#E5DEC9] overflow-hidden shadow-[0_4px_16px_rgba(7,51,42,0.03)] bg-white hover:border-emerald-300 transition-colors duration-200"
             >
-              {/* Aspect Label */}
-              <div className="md:col-span-3 bg-surface p-4 sm:p-5 border-b md:border-b-0 md:border-r border-line flex items-center">
-                <span className="font-display font-bold text-ink-900 text-base">
+              {/* Aspect Label (3 Columns) */}
+              <div className="md:col-span-3 bg-[#FAF9F5] p-4 sm:p-5 border-b md:border-b-0 md:border-r border-[#E5DEC9] flex items-center">
+                <span className="font-display font-bold text-ink-900 text-sm sm:text-base">
                   {row.aspect}
                 </span>
               </div>
 
-              {/* Paper Problem */}
-              <div className="md:col-span-4 bg-red-50/40 p-4 sm:p-5 border-b md:border-b-0 md:border-r border-line flex items-start gap-3">
-                <div className="w-5 h-5 rounded-full bg-red-100 text-red-600 flex items-center justify-center flex-shrink-0 mt-0.5">
+              {/* Paper Problem (4 Columns) */}
+              <div className="md:col-span-4 bg-red-50/30 p-4 sm:p-5 border-b md:border-b-0 md:border-r border-[#E5DEC9] flex items-start gap-2.5">
+                <div className="w-5 h-5 rounded-full bg-red-100 text-red-600 flex items-center justify-center shrink-0 mt-0.5">
                   <X className="w-3.5 h-3.5 stroke-[3]" />
                 </div>
                 <p className="text-xs sm:text-sm text-charcoal-700 font-sans leading-relaxed">
@@ -74,9 +85,9 @@ export function PaperComparisonSection() {
                 </p>
               </div>
 
-              {/* Eductive Solution */}
-              <div className="md:col-span-5 bg-emerald-50/40 p-4 sm:p-5 flex items-start gap-3">
-                <div className="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center flex-shrink-0 mt-0.5">
+              {/* Eductive Solution (5 Columns) */}
+              <div className="md:col-span-5 bg-emerald-50/30 p-4 sm:p-5 flex items-start gap-2.5">
+                <div className="w-5 h-5 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0 mt-0.5">
                   <Check className="w-3.5 h-3.5 stroke-[3]" />
                 </div>
                 <p className="text-xs sm:text-sm text-ink-900 font-sans font-medium leading-relaxed">

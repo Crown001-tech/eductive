@@ -3,10 +3,11 @@
 import React from "react";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/Button";
 
 export function AboutHero() {
   return (
-    <section className="relative w-full bg-[#07332A] text-white pt-36 pb-24 xl:pt-44 xl:pb-32 overflow-hidden select-none">
+    <section className="relative w-full bg-[#07332A] text-white pt-36 pb-20 xl:pt-44 xl:pb-28 overflow-hidden select-none">
       {/* Background Architectural Grid Pattern */}
       <div className="absolute inset-0 pointer-events-none opacity-5">
         <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
@@ -29,41 +30,43 @@ export function AboutHero() {
           ABOUT EDUCTIVE
         </span>
 
-        {/* Headline */}
-        <h1 className="font-display font-bold text-white text-4xl sm:text-5xl xl:text-[56px] leading-[1.08] tracking-[-1.5px] mb-6 max-w-3xl text-balance">
-          Better organised schools start with better systems.
+        {/* Headline (<= 8 words) */}
+        <h1 className="font-display font-bold text-white text-4xl sm:text-5xl xl:text-[56px] leading-[1.08] tracking-[-1.5px] mb-5 max-w-3xl text-balance">
+          Scattered registers to one connected platform.
         </h1>
 
-        {/* Supporting Copy */}
-        <p className="text-base sm:text-lg xl:text-xl text-surface/80 font-sans leading-relaxed max-w-2xl mb-10 text-balance">
-          EDUCTIVE was created to help schools bring essential academic, administrative and financial activities into a more organised digital environment.
+        {/* Supporting Copy (<= 20 words) */}
+        <p className="text-base sm:text-lg xl:text-xl text-surface/90 font-sans leading-relaxed max-w-2xl mb-8 text-balance">
+          EDUCTIVE replaces scattered registers, receipt books and spreadsheets with one connected platform for the whole school.
         </p>
 
         {/* Primary CTA & Secondary Link */}
         <div className="flex flex-col sm:flex-row items-center gap-4">
-          <Link
-            href="/product"
-            className="inline-flex items-center justify-center font-sans font-semibold rounded-full px-8 py-3.5 text-sm bg-tangerine-500 hover:bg-tangerine-400 text-ink-900 shadow-lg hover:shadow-xl transition-all duration-200 cursor-pointer"
+          <Button
+            href="/demo"
+            variant="primary"
+            size="lg"
+            className="px-8 py-4 rounded-full font-bold shadow-lg shadow-tangerine-500/20 hover:scale-[1.02]"
           >
-            Explore the Platform
-          </Link>
+            Request a demo
+          </Button>
 
           <Link
-            href="/demo"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-surface/80 hover:text-white px-4 py-3 transition-colors"
+            href="/product"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-300 hover:text-white px-4 py-3 transition-colors"
           >
-            <span>Request a Demo</span>
+            <span>See all eight portals</span>
             <ArrowRight className="w-4 h-4 text-emerald-400" />
           </Link>
         </div>
 
-        {/* Subtle verification footnote */}
-        <div className="mt-14 pt-8 border-t border-emerald-500/15 flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-xs font-mono text-emerald-300/80">
-          <span>Designed for School Operations</span>
+        {/* Footnote Chips */}
+        <div className="mt-12 pt-6 border-t border-emerald-500/15 flex flex-wrap items-center justify-center gap-4 sm:gap-8 text-xs font-mono text-emerald-300/80">
+          <span>Engineered in Nigeria</span>
           <span className="w-1 h-1 rounded-full bg-emerald-500/40" />
-          <span>Primary & Secondary Schools</span>
+          <span>Eight portals</span>
           <span className="w-1 h-1 rounded-full bg-emerald-500/40" />
-          <span>Developed by Crown Tech</span>
+          <span>Works on any phone</span>
         </div>
 
       </div>

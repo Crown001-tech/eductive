@@ -325,10 +325,10 @@ export function HeroSection() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="text-[12px] font-bold tracking-[2.5px] uppercase text-emerald-300 font-sans mb-3.5"
             >
-              SCHOOL MANAGEMENT, CONNECTED
+              EIGHT PORTALS. ONE SCHOOL.
             </motion.p>
 
-            {/* Display XL Headline with Balanced Break */}
+            {/* Display XL Headline with Balanced Break (PRESERVED) */}
             <motion.h1
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
@@ -346,10 +346,10 @@ export function HeroSection() {
               transition={{ duration: 0.6, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
               className="text-[16px] xl:text-[17px] text-surface/90 leading-[1.6] font-sans max-w-[480px] mb-6"
             >
-              From student records and academic activities to school finances and daily administration, EDUCTIVE brings essential school operations together in one organised system.
+              EDUCTIVE runs everything in between, for owners, principals, teachers, parents and students. Built for Nigerian schools.
             </motion.p>
 
-            {/* 4 Interactive Module Station Tags (Subtle tags at idle, interactive pulse on click) */}
+            {/* 4 Teaser Chips */}
             <motion.div
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
@@ -357,10 +357,10 @@ export function HeroSection() {
               className="flex flex-wrap items-center gap-2 mb-6"
             >
               {[
-                { name: "Leadership", id: "leadership" },
-                { name: "Attendance", id: "attendance" },
-                { name: "Assessment", id: "assessment" },
-                { name: "Bursar fees", id: "bursar" },
+                { name: "Tuition fees", id: "bursar" },
+                { name: "CBT exams", id: "cbt" },
+                { name: "Gate & visitors", id: "gate" },
+                { name: "Parent portal", id: "parent" },
               ].map((m) => {
                 const isActive = activeFeature === m.id;
                 return (
@@ -394,7 +394,7 @@ export function HeroSection() {
                   size="lg"
                   className="group px-8 py-4 rounded-full text-base font-bold shadow-lg shadow-tangerine-500/20 hover:shadow-tangerine-500/35 hover:scale-[1.02] transition-all flex items-center gap-3"
                 >
-                  <span>Request a Demo</span>
+                  <span>Request a demo</span>
                   <span className="w-7 h-7 rounded-full bg-ink-900 text-tangerine-400 flex items-center justify-center transition-transform group-hover:translate-x-1">
                     <ArrowRight className="w-4 h-4" />
                   </span>
@@ -407,7 +407,7 @@ export function HeroSection() {
                   <span className="w-4 h-4 rounded-full bg-emerald-400 text-ink-900 flex items-center justify-center text-[10px] font-black flex-shrink-0">
                     ✓
                   </span>
-                  <span>Designed for the way primary and secondary schools operate.</span>
+                  <span>Built in Nigeria, for Nigerian schools.</span>
                 </div>
                 <div className="text-[12px] text-surface/75 pl-6">
                   Demonstration School:{" "}
@@ -450,23 +450,23 @@ export function HeroSection() {
         <div className="relative z-10 flex flex-col items-start max-w-xl mx-auto">
           {/* Eyebrow */}
           <span className="text-[11px] font-mono font-bold tracking-[2px] uppercase text-emerald-300 mb-3">
-            SCHOOL MANAGEMENT, CONNECTED
+            EIGHT PORTALS. ONE SCHOOL.
           </span>
 
-          {/* Headline */}
+          {/* Headline (PRESERVED) */}
           <h1 className="font-display font-bold text-white text-[36px] sm:text-[44px] leading-[1.08] tracking-[-1px] mb-4 text-balance">
             Everything your school runs on. <br />
             In one place.
           </h1>
 
-          {/* Subtext */}
+          {/* Subtext (mobile) */}
           <p className="text-sm sm:text-base text-surface/85 font-sans leading-relaxed mb-6 text-balance">
-            From student records and academic activities to school finances and daily administration, EDUCTIVE brings essential school operations together in one organised system.
+            EDUCTIVE runs everything in between, one portal for every person. Built for Nigerian schools.
           </p>
 
           {/* Feature tags */}
           <div className="flex flex-wrap items-center gap-2 mb-7">
-            {["Leadership", "Attendance", "Assessment", "Bursar fees"].map((name) => (
+            {["Tuition fees", "CBT exams", "Gate & visitors", "Parent portal"].map((name) => (
               <span
                 key={name}
                 className="px-3 py-1 rounded-full text-xs font-mono font-medium bg-white/[0.06] border border-white/10 text-emerald-200"
@@ -482,7 +482,7 @@ export function HeroSection() {
               href="/demo"
               className="inline-flex items-center justify-center font-sans font-semibold rounded-full px-8 py-4 text-sm bg-tangerine-500 hover:bg-tangerine-400 text-ink-900 shadow-lg shadow-tangerine-500/20 gap-2.5 transition-all"
             >
-              <span>Request a Demo</span>
+              <span>Request a demo</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
 
@@ -491,7 +491,7 @@ export function HeroSection() {
                 ✓
               </span>
               <span>
-                Designed for primary and secondary schools
+                Built in Nigeria, for Nigerian schools.
               </span>
             </div>
           </div>

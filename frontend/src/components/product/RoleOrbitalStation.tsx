@@ -21,52 +21,52 @@ const ROLES: RoleAccess[] = [
   {
     id: "proprietor",
     name: "Dr. A. Adeleke",
-    title: "School Proprietor / Owner",
+    title: "Proprietor",
     department: "Executive Board",
     avatar: "/images/avatars/proprietor.jpg",
     angleDeg: -55,
     orbitRing: 3,
-    headline: "Oversight across school operations and finances.",
+    headline: "See the whole school at a glance.",
     summary:
       "Access high-level financial records, fee collections, attendance trends and key approvals from any device.",
     permissions: [
       "Fee collections and outstanding balance summaries",
-      "Review and approve departmental expense vouchers",
-      "Operational visibility across all school departments",
+      "Executive operational oversight across all school departments",
+      "Review and approve departmental expenditure vouchers",
     ],
   },
   {
     id: "principal",
     name: "Rev. Dr. Okonjo",
-    title: "Principal / Head of School",
+    title: "Principal",
     department: "Academic Leadership",
     avatar: "/images/principal-teacher-transparent.png",
     angleDeg: 30,
     orbitRing: 2,
-    headline: "Academic coordination and school process reviews.",
+    headline: "Run academics and administration.",
     summary:
-      "Review academic submissions, sign off on broadsheets, monitor teacher activity and oversee everyday school processes.",
+      "Review continuous assessment submissions, sign off on broadsheets, monitor roll-call and oversee everyday school processes.",
     permissions: [
       "Review and approve continuous assessment and broadsheets",
-      "Oversee teacher submissions and curriculum coverage",
-      "Monitor class attendance and resolve student queries",
+      "One-click broadsheet score locking after terminal review",
+      "Monitor morning roll-call across all classes and arms",
     ],
   },
   {
     id: "bursar",
     name: "Mrs. F. Adebayo",
-    title: "School Bursar / Accountant",
+    title: "Bursar",
     department: "Bursary & Accounts",
     avatar: "/images/avatars/bursar.jpg",
-    angleDeg: 140,
+    angleDeg: 145,
     orbitRing: 3,
-    headline: "Record payments, manage fee balances and issue receipts.",
+    headline: "Keep every naira accounted for.",
     summary:
-      "Keep clear financial records, track student fee payments, generate stamped receipts and export accurate balance lists.",
+      "Record payments, manage fee balances, issue digital receipts, and maintain clear records for leadership and parents.",
     permissions: [
-      "Record student fee payments and verify bank deposits",
-      "Generate official stamped receipts for parents",
-      "Export class balance lists and fee defaulter records",
+      "Record student tuition payments and verify direct bank deposits",
+      "Generate official stamped electronic receipts for parents",
+      "Export class-by-class fee summaries and outstanding balance lists",
     ],
   },
   {
@@ -75,15 +75,15 @@ const ROLES: RoleAccess[] = [
     title: "Class Teacher",
     department: "JSS 2 Gold",
     avatar: "/images/avatars/class-teacher.jpg",
-    angleDeg: -145,
+    angleDeg: -150,
     orbitRing: 2,
-    headline: "Manage classroom records and student attendance.",
+    headline: "Your class, from the first bell.",
     summary:
-      "Record daily attendance, track class academic performance and update student profiles directly from your mobile device or computer.",
+      "Take morning roll-call on any phone, compile term attendance, and manage homeroom student records.",
     permissions: [
-      "Digital morning roll-call with attendance records",
-      "Compile termly attendance records automatically",
-      "Direct academic updates for assigned classes",
+      "Digital morning roll-call in under a minute from any phone",
+      "Instant notification to leadership and parent on absences",
+      "Automatic term attendance compilation for report cards",
     ],
   },
   {
@@ -92,32 +92,66 @@ const ROLES: RoleAccess[] = [
     title: "Subject Teacher",
     department: "Mathematics & Science",
     avatar: "/images/avatars/subject-teacher.jpg",
-    angleDeg: -10,
+    angleDeg: -20,
     orbitRing: 1,
-    headline: "Enter continuous assessment and exam scores.",
+    headline: "Teach, set work, test and mark.",
     summary:
-      "Record continuous assessment marks, calculate student term totals, and submit scores for class teacher and principal review.",
+      "Record continuous assessment scores, post class assignments, set computer-based tests and calculate marks.",
     permissions: [
-      "Continuous assessment and examination score entry",
-      "Built-in score limits prevent accidental typing errors",
-      "Automated subject rankings and grade computation",
+      "Continuous assessment and exam score recording with error protection",
+      "Set computer-based tests with automatic score processing",
+      "Upload homework, worksheets and lesson notes to student portals",
     ],
   },
   {
     id: "security",
     name: "Officer S. Danjuma",
-    title: "Security & Reception Officer",
+    title: "Security",
     department: "Main Gate & Front Desk",
     avatar: "/images/avatars/security-officer.jpg",
     angleDeg: 85,
     orbitRing: 2,
-    headline: "Visitor logs, pickup verification and gate records.",
+    headline: "Know who comes and goes.",
     summary:
-      "Record visitor details, monitor arrivals and departures, verify student pickups with authorized guardians, and maintain gate access records.",
+      "Register visitors, issue digital passes, verify student pickups with authorized guardians and record gate activity.",
     permissions: [
-      "Visitor registration and daily gate check-in logs",
-      "Guardian verification for safe student pickups",
-      "Access-controlled records for campus entry and departure",
+      "Visitor registration and digital gate pass creation",
+      "Pickup verification matched with authorized family guardians",
+      "Live gate activity log accessible by school leadership",
+    ],
+  },
+  {
+    id: "student",
+    name: "Adeyemi Femi",
+    title: "Student",
+    department: "JSS 2 Gold",
+    avatar: "/images/avatars/student.jpg",
+    angleDeg: -95,
+    orbitRing: 1,
+    headline: "Everything for school, in one login.",
+    summary:
+      "Check your timetable, sit CBT tests, open homework assignments, and view approved report cards.",
+    permissions: [
+      "Sit computer-based tests with instant score feedback",
+      "Open lesson notes and homework assignments posted by teachers",
+      "View terminal report cards, grades and class positions",
+    ],
+  },
+  {
+    id: "parent",
+    name: "Mrs. O. Adeyemi",
+    title: "Parent",
+    department: "Adeyemi Femi (JSS 2 Gold)",
+    avatar: "/images/avatars/parent.jpg",
+    angleDeg: -115,
+    orbitRing: 3,
+    headline: "Know how your child is doing.",
+    summary:
+      "See attendance, terminal results, verified fee receipts and school announcements directly from your phone.",
+    permissions: [
+      "Live morning arrival notifications when roll-call is taken",
+      "Access official stamped fee receipts and fee balances anytime",
+      "View approved terminal results with teacher remarks",
     ],
   },
 ];
@@ -138,15 +172,13 @@ const getOrbitRadius = (ring: 1 | 2 | 3, size: number) => {
 export function RoleOrbitalStation() {
   const [activeRoleId, setActiveRoleId] = useState<string>("proprietor");
   const activeRole = ROLES.find((r) => r.id === activeRoleId) || ROLES[0];
-
   const containerRef = useRef<HTMLDivElement>(null);
-  const [stageSize, setStageSize] = useState<number>(340);
+  const [stageSize, setStageSize] = useState<number>(440);
 
   useEffect(() => {
     const updateSize = () => {
       if (containerRef.current) {
-        const w = containerRef.current.clientWidth;
-        if (w > 0) setStageSize(w);
+        setStageSize(containerRef.current.clientWidth);
       }
     };
     updateSize();
@@ -167,23 +199,23 @@ export function RoleOrbitalStation() {
       <div className="relative max-w-[1440px] mx-auto px-4 sm:px-8 xl:px-16 z-10">
         
         {/* =====================================================================
-            SECTION HEADER
+            SECTION HEADER (Eight Portals Aligned)
            ===================================================================== */}
         <div className="flex flex-col items-center text-center max-w-2xl mx-auto mb-10 sm:mb-16 xl:mb-20">
           <span className="text-xs font-mono font-bold tracking-widest uppercase text-emerald-300 mb-2 sm:mb-3">
-            ROLE-BASED GOVERNANCE
+            EIGHT PORTALS
           </span>
           <h2 className="font-display font-bold text-white text-2xl sm:text-4xl xl:text-[44px] leading-[1.15] tracking-[-1.2px] mb-3 text-balance">
-            Designed around responsibilities, not just accounts.
+            Eight people. Eight workspaces.
           </h2>
           <p className="text-sm sm:text-base text-surface/85 font-sans leading-relaxed text-balance">
-            Different people perform different jobs in a school. EDUCTIVE provides role-based workspaces intended to give users access to the functions and information relevant to their responsibilities.
+            Everyone sees only what their job requires.
           </p>
         </div>
 
         {/* =====================================================================
             DUAL-STAGE INTERACTIVE WORKSPACE
-            Left: Concentric Orbital Ring System with Profile Nodes
+            Left: Concentric Orbital Ring System with 8 Profile Nodes
             Right: Deep Role Workspace Inspection Card
            ===================================================================== */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 xl:gap-16 items-center">
@@ -193,7 +225,7 @@ export function RoleOrbitalStation() {
              =================================================================== */}
           <div className="lg:col-span-6 flex flex-col items-center justify-center">
             
-            {/* Action Prompt with Large Clear Typography & Animated Pointer Sign */}
+            {/* Action Prompt */}
             <div className="mb-6 flex flex-col items-center text-center select-none">
               <div className="inline-flex items-center gap-2.5 sm:gap-3">
                 <h3 className="font-display font-bold text-xl sm:text-2xl xl:text-3xl text-white tracking-tight">
@@ -220,7 +252,7 @@ export function RoleOrbitalStation() {
             {/* The Orbital Stage Container */}
             <div
               ref={containerRef}
-              className="relative w-full max-w-[320px] xs:max-w-[350px] sm:max-w-[440px] xl:max-w-[480px] aspect-square flex items-center justify-center mx-auto"
+              className="relative w-full max-w-[340px] xs:max-w-[370px] sm:max-w-[460px] xl:max-w-[500px] aspect-square flex items-center justify-center mx-auto"
             >
               
               {/* SVG Concentric Orbit Rings & Telemetry Arcs */}
@@ -315,13 +347,15 @@ export function RoleOrbitalStation() {
                 </span>
               </div>
 
-              {/* 5 Orbiting Profile Nodes: Mathematically aligned on SVG circles */}
+              {/* 8 Orbiting Profile Nodes */}
               {ROLES.map((role) => {
                 const isActive = activeRoleId === role.id;
                 const rad = (role.angleDeg * Math.PI) / 180;
                 const r = getOrbitRadius(role.orbitRing, stageSize);
                 const x = Math.cos(rad) * r;
                 const y = Math.sin(rad) * r;
+                const isInitials = role.avatar.startsWith("initials:");
+                const initialsText = isInitials ? role.avatar.replace("initials:", "") : "";
 
                 return (
                   <button
@@ -344,30 +378,36 @@ export function RoleOrbitalStation() {
 
                       {/* Profile Avatar Badge */}
                       <div
-                        className={`w-10 h-10 sm:w-14 sm:h-14 rounded-full overflow-hidden border-2 transition-all duration-300 relative shadow-xl ${
+                        className={`w-10 h-10 sm:w-13 sm:h-13 rounded-full overflow-hidden border-2 transition-all duration-300 relative shadow-xl ${
                           isActive
                             ? "border-emerald-400 ring-4 ring-emerald-400/30 shadow-[0_0_24px_#3DDC97] scale-110"
                             : "border-emerald-500/40 group-hover:border-emerald-300 group-hover:scale-110 group-hover:shadow-[0_0_18px_rgba(61,220,151,0.5)]"
                         }`}
                       >
-                        <Image
-                          src={role.avatar}
-                          alt={role.title}
-                          width={64}
-                          height={64}
-                          className="w-full h-full object-cover"
-                        />
+                        {isInitials ? (
+                          <div className="w-full h-full bg-[#0E3D31] text-emerald-300 font-display font-bold flex items-center justify-center text-xs sm:text-sm">
+                            {initialsText}
+                          </div>
+                        ) : (
+                          <Image
+                            src={role.avatar}
+                            alt={role.title}
+                            width={64}
+                            height={64}
+                            className="w-full h-full object-cover"
+                          />
+                        )}
                       </div>
 
                       {/* Role Name Chip below Avatar */}
                       <span
-                        className={`absolute top-full mt-1.5 px-2.5 py-0.5 rounded-full text-[9px] sm:text-[10px] font-sans font-bold whitespace-nowrap transition-all duration-300 pointer-events-none shadow-md ${
+                        className={`absolute top-full mt-1.5 px-2 py-0.5 rounded-full text-[9px] sm:text-[10px] font-sans font-bold whitespace-nowrap transition-all duration-300 pointer-events-none shadow-md ${
                           isActive
                             ? "bg-emerald-400 text-ink-900 shadow-md font-extrabold scale-105"
                             : "bg-[#041D17]/95 text-surface/90 border border-emerald-500/40 group-hover:bg-emerald-500 group-hover:text-ink-900 group-hover:border-emerald-300 group-hover:font-extrabold group-hover:scale-105"
                         }`}
                       >
-                        {role.title.split("&")[0].trim()}
+                        {role.title}
                       </span>
                     </div>
                   </button>
@@ -390,16 +430,22 @@ export function RoleOrbitalStation() {
                 transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
                 className="w-full bg-[#07332A] border border-emerald-500/30 rounded-2xl sm:rounded-3xl p-4 sm:p-7 xl:p-8 shadow-[0_24px_60px_rgba(0,0,0,0.4)] relative overflow-hidden"
               >
-                {/* Header: Role identity without floating tag */}
+                {/* Header: Role identity */}
                 <div className="flex items-center gap-3 pb-3.5 mb-4 border-b border-emerald-500/20">
                   <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-full overflow-hidden border border-emerald-400 relative shrink-0">
-                    <Image
-                      src={activeRole.avatar}
-                      alt={activeRole.name}
-                      width={60}
-                      height={60}
-                      className="w-full h-full object-cover"
-                    />
+                    {activeRole.avatar.startsWith("initials:") ? (
+                      <div className="w-full h-full bg-[#0E3D31] text-emerald-300 font-display font-bold flex items-center justify-center text-sm">
+                        {activeRole.avatar.replace("initials:", "")}
+                      </div>
+                    ) : (
+                      <Image
+                        src={activeRole.avatar}
+                        alt={activeRole.name}
+                        width={60}
+                        height={60}
+                        className="w-full h-full object-cover"
+                      />
+                    )}
                   </div>
                   <div className="min-w-0">
                     <h3 className="font-display font-bold text-base sm:text-lg text-white truncate">
@@ -436,7 +482,7 @@ export function RoleOrbitalStation() {
                   ))}
                 </div>
 
-                {/* Live Screen Preview Artifact per Role: Optimized for Mobile */}
+                {/* Live Screen Preview Artifact per Role */}
                 <div className="rounded-xl bg-[#031D17] border border-emerald-500/20 p-3 sm:p-4 font-mono text-xs">
                   {activeRole.id === "proprietor" && (
                     <div className="space-y-2.5 font-sans">
@@ -467,11 +513,11 @@ export function RoleOrbitalStation() {
                           <p className="text-[11px] text-surface/70 mt-0.5">42 students · Term Results Compiled</p>
                         </div>
                         <span className="self-start sm:self-auto px-3 py-1 bg-tangerine-500 text-ink-900 rounded-full font-bold text-[11px] shrink-0 text-center whitespace-nowrap shadow-sm">
-                          Approve Broadsheet
+                          Approved by Rev. Dr. Okonjo
                         </span>
                       </div>
                       <p className="text-[11px] text-emerald-300 leading-normal">
-                        Review scores and approve terminal broadsheet submissions.
+                        Continuous assessment and exam broadsheet approved and locked.
                       </p>
                     </div>
                   )}
@@ -492,11 +538,11 @@ export function RoleOrbitalStation() {
                   {activeRole.id === "class-teacher" && (
                     <div className="space-y-2 text-xs font-sans">
                       <div className="flex flex-col xs:flex-row xs:items-center xs:justify-between gap-1 border-b border-emerald-500/20 pb-2">
-                        <span className="text-white font-bold text-xs">Monday Morning Roll-Call</span>
+                        <span className="text-white font-bold text-xs">Monday Morning Roll-Call · JSS 2 Gold</span>
                         <span className="text-emerald-300 font-mono text-[11px]">8:04 AM Recorded</span>
                       </div>
                       <p className="text-[11px] text-surface/80 leading-relaxed">
-                        38 Present · 2 Absent. Morning attendance record updated.
+                        41 Present · 1 Absent (Chukwuma David). Morning attendance record updated.
                       </p>
                     </div>
                   )}
@@ -504,11 +550,11 @@ export function RoleOrbitalStation() {
                   {activeRole.id === "subject-teacher" && (
                     <div className="space-y-2 text-xs font-sans">
                       <div className="flex flex-col xs:flex-row xs:items-center xs:justify-between gap-1 border-b border-emerald-500/20 pb-2">
-                        <span className="text-white font-bold text-xs">SS 2 Mathematics CA / Exam</span>
+                        <span className="text-white font-bold text-xs">JSS 2 Gold Mathematics CA / Exam</span>
                         <span className="text-emerald-300 font-mono text-[11px]">Position 3rd of 42</span>
                       </div>
                       <p className="text-[11px] text-surface/80 leading-relaxed">
-                        Adeyemi Femi: CA (28) + Exam (52) = 80% · Score submitted for review.
+                        Adeyemi Femi: 1st CA (18) + 2nd CA (17) + Exam (52) = 87 · A1.
                       </p>
                     </div>
                   )}
@@ -516,12 +562,38 @@ export function RoleOrbitalStation() {
                   {activeRole.id === "security" && (
                     <div className="space-y-2 text-xs font-sans">
                       <div className="flex flex-col xs:flex-row xs:items-center xs:justify-between gap-1 border-b border-emerald-500/20 pb-2">
-                        <span className="text-white font-bold text-xs">Campus Visitor & Gate Log</span>
-                        <span className="text-emerald-300 font-mono text-[11px]">Active · 18 Logged</span>
+                        <span className="text-white font-bold text-xs">Visitor Pass #0092 · Alh. G. Mohammed</span>
+                        <span className="text-emerald-300 font-mono text-[11px]">Gate 1 Verified</span>
                       </div>
                       <p className="text-[11px] text-surface/80 leading-relaxed">
-                        Guardian matched for Adeyemi Femi pickup · Gate 1 & 2 pass records updated.
+                        Host: Rev. Dr. Okonjo · Time in: 08:15 AM · Officer S. Danjuma on duty.
                       </p>
+                    </div>
+                  )}
+
+                  {activeRole.id === "student" && (
+                    <div className="space-y-2 text-xs font-sans">
+                      <div className="flex flex-col xs:flex-row xs:items-center xs:justify-between gap-1 border-b border-emerald-500/20 pb-2">
+                        <span className="text-white font-bold text-xs">Student Portal · Adeyemi Femi</span>
+                        <span className="text-emerald-300 font-mono text-[11px]">JSS 2 Gold</span>
+                      </div>
+                      <div className="flex justify-between text-[11px] text-surface/85">
+                        <span>CBT: Mathematics (87% · A1)</span>
+                        <span className="text-emerald-300">Homework: 1 Due Friday</span>
+                      </div>
+                    </div>
+                  )}
+
+                  {activeRole.id === "parent" && (
+                    <div className="space-y-2 text-xs font-sans">
+                      <div className="flex flex-col xs:flex-row xs:items-center xs:justify-between gap-1 border-b border-emerald-500/20 pb-2">
+                        <span className="text-white font-bold text-xs">Parent Portal · Mrs. O. Adeyemi</span>
+                        <span className="text-emerald-300 font-mono text-[11px]">Synced Live</span>
+                      </div>
+                      <div className="flex justify-between text-[11px] text-surface/85">
+                        <span>Child: Adeyemi Femi (98.4% attendance)</span>
+                        <span className="text-emerald-300">Fees: ₦0.00 Outstanding</span>
+                      </div>
                     </div>
                   )}
                 </div>

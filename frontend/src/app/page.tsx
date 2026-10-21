@@ -3,6 +3,7 @@ import { Footer } from "@/components/navigation/Footer";
 import { HeroSection } from "@/components/home/HeroSection";
 import { SynchronizedFlowSection } from "@/components/home/SynchronizedFlowSection";
 import { CapabilitiesSection } from "@/components/home/CapabilitiesSection";
+import { TheCliffhangerSection } from "@/components/home/TheCliffhangerSection";
 import { FaqSection } from "@/components/home/FaqSection";
 import { DemoCtaSection } from "@/components/home/DemoCtaSection";
 
@@ -19,8 +20,11 @@ export default function Home() {
         {/* Section 2: Synchronized Flow Story */}
         <SynchronizedFlowSection />
 
-        {/* Section 3: Core Capabilities (4 Modules) */}
+        {/* Section 3: Core Capabilities (4 Desks) */}
         <CapabilitiesSection />
+
+        {/* Section 3b: The Cliffhanger (CBT, Classwork, Gate & Visitors) */}
+        <TheCliffhangerSection />
 
         {/* Section 4: Frequently Answered Questions */}
         <FaqSection />

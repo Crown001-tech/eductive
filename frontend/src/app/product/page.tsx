@@ -4,13 +4,15 @@ import { Footer } from "@/components/navigation/Footer";
 import { ProductHero } from "@/components/product/ProductHero";
 import { RoleOrbitalStation } from "@/components/product/RoleOrbitalStation";
 import { ProductEnginesSection } from "@/components/product/ProductEnginesSection";
+import { LookInsidePortalsSection } from "@/components/product/LookInsidePortalsSection";
+import { BuiltForSchoolsSection } from "@/components/product/BuiltForSchoolsSection";
 import { PaperComparisonSection } from "@/components/product/PaperComparisonSection";
 import { DemoCtaSection } from "@/components/home/DemoCtaSection";
 
 export const metadata: Metadata = {
-  title: "Product Overview — EDUCTIVE School Management System",
+  title: "Eight Portals. One Connected School — EDUCTIVE",
   description:
-    "Discover the tools that help schools manage student information, academic processes, finances and administration in a coordinated working environment.",
+    "Administration, teaching, exams, tuition fees and security, with a workspace for every person. Built for Nigerian schools.",
 };
 
 export default function ProductPage() {
@@ -20,6 +22,8 @@ export default function ProductPage() {
       <ProductHero />
       <RoleOrbitalStation />
       <ProductEnginesSection />
+      <LookInsidePortalsSection />
+      <BuiltForSchoolsSection />
       <PaperComparisonSection />
       <DemoCtaSection />
       <Footer />

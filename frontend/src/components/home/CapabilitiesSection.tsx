@@ -32,48 +32,39 @@ interface WorkspaceDesk {
 const DESKS: WorkspaceDesk[] = [
   {
     id: "parents",
-    tabLabel: "Admissions",
-    role: "Student Information & Admissions",
-    title: "Student records and enrolment",
+    tabLabel: "Parents",
+    role: "Parents on their phones",
+    title: "Parents on their phones",
     description:
-      "Manage student records and support the admissions process, from initial applications through review and enrolment.",
-    actionText: "Explore All Features",
+      "Attendance, results, fee records and announcements, in their own portal.",
+    actionText: "See all eight portals",
   },
   {
     id: "teachers",
-    tabLabel: "Attendance",
-    role: "Attendance & Daily Operations",
-    title: "Attendance and roll-call",
+    tabLabel: "Teachers",
+    role: "Teachers in class",
+    title: "Teachers in class",
     description:
-      "Record attendance and make relevant information available to authorised members of staff.",
-    actionText: "Explore All Features",
+      "Take roll-call, set classwork and record marks from one phone.",
+    actionText: "See all eight portals",
   },
   {
     id: "bursar",
-    tabLabel: "Bursary",
-    role: "Fees & Financial Records",
-    title: "Fees and financial records",
+    tabLabel: "Bursar",
+    role: "Bursar at desk",
+    title: "Bursar at desk",
     description:
-      "Record payments, issue receipts, track outstanding balances and help the bursary maintain organised financial records.",
-    actionText: "Explore All Features",
+      "Record payments, track balances and keep clean fee records.",
+    actionText: "See all eight portals",
   },
   {
     id: "principal",
-    tabLabel: "Academics",
-    role: "Academic Management",
-    title: "Academic records and results",
+    tabLabel: "Principal",
+    role: "Principal on the go",
+    title: "Principal on the go",
     description:
-      "Support class and subject structures, timetables, continuous assessment and the preparation and review of academic results.",
-    actionText: "Explore All Features",
-  },
-  {
-    id: "security",
-    tabLabel: "Security",
-    role: "Security & Reception Portal",
-    title: "Visitor and gate records",
-    description:
-      "Every visitor accounted for. Every arrival under control. Record visitor details, track arrivals and departures, and support student pickup verification.",
-    actionText: "Explore All Features",
+      "See fees, attendance and results live. Approve broadsheets from anywhere.",
+    actionText: "See all eight portals",
   },
 ];
 
@@ -163,15 +154,12 @@ export function CapabilitiesSection() {
             SECTION HEADER
            ===================================================================== */}
         <div className="flex flex-col items-center text-center max-w-2xl mx-auto mb-12 xl:mb-16">
-          <span className="text-[11px] font-mono font-bold tracking-[2px] uppercase text-emerald-300 mb-3">
-            ONE CONNECTED PLATFORM
-          </span>
           <h2 className="font-display font-bold text-white text-3xl sm:text-4xl xl:text-[46px] leading-[1.1] tracking-[-1.2px] mb-4 text-balance">
-            The essential work of your school, organised.
+            Built for your school's people.
           </h2>
 
           <p className="text-base sm:text-lg text-surface/80 font-sans leading-relaxed text-balance">
-            Explore the key areas EDUCTIVE supports, from everyday administration to academic management and financial records.
+            From parents at home to teachers in class, each person sees only what their day requires.
           </p>
         </div>
 
@@ -251,10 +239,10 @@ export function CapabilitiesSection() {
 
                     {/* Direct Action Link */}
                     <Link
-                      href="/product#features"
+                      href="/product"
                       className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-300 hover:text-white transition-colors group cursor-pointer"
                     >
-                      <span>Explore All Features</span>
+                      <span>See all eight portals</span>
                       <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                     </Link>
                   </div>
@@ -263,78 +251,92 @@ export function CapabilitiesSection() {
                   <div className="lg:col-span-7 flex justify-center items-center w-full">
                     
                     {/* =========================================================
-                        SLIDE 1: PARENTS ON WHATSAPP
-                        - Authentic mobile WhatsApp delivery interface
-                        - Stamped Oakland e-receipt & terminal report PDF
+                        SLIDE 1: PARENTS ON THEIR PHONES
+                        - Clean, high-clarity Parent Portal mobile interface
+                        - Live attendance (98.4%), terminal results (87% - A1), ₦0.00 balance
                        ========================================================= */}
                     {activeDesk.id === "parents" && (
-                      <div className="w-full max-w-[420px] bg-[#0C1514] rounded-2xl border border-emerald-500/30 shadow-2xl overflow-hidden font-sans text-xs">
-                        {/* WhatsApp Top App Bar */}
-                        <div className="bg-[#07332A] px-4 py-3 border-b border-emerald-500/20 flex items-center justify-between text-white">
+                      <div className="w-full max-w-[420px] bg-[#0A2620] rounded-2xl border border-emerald-500/30 shadow-2xl overflow-hidden font-sans text-xs">
+                        {/* Parent Portal Mobile Header */}
+                        <div className="bg-[#051C17] px-4 py-3 border-b border-emerald-500/20 flex items-center justify-between text-white">
                           <div className="flex items-center gap-2.5">
-                            <div className="w-8 h-8 rounded-full bg-emerald-500/30 border border-emerald-400 flex items-center justify-center font-display font-bold text-xs text-white">
-                              O
+                            <div className="w-8 h-8 rounded-full bg-emerald-500/20 border border-emerald-400/40 flex items-center justify-center font-display font-bold text-xs text-emerald-300">
+                              AF
                             </div>
                             <div>
-                              <p className="font-bold text-xs flex items-center gap-1">
-                                <span>Oakland Comprehensive High</span>
-                                <span className="w-3.5 h-3.5 rounded-full bg-emerald-400 text-ink-900 inline-flex items-center justify-center text-[9px] font-black">
-                                  ✓
-                                </span>
+                              <p className="font-bold text-xs text-white">
+                                Adeyemi Femi
                               </p>
-                              <p className="text-[10px] text-emerald-300/80">Official School Account</p>
+                              <p className="text-[10px] text-emerald-300/80">JSS 2 Gold · Oakland Comprehensive</p>
                             </div>
                           </div>
-                          <span className="text-[10px] font-mono text-surface/60">8:05 AM</span>
+                          <span className="text-[10px] font-mono bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded border border-emerald-400/30">
+                            PARENT PORTAL
+                          </span>
                         </div>
 
-                        {/* WhatsApp Chat Thread Body */}
-                        <div className="p-4 space-y-3 bg-[#0B1E19]">
-                          {/* Message 1: Stamped Fee Receipt */}
-                          <div className="bg-[#0E2E25] border border-emerald-500/25 rounded-xl p-3 text-white max-w-[92%] shadow-sm">
-                            <p className="text-[11px] leading-relaxed mb-2 text-surface/90">
-                              Good morning Mrs. Adeyemi. We have received your tuition transfer. Here is your official stamped receipt.
-                            </p>
+                        {/* Portal Screen Body */}
+                        <div className="p-4 space-y-3 bg-[#08221B]">
+                          {/* 3 Metric Cards Grid */}
+                          <div className="grid grid-cols-3 gap-2">
+                            <div className="bg-[#0C2B22] p-2.5 rounded-xl border border-emerald-500/20 text-center">
+                              <span className="text-[9px] text-surface/70 block uppercase">Attendance</span>
+                              <span className="font-display font-bold text-sm text-emerald-300 block mt-0.5">98.4%</span>
+                              <span className="text-[9px] text-surface/60 block">Present today</span>
+                            </div>
+                            <div className="bg-[#0C2B22] p-2.5 rounded-xl border border-emerald-500/20 text-center">
+                              <span className="text-[9px] text-surface/70 block uppercase">Results</span>
+                              <span className="font-display font-bold text-sm text-white block mt-0.5">87% · A1</span>
+                              <span className="text-[9px] text-emerald-300 block">3rd of 42</span>
+                            </div>
+                            <div className="bg-[#0C2B22] p-2.5 rounded-xl border border-emerald-500/20 text-center">
+                              <span className="text-[9px] text-surface/70 block uppercase">Balance</span>
+                              <span className="font-display font-bold text-sm text-emerald-400 block mt-0.5">₦0.00</span>
+                              <span className="text-[9px] text-emerald-300/80 block">Cleared</span>
+                            </div>
+                          </div>
 
-                            {/* PDF Attachment Card */}
-                            <div className="bg-white rounded-lg p-2.5 text-charcoal-900 flex items-center justify-between border border-emerald-200/50">
+                          {/* Live Feed Card 1: Official Fee Receipt */}
+                          <div className="bg-[#0D3126] border border-emerald-500/30 rounded-xl p-3 text-white shadow-sm">
+                            <div className="flex items-center justify-between mb-1.5">
+                              <span className="text-[10px] font-mono text-emerald-300 font-bold uppercase tracking-wider">
+                                Official Fee Receipt
+                              </span>
+                              <span className="text-[10px] text-surface/60 font-mono">Receipt #0417</span>
+                            </div>
+                            <div className="bg-[#07241C] rounded-lg p-2.5 flex items-center justify-between border border-emerald-500/20">
                               <div className="flex items-center gap-2">
-                                <FileText className="w-6 h-6 text-emerald-700 flex-shrink-0" />
-                                <div className="text-left font-mono">
-                                  <p className="font-bold text-[10px] leading-tight text-ink-900">
-                                    Receipt_0417_Femi.pdf
-                                  </p>
-                                  <p className="text-[9px] text-charcoal-600 font-sans">
-                                    ₦185,000.00 · PAID
-                                  </p>
+                                <FileText className="w-5 h-5 text-emerald-400 flex-shrink-0" />
+                                <div>
+                                  <p className="font-bold text-[11px] text-white">Tuition & Levies · Term 2</p>
+                                  <p className="text-[10px] text-emerald-300 font-mono">₦185,000.00 Paid in full</p>
                                 </div>
                               </div>
-                              <span className="text-[9px] font-bold text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-300">
-                                Stamped
+                              <span className="text-[9px] font-bold text-tangerine-400 border border-tangerine-500/40 bg-tangerine-500/10 px-2 py-0.5 rounded">
+                                PAID
                               </span>
                             </div>
                           </div>
 
-                          {/* Message 2: Daily Attendance Alert */}
-                          <div className="bg-[#0E2E25] border border-emerald-500/25 rounded-xl p-3 text-white max-w-[92%] shadow-sm">
-                            <p className="text-[11px] leading-relaxed text-surface/90">
-                              Adeyemi Femi arrived safely at school and checked in at 8:00 AM (JSS 2 Gold).
-                            </p>
-                            <span className="text-[9px] font-mono text-emerald-300/70 block text-right mt-1">
-                              8:02 AM
-                            </span>
-                          </div>
-
-                          {/* Outgoing Message Reply from Parent */}
-                          <div className="ml-auto bg-[#124B3B] border border-emerald-400/30 rounded-xl p-2.5 text-white max-w-[80%] text-right shadow-sm">
-                            <p className="text-[11px] text-surface/95">
-                              Thank you Bursar, receipt well received.
-                            </p>
-                            <div className="flex items-center justify-end gap-1 text-[9px] text-emerald-300 mt-0.5 font-mono">
-                              <span>8:06 AM</span>
-                              <CheckCheck className="w-3.5 h-3.5 stroke-[2.5]" />
+                          {/* Live Feed Card 2: Roll-call update */}
+                          <div className="bg-[#0D3126] border border-emerald-500/30 rounded-xl p-3 text-white shadow-sm flex items-center justify-between">
+                            <div className="flex items-center gap-2.5">
+                              <div className="w-7 h-7 rounded-full bg-emerald-500/20 text-emerald-300 flex items-center justify-center font-bold text-xs">
+                                ✓
+                              </div>
+                              <div>
+                                <p className="font-bold text-[11px] text-white">Morning Roll-Call Recorded</p>
+                                <p className="text-[10px] text-surface/75">Checked in safely at 7:58 AM · Homeroom</p>
+                              </div>
                             </div>
+                            <span className="text-[10px] font-mono text-emerald-300/80">8:02 AM</span>
                           </div>
+                        </div>
+
+                        {/* Footer bar */}
+                        <div className="bg-[#051C17] px-4 py-2.5 border-t border-emerald-500/20 flex items-center justify-between text-[10px] text-surface/75">
+                          <span>Parent updates direct from school records</span>
+                          <span className="text-emerald-300 font-medium">Synced live</span>
                         </div>
                       </div>
                     )}
@@ -356,7 +358,7 @@ export function CapabilitiesSection() {
                             </p>
                           </div>
                           <span className="text-[10px] font-bold font-mono text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
-                            38 Present
+                            41 Present
                           </span>
                         </div>
 
@@ -382,7 +384,7 @@ export function CapabilitiesSection() {
                           <div className="flex items-center justify-between p-2 rounded-lg bg-tangerine-500/10 border border-tangerine-500/25">
                             <span className="font-medium text-tangerine-900">3. Chukwuma David</span>
                             <span className="px-2 py-0.5 rounded bg-tangerine-500 text-white font-bold text-[10px] uppercase tracking-wider">
-                              Absent · SMS Sent
+                              Absent · Parent notified in app
                             </span>
                           </div>
                         </div>
@@ -396,8 +398,8 @@ export function CapabilitiesSection() {
 
                     {/* =========================================================
                         SLIDE 3: BURSAR AT DESK
-                        - Direct bank transfer clearing
-                        - Tamper-proof stamped e-receipt
+                        - Clean fee records and payment tracking
+                        - Stamped e-receipt with zero disputes
                        ========================================================= */}
                     {activeDesk.id === "bursar" && (
                       <div className="w-full max-w-[440px] bg-[#FFFDF8] text-charcoal-900 rounded-2xl border border-[#D8CEBA] shadow-2xl p-5 sm:p-6 font-mono text-xs">
@@ -407,11 +409,11 @@ export function CapabilitiesSection() {
                               OAKLAND COMPREHENSIVE HIGH SCHOOL
                             </p>
                             <p className="text-[10px] text-charcoal-600 font-sans">
-                              BURSARY PAYMENT CLEARANCE · TERM 2
+                              BURSARY PAYMENT RECORD · TERM 2
                             </p>
                           </div>
                           <span className="text-[10px] font-bold bg-emerald-500/15 text-emerald-800 px-2 py-0.5 rounded">
-                            CLEARED
+                            REC #0417
                           </span>
                         </div>
 
@@ -422,8 +424,8 @@ export function CapabilitiesSection() {
                             <span className="font-bold text-ink-900">Adeyemi Femi (JSS 2 Gold)</span>
                           </div>
                           <div className="flex justify-between items-baseline">
-                            <span className="text-charcoal-600">Payment Channel:</span>
-                            <span className="font-mono text-ink-900">Direct Bank Transfer</span>
+                            <span className="text-charcoal-600">Tuition & Levies:</span>
+                            <span className="font-mono text-ink-900">₦185,000.00</span>
                           </div>
                           <div className="flex justify-between items-baseline text-emerald-800">
                             <span className="text-charcoal-600">Amount Paid:</span>
@@ -437,8 +439,8 @@ export function CapabilitiesSection() {
 
                         <div className="flex items-end justify-between pt-3 border-t border-[#EDE6D8]">
                           <div className="text-[10px] text-charcoal-600 font-mono">
-                            <p>REF: #OAK-GTB-4092</p>
-                            <p className="text-emerald-700 font-bold">ZERO TELLER DISPUTES</p>
+                            <p>BURSAR: MRS. F. ADEBAYO</p>
+                            <p className="text-emerald-700 font-bold">STATUS: RECONCILED</p>
                           </div>
 
                           <div className="border-2 border-tangerine-500 rounded px-2.5 py-0.5 bg-tangerine-500/10 -rotate-3">
@@ -478,7 +480,7 @@ export function CapabilitiesSection() {
                             <span className="font-display font-bold text-base sm:text-lg text-white mt-0.5 block whitespace-nowrap">
                               ₦42.85M
                             </span>
-                            <span className="text-[10px] text-emerald-300 font-medium block truncate">92% of target</span>
+                            <span className="text-[10px] text-emerald-300 font-medium block truncate">92.8% of target</span>
                           </div>
 
                           <div className="bg-ink-800/80 p-2.5 sm:p-3 rounded-xl border border-emerald-500/20 overflow-hidden">
@@ -503,60 +505,6 @@ export function CapabilitiesSection() {
                           <span className="px-3 py-1 bg-tangerine-500 text-ink-900 rounded-full font-bold text-xs shadow-md">
                             Approved
                           </span>
-                        </div>
-                      </div>
-                    )}
-
-                    {/* =========================================================
-                        SLIDE 5: SECURITY & RECEPTION PORTAL
-                        - Visitor registration, gate activity, student pickup verification
-                       ========================================================= */}
-                    {activeDesk.id === "security" && (
-                      <div className="w-full max-w-[440px] bg-[#07332A] text-white rounded-2xl border border-emerald-500/30 shadow-2xl p-5 sm:p-6 font-sans text-xs">
-                        <div className="flex items-center justify-between border-b border-emerald-500/20 pb-3 mb-4">
-                          <div>
-                            <p className="font-display font-bold text-sm text-white">
-                              SECURITY & RECEPTION PORTAL
-                            </p>
-                            <p className="text-[10px] text-emerald-300/80">Main Gate & Front Desk</p>
-                          </div>
-                          <span className="text-[10px] bg-emerald-500/20 text-emerald-300 font-bold px-2 py-0.5 rounded border border-emerald-400/30">
-                            Access Controlled
-                          </span>
-                        </div>
-
-                        {/* Activity Rows */}
-                        <div className="space-y-2.5 mb-4 text-xs">
-                          <div className="p-2.5 rounded-xl bg-ink-900/70 border border-emerald-500/20 flex items-center justify-between">
-                            <div>
-                              <span className="text-white font-bold block">1. Visitor Registration</span>
-                              <span className="text-[10px] text-surface/75">Alh. G. Mohammed · Parent Enquiry</span>
-                            </div>
-                            <span className="text-emerald-300 font-mono text-[10px] font-bold">08:15 AM</span>
-                          </div>
-
-                          <div className="p-2.5 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-between">
-                            <div>
-                              <span className="text-white font-bold block">2. Student Pickup Verification</span>
-                              <span className="text-[10px] text-emerald-300">Adeyemi Femi (JSS 2 Gold) · Guardian Matched</span>
-                            </div>
-                            <span className="px-2 py-0.5 rounded bg-emerald-700 text-white font-bold text-[10px]">
-                              Verified
-                            </span>
-                          </div>
-
-                          <div className="p-2.5 rounded-xl bg-ink-900/70 border border-emerald-500/20 flex items-center justify-between">
-                            <div>
-                              <span className="text-white font-bold block">3. Gate Departure Log</span>
-                              <span className="text-[10px] text-surface/75">Delivery Vehicle · Pass #G-042</span>
-                            </div>
-                            <span className="text-surface/60 font-mono text-[10px]">Signed out</span>
-                          </div>
-                        </div>
-
-                        <div className="pt-3 border-t border-emerald-500/20 flex items-center justify-between text-[10px] text-surface/75">
-                          <span>Front-desk coordination</span>
-                          <span className="text-emerald-300 font-mono font-bold">14 logs today</span>
                         </div>
                       </div>
                     )}
