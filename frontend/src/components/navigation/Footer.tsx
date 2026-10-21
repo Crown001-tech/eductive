@@ -4,130 +4,81 @@ import { ArrowUpRight } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="w-full bg-ink-900 text-white border-t border-ink-800 pt-16 pb-12">
-      <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Main Footer Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-12 pb-14 border-b border-ink-800">
-          {/* Brand info (2 cols on lg) */}
-          <div className="lg:col-span-2 flex flex-col gap-4">
+    <footer className="w-full bg-[#041D17] text-white border-t border-emerald-500/15 py-12 select-none">
+      <div className="max-w-[1240px] mx-auto px-6 sm:px-12 xl:px-16">
+        {/* Main Footer Row */}
+        <div className="flex flex-col md:flex-row md:items-start justify-between gap-8 pb-10 border-b border-emerald-500/15">
+          {/* Brand info */}
+          <div className="flex flex-col gap-2 max-w-sm">
             <Link
               href="/"
-              className="flex items-center gap-2 text-2xl font-bold tracking-tight font-display text-white w-fit focus-ring-dark rounded-sm"
+              className="flex items-center gap-2 text-xl font-bold tracking-tight font-display text-white w-fit"
             >
-              <span className="w-2.5 h-2.5 rounded-full bg-emerald-500" />
+              <span className="w-2.5 h-2.5 rounded-full bg-emerald-400" />
               <span>EDUCTIVE</span>
             </Link>
-            <p className="text-sm text-surface/80 max-w-sm leading-relaxed">
-              EDUCTIVE is a school management system designed to help primary and secondary schools manage academic, administrative and financial operations through one coordinated platform.
-            </p>
-            <p className="text-xs text-surface/60 pt-1">
-              Designed for primary and secondary schools
+            <p className="text-xs sm:text-sm text-surface/75 leading-relaxed font-sans">
+              Eight portals. One connected school. Built for Nigerian schools.
             </p>
           </div>
 
-          {/* Col 1: Product */}
-          <div className="flex flex-col gap-3">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-emerald-300 font-body">
-              Product
-            </h4>
-            <ul className="flex flex-col gap-2.5 text-sm text-surface/75">
-              <li>
-                <Link href="/product#features" className="hover:text-white transition-colors focus-ring-dark">
-                  All Feature Areas
-                </Link>
-              </li>
-              <li>
-                <Link href="/#how-it-works" className="hover:text-white transition-colors focus-ring-dark">
-                  How Eductive Works
-                </Link>
-              </li>
-              <li>
-                <Link href="/product" className="hover:text-white transition-colors focus-ring-dark">
-                  Role-Based Workspaces
-                </Link>
-              </li>
-              <li>
-                <Link href="/product" className="hover:text-white transition-colors focus-ring-dark">
-                  Security & Reception
-                </Link>
-              </li>
-            </ul>
-          </div>
+          {/* Quick Links */}
+          <div className="flex flex-wrap gap-8 sm:gap-12 text-xs sm:text-sm text-surface/80">
+            <div className="flex flex-col gap-2">
+              <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-emerald-300">
+                Pages
+              </span>
+              <Link href="/" className="hover:text-white transition-colors">
+                Home
+              </Link>
+              <Link href="/product" className="hover:text-white transition-colors">
+                Product
+              </Link>
+              <Link href="/about" className="hover:text-white transition-colors">
+                About
+              </Link>
+            </div>
 
-          {/* Col 2: Schools */}
-          <div className="flex flex-col gap-3">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-emerald-300 font-body">
-              Roles
-            </h4>
-            <ul className="flex flex-col gap-2.5 text-sm text-surface/75">
-              <li>
-                <Link href="/product#roles-orbital" className="hover:text-white transition-colors focus-ring-dark">
-                  For School Proprietors
-                </Link>
-              </li>
-              <li>
-                <Link href="/product#roles-orbital" className="hover:text-white transition-colors focus-ring-dark">
-                  For Principals & Admins
-                </Link>
-              </li>
-              <li>
-                <Link href="/product#roles-orbital" className="hover:text-white transition-colors focus-ring-dark">
-                  For School Bursars
-                </Link>
-              </li>
-              <li>
-                <Link href="/product#roles-orbital" className="hover:text-white transition-colors focus-ring-dark">
-                  For Teachers & Security
-                </Link>
-              </li>
-            </ul>
-          </div>
+            <div className="flex flex-col gap-2">
+              <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-emerald-300">
+                Showcase
+              </span>
+              <a
+                href="https://oakland-school.onrender.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white transition-colors inline-flex items-center gap-1"
+              >
+                <span>Oakland School</span>
+                <ArrowUpRight className="w-3 h-3 text-emerald-400" />
+              </a>
+              <Link
+                href="/demo"
+                className="text-tangerine-400 hover:text-tangerine-300 font-semibold transition-colors"
+              >
+                Request a demo
+              </Link>
+            </div>
 
-          {/* Col 3: Company & Demo */}
-          <div className="flex flex-col gap-3">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-emerald-300 font-body">
-              Company
-            </h4>
-            <ul className="flex flex-col gap-2.5 text-sm text-surface/75">
-              <li>
-                <Link href="/about" className="hover:text-white transition-colors focus-ring-dark">
-                  About EDUCTIVE
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/demo"
-                  className="inline-flex items-center gap-1 text-tangerine-500 font-semibold hover:text-white transition-colors focus-ring-dark"
-                >
-                  <span>Request a Demo</span>
-                  <ArrowUpRight className="w-3.5 h-3.5" />
-                </Link>
-              </li>
-              <li>
-                <a
-                  href="mailto:contact@eductive.ng"
-                  className="hover:text-white transition-colors focus-ring-dark"
-                >
-                  contact@eductive.ng
-                </a>
-              </li>
-              <li>
-                <span className="text-xs text-charcoal-600 block pt-1">
-                  Crown Tech · Software & Technology
-                </span>
-              </li>
-            </ul>
+            <div className="flex flex-col gap-2">
+              <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-emerald-300">
+                Contact
+              </span>
+              <a
+                href="mailto:contact@eductive.ng"
+                className="hover:text-white transition-colors"
+              >
+                contact@eductive.ng
+              </a>
+              <span className="text-surface/50 text-xs">Developed by Crown Tech</span>
+            </div>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-surface/60">
-          <p>© 2026 EDUCTIVE. Developed by Crown Tech. All rights reserved.</p>
-          <div className="flex items-center gap-6">
-            <span>Primary & Secondary School Management</span>
-            <span className="hidden sm:inline">•</span>
-            <span>Demonstration School: Oakland Comprehensive High School</span>
-          </div>
+        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-surface/50">
+          <p>© 2026 EDUCTIVE. All rights reserved.</p>
+          <p>Built for Nigerian schools</p>
         </div>
       </div>
     </footer>
