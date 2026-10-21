@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Bricolage_Grotesque, DM_Sans } from "next/font/google";
 import { SmoothScroll } from "@/components/ui/SmoothScroll";
 import { ServiceWorkerRegister } from "@/components/pwa/ServiceWorkerRegister";
+import { PwaSplashScreen } from "@/components/pwa/PwaSplashScreen";
 import "./globals.css";
 
 const bricolageGrotesque = Bricolage_Grotesque({
@@ -87,6 +88,7 @@ export default function RootLayout({
         suppressHydrationWarning
         className="min-h-full flex flex-col bg-white text-charcoal-900 selection:bg-emerald-300 selection:text-ink-900"
       >
+        <PwaSplashScreen />
         <ServiceWorkerRegister />
         <SmoothScroll>{children}</SmoothScroll>
       </body>
