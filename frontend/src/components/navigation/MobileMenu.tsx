@@ -2,7 +2,7 @@
 
 import React, { useEffect } from "react";
 import Link from "next/link";
-import { X, ArrowRight, ArrowUpRight, MessageCircle, Building2 } from "lucide-react";
+import { X, ArrowRight } from "lucide-react";
 
 export interface MobileMenuProps {
   isOpen: boolean;
@@ -15,7 +15,6 @@ export function MobileMenu({
   isOpen,
   onClose,
   links,
-  onSelectSection,
 }: MobileMenuProps) {
   useEffect(() => {
     if (isOpen) {
@@ -93,52 +92,23 @@ export function MobileMenu({
               const num = String(idx + 1).padStart(2, "0");
               return (
                 <li key={link.label} className="border-b border-white/[0.08]">
-                  {link.external ? (
-                    <a
-                      href={link.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={handleClick}
-                      className="group flex items-center justify-between py-4 text-2xl font-display font-bold text-white hover:text-emerald-300 transition-colors"
-                    >
-                      <div className="flex items-baseline gap-3">
-                        <span className="text-xs font-mono font-bold text-emerald-400/70">
-                          {num}
-                        </span>
-                        <span>{link.label}</span>
-                      </div>
-                      <ArrowUpRight className="w-5 h-5 text-emerald-400 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                    </a>
-                  ) : (
-                    <Link
-                      href={link.href || "/"}
-                      onClick={handleClick}
-                      className="group flex items-center justify-between py-4 text-2xl font-display font-bold text-white hover:text-emerald-300 transition-colors"
-                    >
-                      <div className="flex items-baseline gap-3">
-                        <span className="text-xs font-mono font-bold text-emerald-400/70">
-                          {num}
-                        </span>
-                        <span>{link.label}</span>
-                      </div>
-                      <ArrowRight className="w-5 h-5 text-emerald-400 transition-transform group-hover:translate-x-1" />
-                    </Link>
-                  )}
+                  <Link
+                    href={link.href || "/"}
+                    onClick={handleClick}
+                    className="group flex items-center justify-between py-4 text-2xl font-display font-bold text-white hover:text-emerald-300 transition-colors"
+                  >
+                    <div className="flex items-baseline gap-3">
+                      <span className="text-xs font-mono font-bold text-emerald-400/70">
+                        {num}
+                      </span>
+                      <span>{link.label}</span>
+                    </div>
+                    <ArrowRight className="w-5 h-5 text-emerald-400 transition-transform group-hover:translate-x-1" />
+                  </Link>
                 </li>
               );
             })}
           </ul>
-
-          {/* Quick Pilot Snapshot Badge */}
-          <div className="mt-4 p-4 rounded-2xl bg-white/[0.04] border border-white/10 flex items-start gap-3">
-            <Building2 className="w-5 h-5 text-emerald-400 flex-shrink-0 mt-0.5" />
-            <div className="text-xs">
-              <span className="font-bold text-white block">Oakland High Showcase</span>
-              <p className="text-surface/70 font-sans mt-0.5">
-                Active demonstration deployment for primary and secondary operations.
-              </p>
-            </div>
-          </div>
         </div>
 
         {/* Bottom CTA & Attribution */}

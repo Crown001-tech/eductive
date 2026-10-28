@@ -3,13 +3,13 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ArrowRight, Menu } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { MobileMenu } from "./MobileMenu";
 
 export const NAV_LINKS = [
   { label: "Product", href: "/product" },
   { label: "About", href: "/about" },
-  { label: "School", href: "https://oakland-school.onrender.com", external: true },
+  { label: "School", href: "/school" },
   { label: "FAQ", href: "/#faq" },
 ];
 
@@ -30,7 +30,11 @@ export function NavBar() {
 
   const isHome = pathname === "/" || pathname === "";
   const isDemoPage = pathname === "/demo";
-  const isDarkHeroPage = pathname === "/product" || pathname === "/about" || pathname === "/demo";
+  const isDarkHeroPage =
+    pathname === "/product" ||
+    pathname === "/about" ||
+    pathname === "/demo" ||
+    pathname === "/school";
 
   const getLinkClasses = (isActive: boolean) => {
     if (isDemoPage) {
@@ -48,7 +52,6 @@ export function NavBar() {
         ? "text-emerald-300 font-extrabold"
         : "text-white/90 hover:text-white";
     }
-    // Default light background / Home
     return isActive
       ? "text-emerald-700 font-extrabold"
       : "text-charcoal-900 hover:text-emerald-700";
@@ -68,7 +71,6 @@ export function NavBar() {
         }`}
       >
         <div className="max-w-[1440px] mx-auto h-full px-6 sm:px-12 xl:px-16 flex items-center justify-between">
-          
           {/* Brand Logo */}
           <Link
             href="/"
@@ -89,17 +91,7 @@ export function NavBar() {
                   isActive
                 )}`;
 
-                return link.external ? (
-                  <a
-                    key={link.label}
-                    href={link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={linkClasses}
-                  >
-                    <span>{link.label}</span>
-                  </a>
-                ) : (
+                return (
                   <Link
                     key={link.label}
                     href={link.href}
@@ -118,7 +110,9 @@ export function NavBar() {
             <Link
               href="/demo"
               aria-current={isDemoPage ? "page" : undefined}
-              className={`inline-flex items-center justify-center font-sans font-semibold rounded-full pl-6 pr-2 py-2 text-[13px] bg-tangerine-500 hover:bg-tangerine-400 text-ink-900 gap-2.5 shadow-md transition-all duration-200 group cursor-pointer ${isDemoPage ? "hidden" : ""}`}
+              className={`inline-flex items-center justify-center font-sans font-semibold rounded-full pl-6 pr-2 py-2 text-[13px] bg-tangerine-500 hover:bg-tangerine-400 text-ink-900 gap-2.5 shadow-md transition-all duration-200 group cursor-pointer ${
+                isDemoPage ? "hidden" : ""
+              }`}
             >
               <span>Book a demo</span>
               <span className="w-7 h-7 rounded-full bg-ink-900 text-tangerine-500 flex items-center justify-center transition-transform group-hover:translate-x-0.5">
