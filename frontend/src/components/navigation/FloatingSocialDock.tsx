@@ -5,7 +5,6 @@ import { motion, useReducedMotion } from "motion/react";
 
 // =============================================================================
 // PUT YOUR SOCIAL LINKS HERE:
-// Replace the phone number / URLs below with your official WhatsApp, Instagram, and Facebook links.
 // =============================================================================
 const WHATSAPP_MESSAGE = `Hello, I'm interested in learning more about EDUCTIVE for my school.
 
@@ -14,7 +13,7 @@ I'd like to understand how it works, the features available, and how it could he
 Could you please share more information and let me know how I can book a demo?`;
 
 export const SOCIAL_LINKS = {
-  whatsapp: "https://wa.me/2348000000000",
+  whatsapp: "https://wa.me/2349078270213",
   instagram: "https://www.instagram.com/crowntech0?cplk=ZTZ4NzkxcjQ2anU1",
   facebook: "https://www.facebook.com/profile.php?id=61584192238008",
 };
@@ -28,12 +27,13 @@ function buildWhatsAppUrl(rawLink: string): string {
 
 export function FloatingSocialDock() {
   const prefersReducedMotion = useReducedMotion();
+  const whatsappHref = buildWhatsAppUrl(SOCIAL_LINKS.whatsapp);
 
   const items = [
     {
       id: "whatsapp",
       label: "Chat on WhatsApp",
-      href: buildWhatsAppUrl(SOCIAL_LINKS.whatsapp),
+      href: whatsappHref,
       delay: 0,
       accentClass:
         "bg-[#12A26B] text-white border-emerald-300/40 hover:bg-[#3DDC97] hover:text-[#07332A]",
@@ -114,11 +114,7 @@ export function FloatingSocialDock() {
           rel="noopener noreferrer"
           aria-label={item.label}
           title={item.label}
-          animate={
-            prefersReducedMotion
-              ? { y: 0 }
-              : { y: [0, -5, 0] }
-          }
+          animate={prefersReducedMotion ? { y: 0 } : { y: [0, -5, 0] }}
           transition={
             prefersReducedMotion
               ? undefined
@@ -137,4 +133,3 @@ export function FloatingSocialDock() {
     </div>
   );
 }
-
