@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Bricolage_Grotesque, DM_Sans } from "next/font/google";
 import { SmoothScroll } from "@/components/ui/SmoothScroll";
 import { ServiceWorkerRegister } from "@/components/pwa/ServiceWorkerRegister";
+import { FloatingSocialDock } from "@/components/navigation/FloatingSocialDock";
 import "./globals.css";
 
 const bricolageGrotesque = Bricolage_Grotesque({
@@ -89,6 +90,7 @@ export default function RootLayout({
       >
         <ServiceWorkerRegister />
         <SmoothScroll>{children}</SmoothScroll>
+        <FloatingSocialDock />
       </body>
     </html>
   );

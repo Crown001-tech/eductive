@@ -262,7 +262,7 @@ export function HeroSection() {
               }}
             >
               <Image
-                src="/images/principal-teacher-transparent.png"
+                src="/images/principal-looking-desktop.png"
                 alt="Distinguished Nigerian school principal holding a synchronized management tablet"
                 width={777}
                 height={1117}
@@ -554,7 +554,7 @@ export function HeroSection() {
             {/* Principal with live tablet */}
             <div className="w-40 sm:w-48 flex-shrink-0 order-1 sm:order-2 flex justify-end">
               <Image
-                src="/images/principal-teacher-transparent.png"
+                src="/images/principal-looking-up.png"
                 alt="Nigerian school principal with management tablet"
                 width={777}
                 height={1117}
