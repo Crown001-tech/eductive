@@ -182,7 +182,7 @@ export function LookInsidePortalsSection() {
                     VISITOR PASS · GATE 1
                   </p>
                 </div>
-                <span className="text-xs font-mono font-bold text-red-600 bg-red-50 border border-red-200 px-2 py-0.5 rounded">
+                <span className="text-xs font-mono font-bold text-red-700 bg-red-50 border border-red-200 px-2 py-0.5 rounded">
                   NO. 0092
                 </span>
               </div>

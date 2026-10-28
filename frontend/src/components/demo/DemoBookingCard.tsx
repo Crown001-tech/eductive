@@ -16,10 +16,17 @@ export function DemoBookingCard() {
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [phoneError, setPhoneError] = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.schoolName || !formData.phone || !formData.contactName) return;
+    const digits = formData.phone.replace(/[\s-]/g, "");
+    if (!/^(\+?234|0)[789][01]\d{8}$/.test(digits)) {
+      setPhoneError("Enter a Nigerian number, like 0803 123 4567.");
+      return;
+    }
+    setPhoneError("");
     setSubmitted(true);
   };
 
@@ -90,7 +97,7 @@ export function DemoBookingCard() {
               href="/product"
               className="w-full sm:w-auto text-center py-3 px-6 rounded-full border border-emerald-700 text-emerald-800 font-sans font-semibold text-xs hover:bg-emerald-50 transition-colors"
             >
-              Explore all eight portals
+              Explore all portals
             </Link>
           </div>
         </div>
@@ -185,9 +192,21 @@ export function DemoBookingCard() {
               required
               placeholder="e.g. 0803 123 4567"
               value={formData.phone}
-              onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+              onChange={(e) => {
+                setFormData({ ...formData, phone: e.target.value });
+                if (phoneError) setPhoneError("");
+              }}
+              aria-invalid={phoneError ? true : undefined}
+              aria-describedby={phoneError ? "demo-phone-error" : undefined}
+              inputMode="tel"
+              autoComplete="tel"
               className="w-full px-4 py-2.5 rounded-xl border border-[#D8CEBA] bg-[#FAF9F5] text-ink-900 text-sm font-mono focus:outline-none focus:border-emerald-600 focus:bg-white transition-colors"
             />
+            {phoneError && (
+              <p id="demo-phone-error" role="alert" className="mt-1 text-xs text-red-700 font-sans">
+                {phoneError}
+              </p>
+            )}
           </div>
 
           {/* Group: Optional Context Fields */}
@@ -272,7 +291,7 @@ export function DemoBookingCard() {
             type="submit"
             className="w-full py-3.5 px-6 rounded-full bg-tangerine-500 hover:bg-tangerine-400 text-ink-900 font-sans font-bold text-sm shadow-md hover:shadow-lg transition-all duration-200 mt-2 flex items-center justify-center gap-2 cursor-pointer"
           >
-            <span>Request a demo</span>
+            <span>Book a demo</span>
             <ArrowRight className="w-4 h-4" />
           </button>
 

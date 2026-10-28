@@ -5,7 +5,7 @@ import { DemoBookingCard } from "@/components/demo/DemoBookingCard";
 import { Check, Building2, ArrowUpRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Request a Demo — EDUCTIVE School Management System",
+  title: "Book a demo — EDUCTIVE School Management System",
   description:
     "A 15-minute walkthrough of all eight portals, set up with your school's classes. Built for Nigerian schools.",
 };
@@ -102,10 +102,10 @@ export default function DemoPage() {
                     <Building2 className="w-4 h-4" />
                   </div>
                   <div className="text-xs min-w-0">
-                    <p className="font-display font-bold text-white truncate">
+                    <p className="font-display font-bold text-white">
                       Oakland Comprehensive High School
                     </p>
-                    <p className="text-[11px] text-surface/70 font-sans truncate">
+                    <p className="text-[11px] text-surface/70 font-sans">
                       Sample student records &amp; fee receipts
                     </p>
                   </div>

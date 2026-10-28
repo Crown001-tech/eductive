@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import { motion, AnimatePresence, useScroll, useTransform } from "motion/react";
+import { motion, AnimatePresence, useScroll, useTransform, useReducedMotion } from "motion/react";
 import {
   Receipt,
   Users,
@@ -37,7 +37,7 @@ const STEPS: StepData[] = [
     id: "attendance",
     stepNum: "02",
     title: "Attendance",
-    subtitle: "Homeroom",
+    subtitle: "Form Class",
     summary: "Take roll-call from any phone in under a minute.",
     highlights: [
       "One-tap roll-call on any phone",
@@ -71,32 +71,24 @@ const STEPS: StepData[] = [
 export function SynchronizedFlowSection() {
   const sectionRef = useRef<HTMLElement>(null);
   const [activeStepIndex, setActiveStepIndex] = useState<number>(0);
-  const activeStep = STEPS[activeStepIndex];
+  const [paused, setPaused] = useState(false);
+  const reduceMotion = useReducedMotion();
 
-  // Scroll progression for edge educational elements expanding/contracting
+  // The line draws down as the reader scrolls through the steps.
   const { scrollYProgress } = useScroll({
     target: sectionRef,
-    offset: ["start end", "end start"],
+    offset: ["start 70%", "end 60%"],
   });
+  const railDraw = useTransform(scrollYProgress, [0, 0.8], [0, 1]);
 
-  // Dynamic transforms for educational motifs around edges
-  const compassScale = useTransform(scrollYProgress, [0, 0.45, 1], [0.8, 1.22, 0.85]);
-  const compassRotate = useTransform(scrollYProgress, [0, 1], [-16, 26]);
-  const rulerHeight = useTransform(scrollYProgress, [0, 0.5, 1], [150, 270, 160]);
-  const abacusBead1 = useTransform(scrollYProgress, [0, 1], [0, 22]);
-  const abacusBead2 = useTransform(scrollYProgress, [0, 1], [18, -4]);
-  const abacusBead3 = useTransform(scrollYProgress, [0, 1], [-6, 16]);
-  const sealScale = useTransform(scrollYProgress, [0, 0.5, 1], [0.85, 1.2, 0.9]);
-  const triangleScale = useTransform(scrollYProgress, [0, 0.5, 1], [0.82, 1.15, 0.88]);
-  const triangleRotate = useTransform(scrollYProgress, [0, 1], [8, -18]);
-
-  // Auto-advance loop every 7.5s
+  // Steps change every 7.5s. Stops on hover and with reduced motion. A tap restarts the count.
   useEffect(() => {
-    const timer = setInterval(() => {
+    if (reduceMotion || paused) return;
+    const timer = setTimeout(() => {
       setActiveStepIndex((prev) => (prev + 1) % STEPS.length);
     }, 7500);
-    return () => clearInterval(timer);
-  }, []);
+    return () => clearTimeout(timer);
+  }, [activeStepIndex, paused, reduceMotion]);
 
   return (
     <section
@@ -104,283 +96,7 @@ export function SynchronizedFlowSection() {
       id="how-it-works"
       className="relative w-full bg-[#FCFBF8] text-charcoal-900 py-24 xl:py-36 overflow-hidden rounded-t-[36px] sm:rounded-t-[56px] -mt-10 relative z-20 shadow-[0_-20px_50px_rgba(7,51,42,0.10)] select-none border-t border-line/60"
     >
-      {/* =======================================================================
-          MINI 3D & DRAFTING EDUCATIONAL ELEMENTS AROUND EDGES (Expand/Contract on Scroll)
-          - Positioned strictly along peripheral gutters
-          - Clear of all headlines, copy, and central interactive cards
-         ======================================================================= */}
-      {/* 1. Top-Right: Geometric Drafting Compass & Degree Arc */}
-      <motion.div
-        style={{ scale: compassScale, rotate: compassRotate }}
-        className="pointer-events-none absolute top-12 right-6 lg:right-16 z-0 opacity-45 hidden md:block"
-      >
-        <svg width="150" height="150" viewBox="0 0 150 150" fill="none">
-          {/* Protractor Arc */}
-          <circle cx="75" cy="75" r="58" stroke="#12A26B" strokeWidth="1" strokeDasharray="3 3" opacity="0.65" />
-          <circle cx="75" cy="75" r="48" stroke="#D9E0DD" strokeWidth="1.2" opacity="0.8" />
-          {/* Angle degree marks */}
-          {[0, 30, 45, 60, 90, 120, 135, 150, 180].map((deg) => {
-            const rad = (deg * Math.PI) / 180;
-            const x1 = 75 + 44 * Math.cos(rad);
-            const y1 = 75 - 44 * Math.sin(rad);
-            const x2 = 75 + 48 * Math.cos(rad);
-            const y2 = 75 - 48 * Math.sin(rad);
-            return <line key={deg} x1={x1} y1={y1} x2={x2} y2={y2} stroke="#12A26B" strokeWidth="1" opacity="0.7" />;
-          })}
-          {/* Compass Needle */}
-          <line x1="75" y1="18" x2="75" y2="132" stroke="#07332A" strokeWidth="1.75" strokeLinecap="round" />
-          <line x1="18" y1="75" x2="132" y2="75" stroke="#07332A" strokeWidth="1.75" strokeLinecap="round" />
-          <circle cx="75" cy="75" r="4.5" fill="#3DDC97" stroke="#07332A" strokeWidth="1.5" />
-          <text x="80" y="32" fill="#12A26B" fontSize="9" fontFamily="monospace" fontWeight="bold">90°</text>
-          <text x="122" y="71" fill="#12A26B" fontSize="9" fontFamily="monospace">0°</text>
-        </svg>
-      </motion.div>
 
-      {/* 2. Left Edge: Ruled Measurement Gauge & Sliding Abacus Counting Frame */}
-      <motion.div
-        className="pointer-events-none absolute left-3 lg:left-8 top-1/2 -translate-y-1/2 z-0 opacity-40 hidden sm:block"
-      >
-        <div className="flex items-center gap-3">
-          {/* Red Ledger Margin Line */}
-          <div className="w-[1.5px] h-56 bg-red-400/60" />
-          {/* Dynamic Expanding Ruler Lines */}
-          <motion.div style={{ height: rulerHeight }} className="flex flex-col justify-between py-1">
-            {Array.from({ length: 11 }).map((_, i) => (
-              <div key={i} className="flex items-center gap-1.5">
-                <div className={`h-[1px] bg-charcoal-600 ${i % 2 === 0 ? "w-4" : "w-2.5"}`} />
-                {i % 5 === 0 && (
-                  <span className="text-[8px] font-mono text-charcoal-600 font-bold">
-                    {i * 5}mm
-                  </span>
-                )}
-              </div>
-            ))}
-          </motion.div>
-
-          {/* Mini Abacus Frame with sliding tactile beads */}
-          <div className="w-8 h-40 border border-charcoal-400/40 rounded bg-white/40 p-1 flex flex-col justify-around shadow-sm">
-            {/* Wire 1 */}
-            <div className="relative w-full h-[1px] bg-charcoal-400/60 flex items-center">
-              <motion.div
-                style={{ x: abacusBead1 }}
-                className="w-2.5 h-2.5 rounded-full bg-emerald-600 shadow-sm border border-emerald-400"
-              />
-            </div>
-            {/* Wire 2 */}
-            <div className="relative w-full h-[1px] bg-charcoal-400/60 flex items-center">
-              <motion.div
-                style={{ x: abacusBead2 }}
-                className="w-2.5 h-2.5 rounded-full bg-sun-400 shadow-sm border border-amber-300"
-              />
-            </div>
-            {/* Wire 3 */}
-            <div className="relative w-full h-[1px] bg-charcoal-400/60 flex items-center">
-              <motion.div
-                style={{ x: abacusBead3 }}
-                className="w-2.5 h-2.5 rounded-full bg-tangerine-500 shadow-sm border border-orange-400"
-              />
-            </div>
-          </div>
-        </div>
-      </motion.div>
-
-      {/* 3. Bottom-Right: 3D Official Academic Wax Crest Seal Motif */}
-      <motion.div
-        style={{ scale: sealScale }}
-        className="pointer-events-none absolute bottom-8 right-6 lg:right-16 z-0 opacity-50 hidden lg:block"
-      >
-        <div className="w-28 h-28 rounded-full border-2 border-dashed border-emerald-600/40 p-2 flex items-center justify-center bg-white/70 shadow-[0_16px_32px_rgba(7,51,42,0.12)] [perspective:700px] [transform:rotateX(14deg)_rotateY(-12deg)]">
-          <div className="w-full h-full rounded-full border border-emerald-600/30 flex flex-col items-center justify-center text-center p-1 bg-emerald-500/5">
-            <span className="text-[8px] font-display font-bold text-ink-900 tracking-wider uppercase leading-none">
-              OAKLAND
-            </span>
-            <span className="text-[6.5px] font-sans text-emerald-800 font-semibold tracking-tight mt-0.5">
-              EST. NIGERIA
-            </span>
-            <div className="w-8 h-[1px] bg-emerald-500/50 my-1" />
-            <span className="text-[6px] font-mono text-charcoal-600 tracking-wider">OFFICIAL SEAL</span>
-          </div>
-        </div>
-      </motion.div>
-
-      {/* 4. Bottom-Left: 3D Mathematical Set-Square / Drafting Triangle */}
-      <motion.div
-        style={{ scale: triangleScale, rotate: triangleRotate }}
-        className="pointer-events-none absolute bottom-12 left-8 lg:left-20 z-0 opacity-35 hidden xl:block"
-      >
-        <svg width="100" height="100" viewBox="0 0 100 100" fill="none">
-          {/* Transparent Acrylic Triangle */}
-          <polygon
-            points="10,90 90,90 10,10"
-            fill="rgba(18, 162, 107, 0.06)"
-            stroke="#12A26B"
-            strokeWidth="1.5"
-            strokeLinejoin="round"
-          />
-          {/* Inner Cutout */}
-          <polygon
-            points="24,78 72,78 24,30"
-            fill="#FCFBF8"
-            stroke="#D9E0DD"
-            strokeWidth="1"
-            strokeLinejoin="round"
-          />
-          {/* Millimeter Ticks along base */}
-          {[16, 26, 36, 46, 56, 66, 76, 84].map((x) => (
-            <line key={x} x1={x} y1="88" x2={x} y2="92" stroke="#07332A" strokeWidth="1" />
-          ))}
-        </svg>
-      </motion.div>
-
-      {/* =======================================================================
-          NON-LINEAR CONNECTING THREAD & CONTACT SYSTEM (Desktop lg:block only)
-          - Enters at top center (720, 0) directly from Hero handoff
-          - Continuous non-linear path with feeder branches to each card
-          - Feature: ALWAYS-MOVING GLOWING BALL via native SVG animateMotion
-          - Feature: Point showing contact at every card junction
-         ======================================================================= */}
-      <svg
-        className="absolute inset-0 w-full h-full pointer-events-none z-0 overflow-visible hidden lg:block"
-        viewBox="0 0 1440 1000"
-        preserveAspectRatio="none"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <defs>
-          <linearGradient id="flowGrad" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stopColor="#3DDC97" />
-            <stop offset="50%" stopColor="#12A26B" />
-            <stop offset="100%" stopColor="#FF6A1A" />
-          </linearGradient>
-          <filter id="flowGlow" x="-30%" y="-30%" width="160%" height="160%">
-            <feGaussianBlur stdDeviation="3.5" result="blur" />
-            <feMerge>
-              <feMergeNode in="blur" />
-              <feMergeNode in="SourceGraphic" />
-            </feMerge>
-          </filter>
-        </defs>
-
-        {/* Master Non-Linear S-Thread Pathway */}
-        <path
-          d="M 720,0 C 720,80 540,140 420,200 C 260,280 210,420 320,540 C 440,670 760,600 920,680 C 1080,760 980,920 720,1000"
-          stroke="url(#flowGrad)"
-          strokeWidth="2.5"
-          strokeDasharray="6 6"
-          strokeOpacity="0.45"
-          filter="url(#flowGlow)"
-        />
-
-        {/* FEEDER BRANCH LINES CONNECTING MASTER THREAD TO CARDS */}
-        {/* Branch 1 to Card 1 (Bursar) */}
-        <path
-          d="M 420,200 C 340,240 260,320 220,360"
-          stroke="url(#flowGrad)"
-          strokeWidth="1.75"
-          strokeDasharray="4 4"
-          strokeOpacity={activeStepIndex === 0 ? "0.9" : "0.3"}
-        />
-        {/* Branch 2 to Card 2 (Attendance) */}
-        <path
-          d="M 260,380 C 220,420 200,450 220,480"
-          stroke="url(#flowGrad)"
-          strokeWidth="1.75"
-          strokeDasharray="4 4"
-          strokeOpacity={activeStepIndex === 1 ? "0.9" : "0.3"}
-        />
-        {/* Branch 3 to Card 3 (Assessment) */}
-        <path
-          d="M 320,540 C 260,560 210,580 220,610"
-          stroke="url(#flowGrad)"
-          strokeWidth="1.75"
-          strokeDasharray="4 4"
-          strokeOpacity={activeStepIndex === 2 ? "0.9" : "0.3"}
-        />
-        {/* Branch 4 to Card 4 (Leadership) */}
-        <path
-          d="M 440,670 C 340,680 260,700 220,730"
-          stroke="url(#flowGrad)"
-          strokeWidth="1.75"
-          strokeDasharray="4 4"
-          strokeOpacity={activeStepIndex === 3 ? "0.9" : "0.3"}
-        />
-        {/* Branch across to 3D Stage on the right */}
-        <path
-          d="M 760,600 C 820,610 880,590 940,560"
-          stroke="url(#flowGrad)"
-          strokeWidth="1.75"
-          strokeDasharray="4 4"
-          strokeOpacity="0.6"
-        />
-
-        {/* ALWAYS-MOVING GLOWING BALL: Continuously glides along the main thread without pause */}
-        <g>
-          {/* Main glowing pulse ball */}
-          <circle r="5.5" fill="#3DDC97" filter="url(#flowGlow)">
-            <animateMotion
-              dur="8.2s"
-              repeatCount="indefinite"
-              path="M 720,0 C 720,80 540,140 420,200 C 260,280 210,420 320,540 C 440,670 760,600 920,680 C 1080,760 980,920 720,1000"
-            />
-          </circle>
-          {/* Traveling aura beam */}
-          <circle r="14" fill="#3DDC97" opacity="0.3" filter="url(#flowGlow)">
-            <animateMotion
-              dur="8.2s"
-              repeatCount="indefinite"
-              path="M 720,0 C 720,80 540,140 420,200 C 260,280 210,420 320,540 C 440,670 760,600 920,680 C 1080,760 980,920 720,1000"
-            />
-          </circle>
-        </g>
-
-        {/* =====================================================================
-            CONTACT POINTS (Showing tactile contact at each card junction & stage)
-           ===================================================================== */}
-        {[
-          { x: 220, y: 360, step: 0, label: "Bursar Contact" },
-          { x: 220, y: 480, step: 1, label: "Attendance Contact" },
-          { x: 220, y: 610, step: 2, label: "Assessment Contact" },
-          { x: 220, y: 730, step: 3, label: "Leadership Contact" },
-          { x: 940, y: 560, step: activeStepIndex, label: "Stage Sync Contact" },
-        ].map((pt, i) => {
-          const isContact = activeStepIndex === pt.step;
-          return (
-            <g key={i} className="transition-all duration-300">
-              {/* Concentric contact ring */}
-              <circle
-                cx={pt.x}
-                cy={pt.y}
-                r={isContact ? 15 : 9}
-                fill="none"
-                stroke={isContact ? "#12A26B" : "#D9E0DD"}
-                strokeWidth={isContact ? "2" : "1"}
-                strokeDasharray={isContact ? "3 3" : "none"}
-                opacity={isContact ? 0.95 : 0.45}
-              />
-              {/* Illuminated contact halo when active */}
-              {isContact && (
-                <circle
-                  cx={pt.x}
-                  cy={pt.y}
-                  r="20"
-                  fill="#3DDC97"
-                  opacity="0.35"
-                  filter="url(#flowGlow)"
-                />
-              )}
-              {/* Solid Contact Anchor Core */}
-              <circle
-                cx={pt.x}
-                cy={pt.y}
-                r={isContact ? 6.5 : 4}
-                fill={isContact ? "#12A26B" : "#71807A"}
-                filter={isContact ? "url(#flowGlow)" : undefined}
-              />
-              <circle cx={pt.x} cy={pt.y} r="2.5" fill="#FFFFFF" />
-            </g>
-          );
-        })}
-      </svg>
 
       {/* Ambient background light */}
       <div className="absolute top-1/4 -left-32 w-[500px] h-[500px] bg-emerald-500/5 rounded-full blur-3xl pointer-events-none" />
@@ -396,7 +112,7 @@ export function SynchronizedFlowSection() {
           </h2>
 
           <p className="text-base sm:text-lg text-charcoal-600 font-sans leading-relaxed text-balance">
-            Fees, registers, results and oversight, already connected. And that's before the part most schools don't expect.
+            Fees, registers, results and oversight, already connected.
           </p>
         </div>
 
@@ -408,28 +124,18 @@ export function SynchronizedFlowSection() {
           {/* ===================================================================
               LEFT COLUMN: STEP NAVIGATION WITH CONTACT NODES (5 Cols)
              =================================================================== */}
-          <div className="lg:col-span-5 flex flex-col gap-3.5 relative pl-6 sm:pl-8 lg:pl-0">
-            {/* Dedicated Mobile Connecting Line & Continuously Moving Ball (lg:hidden) */}
-            <div className="lg:hidden absolute left-2 sm:left-3 top-6 bottom-12 w-[2px] pointer-events-none z-0">
-              {/* Vertical Gradient Rail */}
-              <div className="w-full h-full bg-gradient-to-b from-[#3DDC97] via-[#12A26B] to-[#FF6A1A] opacity-40 rounded-full" />
-
-              {/* Mobile Continuously Moving Ball: Glides down smoothly and continuously without pause */}
+          <div
+            className="lg:col-span-5 flex flex-col gap-3.5 relative pl-6 sm:pl-8 lg:pl-0"
+            onMouseEnter={() => setPaused(true)}
+            onMouseLeave={() => setPaused(false)}
+          >
+            {/* Connecting line: dashed track behind, solid line draws on scroll */}
+            <div className="absolute left-2 lg:left-[2px] top-6 bottom-12 w-[2px] pointer-events-none z-0">
+              <div className="absolute inset-0 border-l-2 border-dashed border-emerald-500/30" />
               <motion.div
-                animate={{
-                  top: ["0%", "100%"],
-                  opacity: [0, 1, 1, 0],
-                }}
-                transition={{
-                  duration: 8.2,
-                  repeat: Infinity,
-                  ease: "linear",
-                }}
-                className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-10"
-              >
-                <div className="w-3.5 h-3.5 rounded-full bg-[#3DDC97] shadow-[0_0_12px_#3DDC97]" />
-                <div className="absolute inset-[-4px] rounded-full bg-[#3DDC97]/30 blur-xs" />
-              </motion.div>
+                style={{ scaleY: reduceMotion ? 1 : railDraw, transformOrigin: "top" }}
+                className="absolute inset-0 bg-gradient-to-b from-[#3DDC97] via-[#12A26B] to-[#FF6A1A] rounded-full"
+              />
             </div>
 
             {STEPS.map((step, idx) => {
@@ -454,9 +160,6 @@ export function SynchronizedFlowSection() {
                     />
                     {/* Contact Point Node */}
                     <div className="relative flex items-center justify-center">
-                      {isActive && (
-                        <span className="absolute w-5 h-5 rounded-full bg-emerald-400/40 animate-ping" />
-                      )}
                       <span
                         className={`w-3.5 h-3.5 rounded-full flex items-center justify-center transition-all ${
                           isActive
@@ -476,9 +179,6 @@ export function SynchronizedFlowSection() {
                   {/* MOBILE CONTACT DOCKING NODE (lg:hidden: sits right on the mobile rail) */}
                   <div className="absolute -left-6 sm:-left-8 top-6 -translate-y-1/2 flex lg:hidden items-center">
                     <div className="relative flex items-center justify-center">
-                      {isActive && (
-                        <span className="absolute w-6 h-6 rounded-full bg-emerald-400/40 animate-ping" />
-                      )}
                       <span
                         className={`w-4 h-4 rounded-full flex items-center justify-center transition-all ${
                           isActive
@@ -523,33 +223,30 @@ export function SynchronizedFlowSection() {
                     </span>
                   </div>
 
-                  {/* Summary & Highlights - only expanded for active item */}
-                  <AnimatePresence mode="wait">
-                    {isActive && (
-                      <motion.div
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: "auto" }}
-                        exit={{ opacity: 0, height: 0 }}
-                        transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-                        className="overflow-hidden pt-2"
-                      >
-                        <p className="text-sm text-charcoal-700 leading-relaxed font-sans mb-3.5">
-                          {step.summary}
-                        </p>
+                  {/* Summary & Highlights - shown for the active step, fades in (no height animation) */}
+                  {isActive && (
+                    <motion.div
+                      initial={reduceMotion ? false : { opacity: 0, y: 6 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                      className="pt-2"
+                    >
+                      <p className="text-sm text-charcoal-700 leading-relaxed font-sans mb-3.5">
+                        {step.summary}
+                      </p>
 
-                        <div className="space-y-1.5 pt-2 border-t border-line/50">
-                          {step.highlights.map((h, i) => (
-                            <div key={i} className="flex items-center gap-2 text-xs text-charcoal-800">
-                              <span className="w-4 h-4 rounded-full bg-emerald-50 text-emerald-700 flex items-center justify-center text-[10px] flex-shrink-0 font-bold">
-                                ✓
-                              </span>
-                              <span>{h}</span>
-                            </div>
-                          ))}
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
+                      <div className="space-y-1.5 pt-2 border-t border-line/50">
+                        {step.highlights.map((h, i) => (
+                          <div key={i} className="flex items-center gap-2 text-xs text-charcoal-800">
+                            <span className="w-4 h-4 rounded-full bg-emerald-50 text-emerald-700 flex items-center justify-center text-[10px] flex-shrink-0 font-bold">
+                              ✓
+                            </span>
+                            <span>{h}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </motion.div>
+                  )}
                 </div>
               );
             })}
@@ -560,7 +257,7 @@ export function SynchronizedFlowSection() {
                 href="/product"
                 className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-700 hover:text-emerald-800 transition-colors group cursor-pointer"
               >
-                <span>See everything it does</span>
+                <span>See all features</span>
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </div>
@@ -600,7 +297,7 @@ export function SynchronizedFlowSection() {
                           OAKLAND COMPREHENSIVE HIGH SCHOOL
                         </p>
                         <p className="text-[11px] text-charcoal-600 font-sans">
-                          BURSARY E-RECEIPT · FIRST TERM 2024/2025
+                          BURSARY E-RECEIPT · FIRST TERM 2026/2027
                         </p>
                       </div>
                       <span className="text-[10px] bg-emerald-500/15 text-emerald-800 font-bold px-2.5 py-1 rounded">
@@ -618,19 +315,19 @@ export function SynchronizedFlowSection() {
                         <span className="font-bold font-mono text-sm">₦185,000.00</span>
                       </div>
                       <div className="flex justify-between items-baseline text-emerald-800">
-                        <span className="text-charcoal-600 text-xs">Amount Paid (Bank Transfer):</span>
+                        <span className="text-charcoal-600 text-xs">Amount Paid:</span>
                         <span className="font-bold font-mono text-sm text-emerald-700">₦185,000.00</span>
                       </div>
                       <div className="flex justify-between items-baseline border-t border-dashed border-[#E5DEC9] pt-2">
-                        <span className="text-charcoal-600 text-xs">Outstanding Balance:</span>
+                        <span className="text-charcoal-600 text-xs">Balance:</span>
                         <span className="font-extrabold font-mono text-base text-emerald-700">₦0.00</span>
                       </div>
                     </div>
 
                     <div className="flex items-end justify-between pt-3 border-t border-[#EDE6D8]">
                       <div className="text-[10px] text-charcoal-600 font-mono">
-                        <p>SETTLEMENT: ZENITH DIRECT CLEARING</p>
-                        <p className="text-emerald-800 font-bold">STATUS: RECONCILED</p>
+                        <p>PAID BY: BANK TRANSFER</p>
+                        <p className="text-emerald-800 font-bold">STATUS: RECORDED</p>
                       </div>
 
                       {/* Stamped Paid Seal */}
@@ -720,7 +417,7 @@ export function SynchronizedFlowSection() {
                         <p className="font-bold text-ink-900 text-sm uppercase tracking-wide font-display">
                           CONTINUOUS ASSESSMENT SLIP
                         </p>
-                        <p className="text-xs text-charcoal-600">Mathematics · Second Term</p>
+                        <p className="text-xs text-charcoal-600">Mathematics · First Term</p>
                       </div>
                       <span className="text-xs font-bold text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded border border-emerald-200">
                         Class Position: 3rd / 42
@@ -774,20 +471,20 @@ export function SynchronizedFlowSection() {
                         <p className="text-xs text-emerald-300/80">Oakland Comprehensive High School</p>
                       </div>
                       <span className="text-[10px] bg-emerald-500/20 text-emerald-300 font-bold px-2.5 py-1 rounded border border-emerald-400/30">
-                        Term 2 Active
+                        First Term
                       </span>
                     </div>
 
                     <div className="grid grid-cols-2 gap-3 mb-4">
                       <div className="bg-ink-800/80 p-3 rounded-lg border border-emerald-500/20">
-                        <span className="text-surface/70 block text-[11px] mb-1">Fee Collection</span>
-                        <span className="font-display font-bold text-lg text-white">₦42.85M</span>
-                        <span className="text-[10px] text-emerald-300 block mt-0.5">92.8% reconciled</span>
+                        <span className="text-surface/70 block text-[11px] mb-1">Fees paid</span>
+                        <span className="font-display font-bold text-lg text-white">₦42,850,000</span>
+                        <span className="text-[10px] text-emerald-300 block mt-0.5">412 of 460 students</span>
                       </div>
                       <div className="bg-ink-800/80 p-3 rounded-lg border border-emerald-500/20">
-                        <span className="text-surface/70 block text-[11px] mb-1">Daily Attendance</span>
-                        <span className="font-display font-bold text-lg text-white">98.4%</span>
-                        <span className="text-[10px] text-emerald-300 block mt-0.5">All 18 arms reported</span>
+                        <span className="text-surface/70 block text-[11px] mb-1">Present today</span>
+                        <span className="font-display font-bold text-lg text-white">41 of 42</span>
+                        <span className="text-[10px] text-emerald-300 block mt-0.5">JSS 2 Gold</span>
                       </div>
                     </div>
 

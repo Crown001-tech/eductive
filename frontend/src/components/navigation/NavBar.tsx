@@ -117,9 +117,10 @@ export function NavBar() {
             {/* Desktop CTA Button */}
             <Link
               href="/demo"
-              className="inline-flex items-center justify-center font-sans font-semibold rounded-full pl-6 pr-2 py-2 text-[13px] bg-tangerine-500 hover:bg-tangerine-400 text-ink-900 gap-2.5 shadow-md transition-all duration-200 group cursor-pointer"
+              aria-current={isDemoPage ? "page" : undefined}
+              className={`inline-flex items-center justify-center font-sans font-semibold rounded-full pl-6 pr-2 py-2 text-[13px] bg-tangerine-500 hover:bg-tangerine-400 text-ink-900 gap-2.5 shadow-md transition-all duration-200 group cursor-pointer ${isDemoPage ? "hidden" : ""}`}
             >
-              <span>Request a Demo</span>
+              <span>Book a demo</span>
               <span className="w-7 h-7 rounded-full bg-ink-900 text-tangerine-500 flex items-center justify-center transition-transform group-hover:translate-x-0.5">
                 <ArrowRight className="w-3.5 h-3.5" />
               </span>
@@ -137,6 +138,8 @@ export function NavBar() {
                   : isScrolled
                   ? "bg-ink-900/[0.04] hover:bg-ink-900/[0.08] border-line text-ink-900"
                   : isDarkHeroPage
+                  ? "bg-white/[0.08] hover:bg-white/[0.14] border-white/20 text-white backdrop-blur-md"
+                  : isHome
                   ? "bg-white/[0.08] hover:bg-white/[0.14] border-white/20 text-white backdrop-blur-md"
                   : "bg-ink-900/[0.05] hover:bg-ink-900/[0.1] border-ink-900/15 text-ink-900"
               }`}

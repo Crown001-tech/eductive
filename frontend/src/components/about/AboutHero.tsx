@@ -48,7 +48,7 @@ export function AboutHero() {
             size="lg"
             className="px-8 py-4 rounded-full font-bold shadow-lg shadow-tangerine-500/20 hover:scale-[1.02]"
           >
-            Request a demo
+            Book a demo
           </Button>
 
           <Link

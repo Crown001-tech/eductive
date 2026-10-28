@@ -158,6 +158,7 @@ export function BuiltForSchoolsSection() {
                             alt="EDUCTIVE Logo"
                             width={36}
                             height={36}
+                            unoptimized
                             className="w-full h-full object-contain"
                           />
                         </div>

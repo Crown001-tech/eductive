@@ -73,7 +73,7 @@ export function CrownTechSection() {
                 01 · THE PROBLEM
               </span>
               <p className="text-xs sm:text-sm text-surface/90 font-sans leading-relaxed">
-                Schools were running on paper receipts, soaked registers and spreadsheets. Teachers spent weekends working out broadsheets by hand.
+                Paper receipts, soaked registers and spreadsheets. Teachers spent weekends on broadsheets.
               </p>
             </div>
 
@@ -82,7 +82,7 @@ export function CrownTechSection() {
                 02 · THE SOLUTION
               </span>
               <p className="text-xs sm:text-sm text-surface/90 font-sans leading-relaxed">
-                We designed EDUCTIVE to work on ordinary smartphones, with no costly hardware. Fees, attendance, exams, classwork and the school gate live in one place.
+                Works on ordinary phones. Fees, attendance, exams and the school gate in one place.
               </p>
             </div>
 
@@ -91,7 +91,7 @@ export function CrownTechSection() {
                 03 · FULL SUPPORT
               </span>
               <p className="text-xs sm:text-sm text-surface/90 font-sans leading-relaxed">
-                We set up your classes and staff, train your teachers, and support you by phone and WhatsApp.
+                We set up your classes, train your teachers, and help by phone and WhatsApp.
               </p>
             </div>
           </div>

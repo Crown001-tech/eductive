@@ -56,7 +56,7 @@ export function Footer() {
                 href="/demo"
                 className="text-tangerine-400 hover:text-tangerine-300 font-semibold transition-colors"
               >
-                Request a demo
+                Book a demo
               </Link>
             </div>
 

@@ -27,7 +27,7 @@ export function WhatIsEductive() {
               <div className="w-11 h-11 rounded-2xl bg-emerald-50 text-emerald-800 flex items-center justify-center mb-5 border border-emerald-200 shadow-sm">
                 <ShieldCheck className="w-5 h-5 text-emerald-700" />
               </div>
-              <span className="text-[10px] font-mono font-bold text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
+              <span className="text-[11px] font-mono font-bold text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
                 SAFE CLOUD
               </span>
               <h3 className="font-display font-bold text-ink-900 text-xl mt-3 mb-2">
@@ -48,7 +48,7 @@ export function WhatIsEductive() {
               <div className="w-11 h-11 rounded-2xl bg-emerald-50 text-emerald-800 flex items-center justify-center mb-5 border border-emerald-200 shadow-sm">
                 <Users className="w-5 h-5 text-emerald-700" />
               </div>
-              <span className="text-[10px] font-mono font-bold text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
+              <span className="text-[11px] font-mono font-bold text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
                 EIGHT WORKSPACES
               </span>
               <h3 className="font-display font-bold text-ink-900 text-xl mt-3 mb-2">
@@ -69,14 +69,14 @@ export function WhatIsEductive() {
               <div className="w-11 h-11 rounded-2xl bg-emerald-50 text-emerald-800 flex items-center justify-center mb-5 border border-emerald-200 shadow-sm">
                 <Eye className="w-5 h-5 text-emerald-700" />
               </div>
-              <span className="text-[10px] font-mono font-bold text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
+              <span className="text-[11px] font-mono font-bold text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
                 LIVE OVERSIGHT
               </span>
               <h3 className="font-display font-bold text-ink-900 text-xl mt-3 mb-2">
                 One screen truth
               </h3>
               <p className="text-sm text-charcoal-600 font-sans leading-relaxed">
-                School leaders see fees, attendance and academic performance across the institution on one screen.
+                School leaders see fees, attendance and results across the school on one screen.
               </p>
             </div>
             <div className="mt-6 pt-4 border-t border-line/60 text-xs font-mono text-emerald-800 font-bold">

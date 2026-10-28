@@ -145,7 +145,7 @@ export function FaqSection() {
                       {/* Numbered Accent Indicator */}
                       <span
                         className={`font-mono text-xs font-bold pt-0.5 transition-colors ${
-                          isOpen ? "text-emerald-700" : "text-charcoal-600/60"
+                          isOpen ? "text-emerald-700" : "text-charcoal-600"
                         }`}
                       >
                         {faq.num}

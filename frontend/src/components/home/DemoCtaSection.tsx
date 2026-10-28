@@ -108,6 +108,8 @@ export function DemoCtaSection() {
                     placeholder="e.g. 0803 123 4567"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
+                    inputMode="tel"
+                    autoComplete="tel"
                     className="w-full px-4 py-3 rounded-xl bg-ink-900/90 border border-emerald-500/25 text-white placeholder:text-surface/40 text-sm focus:outline-none focus:border-emerald-400 transition-colors font-mono"
                   />
                 </div>
@@ -118,7 +120,7 @@ export function DemoCtaSection() {
                     type="submit"
                     className="w-full py-4 px-8 rounded-full bg-tangerine-500 hover:bg-tangerine-400 text-ink-900 font-bold text-base flex items-center justify-center gap-3 shadow-lg shadow-tangerine-500/20 hover:shadow-tangerine-500/35 hover:scale-[1.01] transition-all cursor-pointer group"
                   >
-                    <span>Request a demo</span>
+                    <span>Book a demo</span>
                     <span className="w-6 h-6 rounded-full bg-ink-900 text-tangerine-400 flex items-center justify-center transition-transform group-hover:translate-x-1">
                       <ArrowRight className="w-3.5 h-3.5" />
                     </span>

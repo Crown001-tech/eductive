@@ -44,12 +44,9 @@ export function SchoolPaperArtifacts({
         }}
       >
         <motion.div
-          animate={{
-            y: [-5, 5, -5],
-            rotate: [-2.5, -0.5, -2.5],
-            scale: isBursarActive ? 1.04 : 1,
-          }}
-          transition={{ duration: 5.6, repeat: Infinity, ease: "easeInOut", delay: 0 }}
+          initial={false}
+          animate={{ rotate: -1.5, scale: isBursarActive ? 1.04 : 1 }}
+          transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
           className={`relative bg-[#FFFDF8] text-charcoal-900 rounded-[8px] border transition-all duration-300 p-4.5 font-mono text-[11.5px] overflow-hidden ${
             isBursarActive
               ? "border-tangerine-400 ring-2 ring-tangerine-400/40 shadow-[0_28px_56px_rgba(255,106,26,0.22)]"
@@ -70,7 +67,7 @@ export function SchoolPaperArtifacts({
                 OAKLAND COMPREHENSIVE HIGH SCHOOL
               </p>
               <p className="text-[9.5px] text-charcoal-600 font-sans tracking-wide">
-                BURSARY E-RECEIPT · FIRST TERM 2024/2025
+                BURSARY E-RECEIPT · FIRST TERM 2026/2027
               </p>
             </div>
             <span className="text-[9.5px] bg-emerald-500/15 text-emerald-800 font-bold px-2 py-0.5 rounded font-mono">
@@ -89,11 +86,11 @@ export function SchoolPaperArtifacts({
               <span className="font-bold font-mono text-[12.5px]">₦185,000.00</span>
             </div>
             <div className="flex justify-between items-baseline text-emerald-800">
-              <span className="text-charcoal-600 text-[10.5px]">Amount Credited (Bank Transfer):</span>
+              <span className="text-charcoal-600 text-[10.5px]">Amount Paid (Bank Transfer):</span>
               <span className="font-bold font-mono text-[12.5px] text-emerald-700">₦185,000.00</span>
             </div>
             <div className="flex justify-between items-baseline border-t border-dashed border-[#E5DEC9] pt-1">
-              <span className="text-charcoal-600 text-[10.5px]">Outstanding Balance Due:</span>
+              <span className="text-charcoal-600 text-[10.5px]">Balance:</span>
               <span className="font-extrabold font-mono text-[14px] text-emerald-700">
                 ₦0.00
               </span>

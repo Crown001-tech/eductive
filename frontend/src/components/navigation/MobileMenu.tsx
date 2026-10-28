@@ -148,7 +148,7 @@ export function MobileMenu({
             onClick={handleClick}
             className="w-full py-4 px-6 rounded-full bg-tangerine-500 hover:bg-tangerine-400 text-ink-900 font-sans font-bold text-sm flex items-center justify-center gap-2.5 shadow-lg shadow-tangerine-500/20 transition-all cursor-pointer"
           >
-            <span>Request a Demo</span>
+            <span>Book a demo</span>
             <ArrowRight className="w-4 h-4" />
           </Link>
 

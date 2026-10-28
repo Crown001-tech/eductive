@@ -65,7 +65,7 @@ export function ProductHero() {
               size="lg"
               className="px-8 py-4 rounded-full font-bold shadow-lg shadow-tangerine-500/20 hover:scale-[1.02] flex items-center gap-2.5"
             >
-              <span>Request a demo</span>
+              <span>Book a demo</span>
               <ArrowRight className="w-4 h-4" />
             </Button>
 

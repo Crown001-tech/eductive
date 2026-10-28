@@ -35,7 +35,7 @@ export function TheCliffhangerSection() {
           </h2>
 
           <p className="text-base sm:text-lg text-surface/85 font-sans leading-relaxed text-balance">
-            Beyond standard desks, three more workspaces come already built into the platform.
+            Three more portals, already built in.
           </p>
         </div>
 
@@ -80,13 +80,13 @@ export function TheCliffhangerSection() {
                     <span className="w-4 h-4 rounded-full bg-emerald-400 text-ink-900 flex items-center justify-center text-[10px] font-bold flex-shrink-0">
                       ✓
                     </span>
-                    <span>Direct score calculation into the terminal broadsheet</span>
+                    <span>Scores go straight to the result sheet</span>
                   </div>
                   <div className="flex items-center gap-2.5">
                     <span className="w-4 h-4 rounded-full bg-emerald-400 text-ink-900 flex items-center justify-center text-[10px] font-bold flex-shrink-0">
                       ✓
                     </span>
-                    <span>Full-screen test mode with timer and automatic submission</span>
+                    <span>The timer runs and the test submits itself</span>
                   </div>
                 </div>
               </div>
@@ -99,7 +99,7 @@ export function TheCliffhangerSection() {
                   <div className="bg-[#051C17] px-4 sm:px-6 py-3 border-b border-emerald-500/25 flex flex-wrap items-center justify-between gap-3 text-xs">
                     <div>
                       <p className="font-bold text-white text-xs sm:text-sm">
-                        JSS 2 Mathematics · Second Term CBT
+                        JSS 2 Mathematics · First Term CBT
                       </p>
                       <p className="text-[10px] text-emerald-300/80 font-mono">
                         Candidate: Adeyemi Femi (JSS 2 Gold)
@@ -108,7 +108,7 @@ export function TheCliffhangerSection() {
 
                     {/* Live Countdown Clock Badge */}
                     <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/15 border border-emerald-400/30 text-emerald-300 font-mono text-xs font-bold">
-                      <Clock className="w-3.5 h-3.5 text-emerald-400 animate-pulse" />
+                      <Clock className="w-3.5 h-3.5 text-emerald-400" />
                       <span>42m : 18s left</span>
                     </div>
                   </div>
@@ -167,9 +167,9 @@ export function TheCliffhangerSection() {
                   <div className="bg-[#051C17] px-4 sm:px-6 py-2.5 border-t border-emerald-500/20 flex items-center justify-between text-[11px] text-surface/70">
                     <span className="flex items-center gap-1.5">
                       <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-                      <span>Screen lock active · Safe browser</span>
+                      <span>Screen locked during the test</span>
                     </span>
-                    <span className="text-emerald-300 font-mono text-[10px]">Auto-saves every mark</span>
+                    <span className="text-emerald-300 font-mono text-[10px]">Answers save as you go</span>
                   </div>
 
                 </div>
@@ -225,7 +225,7 @@ export function TheCliffhangerSection() {
                         SECURITY POST · OFFICIAL VISITOR PASS
                       </p>
                     </div>
-                    <span className="text-xs font-mono font-bold text-red-600 bg-red-50 border border-red-200 px-2 py-0.5 rounded">
+                    <span className="text-xs font-mono font-bold text-red-700 bg-red-50 border border-red-200 px-2 py-0.5 rounded">
                       NO. 0092
                     </span>
                   </div>
@@ -330,14 +330,11 @@ export function TheCliffhangerSection() {
             Clean, high-contrast invitation into the full 8 portals on /product
            ===================================================================== */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 pt-4 text-center">
-          <span className="text-base sm:text-lg text-surface/90 font-sans">
-            All inside the portals. Built for Nigerian schools.
-          </span>
           <Link
             href="/product"
             className="inline-flex items-center gap-2.5 px-8 py-4 rounded-full text-sm font-bold bg-emerald-400 hover:bg-emerald-300 text-ink-900 font-sans shadow-lg shadow-emerald-500/20 transition-all hover:scale-105 active:scale-95 cursor-pointer"
           >
-            <span>See all eight portals</span>
+            <span>See all portals</span>
             <ArrowRight className="w-4 h-4" />
           </Link>
         </div>

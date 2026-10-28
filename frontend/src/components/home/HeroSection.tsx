@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion, AnimatePresence } from "motion/react";
+import { motion, AnimatePresence, useReducedMotion } from "motion/react";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { SchoolPaperArtifacts, SyncState } from "./SchoolPaperArtifacts";
@@ -19,7 +19,11 @@ export function HeroSection() {
   // Interactive station feature state: clicked module highlights corresponding card
   const [activeFeature, setActiveFeature] = useState<string | null>(null);
 
+  const reduceMotion = useReducedMotion();
+
   useEffect(() => {
+    // Reduced motion: no loop, show the finished state.
+    if (reduceMotion) return;
     let t1: NodeJS.Timeout;
     let t2: NodeJS.Timeout;
     let t3: NodeJS.Timeout;
@@ -64,7 +68,7 @@ export function HeroSection() {
       clearTimeout(t5);
       clearInterval(interval);
     };
-  }, []);
+  }, [reduceMotion]);
 
   return (
     <section className="relative w-full overflow-hidden bg-white select-none">
@@ -158,6 +162,7 @@ export function HeroSection() {
             />
 
             {/* ALWAYS-MOVING GLOWING BALL: Continuously glides along the thread indefinitely */}
+            {!reduceMotion && (
             <g>
               <circle r="5" fill="#3DDC97" filter="url(#threadGlow)">
                 <animateMotion
@@ -174,6 +179,7 @@ export function HeroSection() {
                 />
               </circle>
             </g>
+            )}
 
             {/* CONTACT POINTS (Showing contact at student origin and tablet node) */}
             {/* Contact 1: Students Origin (740, 360) */}
@@ -209,11 +215,7 @@ export function HeroSection() {
               height: "520px",
             }}
           >
-            <motion.div
-              animate={{ y: [-4, 4, -4] }}
-              transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
-              className="w-full h-full flex items-center justify-center"
-            >
+            <div className="w-full h-full flex items-center justify-center">
               <Image
                 src="/images/students-hero-transparent.png"
                 alt="Two celebrating Nigerian secondary school students leaping in triumph with diplomas"
@@ -222,7 +224,7 @@ export function HeroSection() {
                 priority
                 className="w-auto h-full max-h-[540px] object-contain drop-shadow-[0_24px_48px_rgba(7,51,42,0.22)]"
               />
-            </motion.div>
+            </div>
           </motion.div>
 
           {/* ===================================================================
@@ -346,7 +348,7 @@ export function HeroSection() {
               transition={{ duration: 0.6, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
               className="text-[16px] xl:text-[17px] text-surface/90 leading-[1.6] font-sans max-w-[480px] mb-6"
             >
-              EDUCTIVE runs everything in between, for owners, principals, teachers, parents and students. Built for Nigerian schools.
+              One portal for every person: owners, principals, teachers, parents and students. Built for Nigerian schools.
             </motion.p>
 
             {/* 4 Teaser Chips */}
@@ -394,7 +396,7 @@ export function HeroSection() {
                   size="lg"
                   className="group px-8 py-4 rounded-full text-base font-bold shadow-lg shadow-tangerine-500/20 hover:shadow-tangerine-500/35 hover:scale-[1.02] transition-all flex items-center gap-3"
                 >
-                  <span>Request a demo</span>
+                  <span>Book a demo</span>
                   <span className="w-7 h-7 rounded-full bg-ink-900 text-tangerine-400 flex items-center justify-center transition-transform group-hover:translate-x-1">
                     <ArrowRight className="w-4 h-4" />
                   </span>
@@ -461,7 +463,7 @@ export function HeroSection() {
 
           {/* Subtext (mobile) */}
           <p className="text-sm sm:text-base text-surface/85 font-sans leading-relaxed mb-6 text-balance">
-            EDUCTIVE runs everything in between, one portal for every person. Built for Nigerian schools.
+            One portal for every person: owners, principals, teachers, parents and students. Built for Nigerian schools.
           </p>
 
           {/* Feature tags */}
@@ -482,7 +484,7 @@ export function HeroSection() {
               href="/demo"
               className="inline-flex items-center justify-center font-sans font-semibold rounded-full px-8 py-4 text-sm bg-tangerine-500 hover:bg-tangerine-400 text-ink-900 shadow-lg shadow-tangerine-500/20 gap-2.5 transition-all"
             >
-              <span>Request a demo</span>
+              <span>Book a demo</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
 
@@ -535,7 +537,7 @@ export function HeroSection() {
                 </div>
                 <div className="flex justify-between">
                   <span className="text-charcoal-500">Amount Paid:</span>
-                  <span className="font-mono font-bold text-emerald-700">₦85,000.00</span>
+                  <span className="font-mono font-bold text-emerald-700">₦185,000.00</span>
                 </div>
                 <div className="flex justify-between border-t border-dashed border-[#E5DEC9] pt-1">
                   <span className="text-charcoal-500">Balance:</span>
@@ -544,7 +546,7 @@ export function HeroSection() {
               </div>
 
               <div className="flex items-center gap-1.5 pt-2 border-t border-[#EDE6D8] text-[10px] text-emerald-800 font-sans font-medium">
-                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse flex-shrink-0" />
+                <span className="w-2 h-2 rounded-full bg-emerald-500 flex-shrink-0" />
                 <span>Bursary payment record cleared</span>
               </div>
             </div>

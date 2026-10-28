@@ -319,8 +319,8 @@ export function RoleOrbitalStation() {
                 {(() => {
                   const rad = (activeRole.angleDeg * Math.PI) / 180;
                   const r = getOrbitRadius(activeRole.orbitRing, stageSize);
-                  const x = Math.cos(rad) * r;
-                  const y = Math.sin(rad) * r;
+                  const x = Math.round(Math.cos(rad) * r * 100) / 100;
+                  const y = Math.round(Math.sin(rad) * r * 100) / 100;
                   return (
                     <line
                       x1="0"
@@ -352,8 +352,8 @@ export function RoleOrbitalStation() {
                 const isActive = activeRoleId === role.id;
                 const rad = (role.angleDeg * Math.PI) / 180;
                 const r = getOrbitRadius(role.orbitRing, stageSize);
-                const x = Math.cos(rad) * r;
-                const y = Math.sin(rad) * r;
+                const x = Math.round(Math.cos(rad) * r * 100) / 100;
+                const y = Math.round(Math.sin(rad) * r * 100) / 100;
                 const isInitials = role.avatar.startsWith("initials:");
                 const initialsText = isInitials ? role.avatar.replace("initials:", "") : "";
 
