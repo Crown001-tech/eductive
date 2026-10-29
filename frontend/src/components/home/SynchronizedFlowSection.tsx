@@ -294,7 +294,7 @@ export function SynchronizedFlowSection() {
                     <div className="flex items-center justify-between border-b border-dashed border-[#D2C7B2] pb-3 mb-4 pt-1">
                       <div>
                         <p className="font-bold text-ink-900 tracking-wider text-sm font-display">
-                          OAKLAND COMPREHENSIVE HIGH SCHOOL
+                          OAKLAND SCHOOL
                         </p>
                         <p className="text-[11px] text-charcoal-600 font-sans">
                           BURSARY E-RECEIPT · FIRST TERM 2026/2027
@@ -468,7 +468,7 @@ export function SynchronizedFlowSection() {
                         <p className="font-bold text-white text-sm uppercase tracking-wide font-display">
                           PRINCIPAL & PROPRIETOR CONSOLE
                         </p>
-                        <p className="text-xs text-emerald-300/80">Oakland Comprehensive High School</p>
+                        <p className="text-xs text-emerald-300/80">Oakland School</p>
                       </div>
                       <span className="text-[10px] bg-emerald-500/20 text-emerald-300 font-bold px-2.5 py-1 rounded border border-emerald-400/30">
                         First Term

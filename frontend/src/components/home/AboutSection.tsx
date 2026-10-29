@@ -61,7 +61,7 @@ export function AboutSection() {
           <p className="text-base sm:text-lg text-surface/80 font-sans leading-relaxed text-balance">
             Generic foreign software assumes 24/7 high-speed fiber internet, credit card subscriptions,
             and Western school structures. We built an operating system designed around how
-            Nigerian primary and secondary schools actually operate day-to-day.
+            Nigerian nursery, primary and secondary schools actually operate day-to-day.
           </p>
         </div>
 
@@ -146,7 +146,7 @@ export function AboutSection() {
                 Headquartered in Lagos, Nigeria
               </h4>
               <p className="text-xs sm:text-sm text-surface/75 font-sans mt-0.5">
-                Serving Primary, Junior Secondary (JSS), and Senior Secondary (SSS) institutions nationwide.
+                Serving Nursery, Primary, Junior Secondary (JSS), and Senior Secondary (SSS) institutions nationwide.
               </p>
             </div>
           </div>

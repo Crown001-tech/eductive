@@ -267,7 +267,7 @@ export function CapabilitiesSection() {
                               <p className="font-bold text-xs text-white">
                                 Adeyemi Femi
                               </p>
-                              <p className="text-[10px] text-emerald-300/80">JSS 2 Gold · Oakland Comprehensive</p>
+                              <p className="text-[10px] text-emerald-300/80">JSS 2 Gold · Oakland School</p>
                             </div>
                           </div>
                           <span className="text-[10px] font-mono bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded border border-emerald-400/30">
@@ -406,7 +406,7 @@ export function CapabilitiesSection() {
                         <div className="flex items-center justify-between border-b border-dashed border-[#D2C7B2] pb-3 mb-4">
                           <div>
                             <p className="font-display font-bold text-sm text-ink-900">
-                              OAKLAND COMPREHENSIVE HIGH SCHOOL
+                              OAKLAND SCHOOL
                             </p>
                             <p className="text-[10px] text-charcoal-600 font-sans">
                               BURSARY PAYMENT RECORD · TERM 2
@@ -464,7 +464,7 @@ export function CapabilitiesSection() {
                             <p className="font-display font-bold text-sm text-white">
                               EXECUTIVE LEADERSHIP CONSOLE
                             </p>
-                            <p className="text-[10px] text-emerald-300/80">Oakland Comprehensive High</p>
+                            <p className="text-[10px] text-emerald-300/80">Oakland School</p>
                           </div>
                           <span className="text-[10px] bg-emerald-500/20 text-emerald-300 font-bold px-2 py-0.5 rounded border border-emerald-400/30">
                             Term 2 Live

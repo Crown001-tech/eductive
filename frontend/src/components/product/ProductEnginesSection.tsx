@@ -73,7 +73,7 @@ export function ProductEnginesSection() {
               <div className="flex flex-col xs:flex-row xs:items-center xs:justify-between gap-1.5 border-b border-dashed border-[#D2C7B2] pb-3 mb-3 pt-1">
                 <div className="min-w-0">
                   <p className="font-display font-bold text-ink-900 text-xs sm:text-sm tracking-wide truncate">
-                    OAKLAND COMPREHENSIVE HIGH SCHOOL
+                    OAKLAND SCHOOL
                   </p>
                   <p className="text-[10px] text-charcoal-500 font-sans">
                     BURSARY E-RECEIPT · FIRST TERM 2024/2025

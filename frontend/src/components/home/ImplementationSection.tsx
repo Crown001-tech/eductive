@@ -29,7 +29,7 @@ const STEPS: Step[] = [
     day: "Day 1",
     title: "Student Roster Migration & Arm Setup",
     summary:
-      "Send us your existing student and staff lists in Excel, CSV, or photos of physical registers. Our Lagos data specialists clean duplicates, format names, configure class arms (JSS1 to SSS3), and assign unique student registration IDs.",
+      "Send us your existing student and staff lists in Excel, CSV, or photos of physical registers. Our Lagos data specialists clean duplicates, format names, configure class arms (Nursery to SSS3), and assign unique student registration IDs.",
     actionTag: "Data Ingestion & Verification",
     deliverables: [
       "Excel, CSV, or paper registers sanitized and imported in 24 hours",
@@ -39,11 +39,11 @@ const STEPS: Step[] = [
     mockData: {
       badge: "DAY 1 · DATA INGESTION",
       headline: "Student Roster Upload",
-      subtext: "Oakland Comprehensive High School · 840 Student Records",
+      subtext: "Oakland School · 840 Student Records",
       status: "COMPLETED · 100% CLEANED",
       details: [
         { label: "Total Students Mapped", value: "840 Records" },
-        { label: "Class Arms Configured", value: "18 Classes (JSS 1–SSS 3)" },
+        { label: "Class Arms Configured", value: "18 Classes (Nursery–SSS 3)" },
         { label: "Duplicate Records Cleaned", value: "14 Resolved" },
         { label: "Unique IDs Generated", value: "OAK/2024/001 to 840" },
       ],

@@ -18,11 +18,11 @@ const OAKLAND_URL = "https://oakland-school.onrender.com";
 const OAKLAND_SLIDES = [
   {
     src: "/images/oakland-hero-1.png",
-    alt: "Oakland Schools homepage — Where Purpose Becomes a Standard",
+    alt: "Oakland School homepage — Where Purpose Becomes a Standard",
   },
   {
     src: "/images/oakland-hero-2.png",
-    alt: "Oakland Schools science laboratory — Where Character Becomes a Standard",
+    alt: "Oakland School science laboratory — Where Character Becomes a Standard",
   },
 ];
 
@@ -329,7 +329,7 @@ export function SchoolShowcaseStage() {
               <div className="flex items-center gap-2 min-w-0">
                 <span className="w-2 h-2 rounded-full bg-emerald-400 shrink-0" />
                 <span className="text-xs font-sans text-white/85 truncate">
-                  Oakland Comprehensive High School · Lagos
+                  Oakland School · Lagos
                 </span>
               </div>
 

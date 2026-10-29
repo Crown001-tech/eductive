@@ -103,7 +103,7 @@ export default function DemoPage() {
                   </div>
                   <div className="text-xs min-w-0">
                     <p className="font-display font-bold text-white">
-                      Oakland Comprehensive High School
+                      Oakland School
                     </p>
                     <p className="text-[11px] text-surface/70 font-sans">
                       Sample student records &amp; fee receipts

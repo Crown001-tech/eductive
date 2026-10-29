@@ -176,7 +176,7 @@ export function LookInsidePortalsSection() {
               <div className="flex items-center justify-between border-b border-dashed border-[#D2C7B2] pb-2 mb-2">
                 <div>
                   <p className="font-display font-bold text-xs text-ink-900">
-                    OAKLAND COMPREHENSIVE
+                    OAKLAND SCHOOL
                   </p>
                   <p className="text-[9px] text-charcoal-600 font-sans">
                     VISITOR PASS · GATE 1

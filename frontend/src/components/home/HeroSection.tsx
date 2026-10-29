@@ -419,7 +419,7 @@ export function HeroSection() {
                     rel="noopener noreferrer"
                     className="underline underline-offset-4 text-white hover:text-emerald-200 font-bold transition-colors"
                   >
-                    Oakland Comprehensive High School
+                    Oakland School
                   </a>
                 </div>
               </div>
@@ -520,7 +520,7 @@ export function HeroSection() {
             <div className="w-full sm:max-w-[280px] bg-[#FFFDF8] rounded-2xl border border-[#D8CEBA] p-4 shadow-[0_16px_36px_rgba(0,0,0,0.35)] text-charcoal-900 font-mono text-[11px] relative overflow-hidden order-2 sm:order-1">
               <div className="flex items-center justify-between border-b border-dashed border-[#D2C7B2] pb-2 mb-2">
                 <div>
-                  <p className="font-display font-bold text-ink-900 text-xs">OAKLAND HIGH</p>
+                  <p className="font-display font-bold text-ink-900 text-xs">OAKLAND SCHOOL</p>
                   <p className="text-[9px] text-charcoal-500 font-sans">BURSARY E-RECEIPT #0417</p>
                 </div>
                 <div className="border border-emerald-700/60 rounded px-1.5 py-0.5 bg-emerald-700/10">

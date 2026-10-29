@@ -124,7 +124,7 @@ export function BuiltForSchoolsSection() {
                     <div className="bg-[#0A2E24] rounded-2xl p-3 border border-emerald-500/25 shadow-sm">
                       <div className="flex items-center justify-between mb-1">
                         <span className="text-[9px] font-mono text-emerald-300 font-bold uppercase tracking-wider">
-                          OAKLAND HIGH SCHOOL
+                          OAKLAND SCHOOL
                         </span>
                         <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
                       </div>
@@ -170,7 +170,7 @@ export function BuiltForSchoolsSection() {
                             <span className="text-[9px] text-emerald-300 font-mono">App</span>
                           </div>
                           <p className="text-[10px] text-surface/75 truncate">
-                            Oakland Comprehensive High
+                            Oakland School
                           </p>
                         </div>
                       </div>
@@ -211,16 +211,22 @@ export function BuiltForSchoolsSection() {
                 </div>
                 <div className="min-w-0 flex-1">
                   <h3 className="font-display font-bold text-ink-900 text-lg mb-1">
-                    Naira, JSS and SS
+                    Naira and real classes
                   </h3>
                   <p className="text-xs sm:text-sm text-charcoal-600 font-sans leading-relaxed mb-3">
-                    Fees in naira, classes in real JSS and SS arms.
+                    Fees in naira, classes from Nursery to SS 3.
                   </p>
 
                   {/* Micro Badges */}
                   <div className="flex flex-wrap gap-1.5 font-mono text-[11px]">
                     <span className="px-2 py-0.5 rounded bg-emerald-50 text-emerald-800 border border-emerald-200 font-bold">
                       ₦ Naira (NGN)
+                    </span>
+                    <span className="px-2 py-0.5 rounded bg-[#FAF9F5] text-charcoal-700 border border-[#E5DEC9]">
+                      Nursery 1 - 3
+                    </span>
+                    <span className="px-2 py-0.5 rounded bg-[#FAF9F5] text-charcoal-700 border border-[#E5DEC9]">
+                      Primary 1 - 6
                     </span>
                     <span className="px-2 py-0.5 rounded bg-[#FAF9F5] text-charcoal-700 border border-[#E5DEC9]">
                       JSS 1 - 3

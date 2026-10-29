@@ -51,12 +51,12 @@ export function CaseStudySection() {
           </div>
 
           <h2 className="font-display font-bold text-ink-900 text-3xl sm:text-4xl xl:text-5xl tracking-tight leading-[1.12] mb-4 text-balance">
-            How Oakland High eliminated fee leaks <br className="hidden sm:inline" />
+            How Oakland School eliminated fee leaks <br className="hidden sm:inline" />
             and marksheet delays in one term.
           </h2>
 
           <p className="text-base sm:text-lg text-charcoal-600 font-sans leading-relaxed text-balance">
-            See how Oakland Comprehensive High School (840 students, JSS 1 to SSS 3, Lagos) uses EDUCTIVE to eliminate fee reconciliation delays, paper attendance confusion, and end-of-term broadsheet bottlenecks.
+            See how Oakland School (840 students, Nursery to SSS 3, Lagos) uses EDUCTIVE to eliminate fee reconciliation delays, paper attendance confusion, and end-of-term broadsheet bottlenecks.
           </p>
         </div>
 
@@ -146,7 +146,7 @@ export function CaseStudySection() {
           {/* Left Column: Side-by-side Contrast (7 cols) */}
           <div className="lg:col-span-7 space-y-4">
             <h3 className="font-display font-bold text-ink-900 text-xl sm:text-2xl mb-4">
-              What Changed Inside Oakland High
+              What Changed Inside Oakland School
             </h3>
 
             {/* Comparison Row 1 */}
@@ -200,10 +200,10 @@ export function CaseStudySection() {
               </div>
               <div>
                 <p className="font-display font-bold text-ink-900 text-sm">
-                  Oakland Comprehensive High School
+                  Oakland School
                 </p>
                 <p className="text-xs text-charcoal-600 font-sans">
-                  Private Day & Boarding Secondary School · Lagos
+                  Private Day & Boarding Nursery, Primary & Secondary School · Lagos
                 </p>
                 <a
                   href="https://oakland-school.onrender.com"

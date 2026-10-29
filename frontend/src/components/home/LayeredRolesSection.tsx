@@ -50,7 +50,7 @@ const ROLES: RoleData[] = [
     quote: {
       text: "I used to wait weeks for bursary reports. Now I see every payment on my phone before 9:00 AM.",
       author: "Dr. (Mrs.) A. Okonjo",
-      role: "Proprietor, Oakland Comprehensive High School",
+      role: "Proprietor, Oakland School",
     },
     preview: {
       title: "Executive Financial Summary",
@@ -93,7 +93,7 @@ const ROLES: RoleData[] = [
     quote: {
       text: "End of term used to mean three weeks of marksheet stress. Now reports are ready the day exams finish.",
       author: "Mr. B. Adeleke",
-      role: "Principal, Oakland Comprehensive High",
+      role: "Principal, Oakland School",
     },
     preview: {
       title: "Campus Academic & Gate Status",
@@ -136,7 +136,7 @@ const ROLES: RoleData[] = [
     quote: {
       text: "Fake bank alerts and unverified teller slips are completely gone. The system reconciles every kobo.",
       author: "Alhaji M. Ibrahim",
-      role: "Chief Bursar, Oakland High",
+      role: "Chief Bursar, Oakland School",
     },
     preview: {
       title: "Bursary Payment Stream",

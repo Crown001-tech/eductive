@@ -219,7 +219,7 @@ export function TheCliffhangerSection() {
                   <div className="flex items-center justify-between border-b border-dashed border-[#D2C7B2] pb-3 mb-3">
                     <div>
                       <p className="font-display font-bold text-xs sm:text-sm text-ink-900 tracking-wide">
-                        OAKLAND COMPREHENSIVE HIGH SCHOOL
+                        OAKLAND SCHOOL
                       </p>
                       <p className="text-[10px] text-charcoal-600 font-sans">
                         SECURITY POST · OFFICIAL VISITOR PASS

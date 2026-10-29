@@ -89,7 +89,7 @@ export function DemoCtaSection() {
                     id="cta-school-name"
                     type="text"
                     required
-                    placeholder="e.g. Oakland Comprehensive High School"
+                    placeholder="e.g. Oakland School"
                     value={schoolName}
                     onChange={(e) => setSchoolName(e.target.value)}
                     className="w-full px-4 py-3 rounded-xl bg-ink-900/90 border border-emerald-500/25 text-white placeholder:text-surface/40 text-sm focus:outline-none focus:border-emerald-400 transition-colors"
@@ -136,7 +136,7 @@ export function DemoCtaSection() {
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4 text-xs font-sans text-surface/70">
             <span className="flex items-center gap-1.5">
               <span className="w-2 h-2 rounded-full bg-emerald-400" />
-              <span>Designed for Nigerian primary and secondary schools</span>
+              <span>Designed for Nigerian nursery, primary and secondary schools</span>
             </span>
             <span className="hidden sm:inline text-surface/40">·</span>
             <Link

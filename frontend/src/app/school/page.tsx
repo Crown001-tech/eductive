@@ -6,7 +6,7 @@ import { SchoolShowcaseStage } from "@/components/school/SchoolShowcaseStage";
 export const metadata: Metadata = {
   title: "Oakland School Showcase — Built on EDUCTIVE",
   description:
-    "Explore the live website and school portal we built for Oakland Comprehensive High School in Lagos.",
+    "Explore the live website and school portal we built for Oakland School in Lagos.",
 };
 
 export default function SchoolPage() {

@@ -13,7 +13,7 @@ export function ProductHero() {
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         <Image
           src="/images/school-campus-hero-bg.jpg"
-          alt="Nigerian secondary school campus quadrangle"
+          alt="Nigerian school campus quadrangle"
           fill
           priority
           className="object-cover object-center scale-105 opacity-60 sm:opacity-65"
@@ -89,7 +89,7 @@ export function ProductHero() {
                 rel="noopener noreferrer"
                 className="underline underline-offset-4 text-white hover:text-emerald-200 font-bold"
               >
-                Demonstration School: Oakland Comprehensive High School
+                Demonstration School: Oakland School
               </a>
             </span>
           </div>

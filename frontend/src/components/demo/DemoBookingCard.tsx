@@ -128,7 +128,7 @@ export function DemoBookingCard() {
               id="demo-school-name"
               type="text"
               required
-              placeholder="e.g. Oakland Comprehensive High School"
+              placeholder="e.g. Oakland School"
               value={formData.schoolName}
               onChange={(e) => setFormData({ ...formData, schoolName: e.target.value })}
               className="w-full px-4 py-2.5 rounded-xl border border-[#D8CEBA] bg-[#FAF9F5] text-ink-900 text-sm focus:outline-none focus:border-emerald-600 focus:bg-white transition-colors"

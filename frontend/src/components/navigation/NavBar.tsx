@@ -7,7 +7,7 @@ import { ArrowRight } from "lucide-react";
 import { MobileMenu } from "./MobileMenu";
 
 export const NAV_LINKS = [
-  { label: "Product", href: "/product" },
+  { label: "Features", href: "/product" },
   { label: "About", href: "/about" },
   { label: "School", href: "/school" },
   { label: "FAQ", href: "/#faq" },

@@ -24,7 +24,7 @@ export function SchoolPaperArtifacts({
   return (
     <div className="absolute inset-0 pointer-events-none z-24 select-none">
       {/* =====================================================================
-          ARTIFACT (HERO ANCHOR - LEVEL 3 SHADOW): OAKLAND COMPREHENSIVE BURSARY FEE RECEIPT
+          ARTIFACT (HERO ANCHOR - LEVEL 3 SHADOW): OAKLAND SCHOOL BURSARY FEE RECEIPT
           - Prominent hero artifact (350px wide), deep rich shadow, high contrast
           - Anchored at far right (right: 25px, top: 100px) — completely clear of the boy!
           - 100% matched financial data: Tuition ₦185,000 for Adeyemi Femi (JSS 2 Gold)
@@ -64,7 +64,7 @@ export function SchoolPaperArtifacts({
           <div className="flex items-center justify-between border-b border-dashed border-[#D2C7B2] pb-2.5 mb-2.5 pt-1">
             <div>
               <p className="font-bold text-ink-900 tracking-wider text-[11.5px] uppercase font-display">
-                OAKLAND COMPREHENSIVE HIGH SCHOOL
+                OAKLAND SCHOOL
               </p>
               <p className="text-[9.5px] text-charcoal-600 font-sans tracking-wide">
                 BURSARY E-RECEIPT · FIRST TERM 2026/2027
